@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-07-04 Mon 10:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elements of Classical Algebraic Geometry</title>
+<meta name="author" content="Anand Patel" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<div style="display: none"> \(
+\newcommand{\A}{\mathbb{A}}
+\renewcommand{\P}{\mathbb{P}}
+\renewcommand{\O}{\mathcal{O}}
+\renewcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\q}{\mathsf{q}}
+\newcommand{\Gr}{\textrm{Gr}}
+\newcommand{\G}{\mathbb{G}}
+\renewcommand{\k}{\mathsf{k}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\renewcommand{\to}{\longrightarrow}
+\DeclareMathOperator{\Hom}{\mathsf{Hom}}
+\DeclareMathOperator{\sing}{\mathsf{Sing}}
+\DeclareMathOperator{\Sym}{\mathsf{Sym}}
+\DeclareMathOperator{\V}{\mathcal{V}}
+\DeclareMathOperator{\E}{\mathcal{E}}
+\DeclareMathOperator{\cubics}{\textrm{cubics}}
+\)</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Elements of Classical Algebraic Geometry</h1>
+
+<div id="outline-container-org504a95f" class="outline-2">
+<h2 id="org504a95f"><span class="section-number-2">1.</span> Affine space \(\A^n_{\k}\), algebraic subsets, and the Zariski topology</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Affine varieties are the fundamental building blocks of the objects in classical algebraic geometry, <i>quasi-projective varieties</i>.  In essence, an affine variety is the  solution set of a system of polynomial equations with coefficients in some field \(\k\). This solution set is made into a geometric object when we introduce a topology, the <i>Zariski topology</i>, on it.  Furthermore, two such solutions sets are allowed to communicate with each other using only a restricted class of functions, called <b><i>regular maps</i></b>.  Using this, we are then able to codify what it means for two solution sets to be "the same", even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to witness the same abstract group in various guises.)  An affine variety \(X\) is then defined to be an equivalence class of solution sets under the notion of regular isomorphism, and it turns out that \(X\) is uniquely recoverable from the ring of regular functions on it, called the <i>coordinate ring</i>, denoted \(\k[X]\).  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about \(X\) into ring-theoretic notions about \(\k[X]\), thereby securing geometric intuitions in the rigorous realm of algebra.
+</p>
+
+<p>
+The relationship between the originating system of equations and the solution set is tightest when this <i>ground field</i> \(\k\) is algebraically closed, and the main theorem(s) describing this relationship is Hilbert's Nullstellensatz in its various incarnations.  
+</p>
+</div>
+
+<div id="outline-container-org088e5cb" class="outline-3">
+<h3 id="org088e5cb"><span class="section-number-3">1.1.</span> Algebraic sets</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="definition" id="org7ab9e98">
+<ol class="org-ol">
+<li><b><i>Affine space of dimension \(n\) (over \(\k\))</i></b>, denoted \[\A^{n}_{\k}\] is the set of \(n\) -tuples \(p = (p_1, \dots, p_{n})\), \(p_{i} \in \k\).</li>
+<li>For each \(i\), we denote by \[x_{i}: \A^{n}_{\k} \to \A^{1}_{\k}\] the \(i\)-th coordinate function sending \((p_{1}, \dots, p_{n})\) to \(p_i\).</li>
+<li>If \(S \subset \k[x_{1} \dots, x_n]\) is a subset of polynomials, we define the <b><i>vanishing set of \(S\)</i></b> to be
+\[\V(S) = \big\{p \in \A^n_{\k} \mid f(p)=0 \, \textrm{for all}\, f \in S \big\}.\]</li>
+<li>A subset \(U \subset \A^{n}_{\k}\) is a <b><i>Zariski open set</i></b> if its complement is \(\V(S)\) for some \(S \subset \k[x_1, \dots, x_n]\).</li>
+<li>Conversely, any subset \(Z \subset \A^n_{\k}\) of the form \(\V(S)\) is called a <b><i>Zariski closed</i></b> (or, simply <b><i>closed</i></b>) subset. A Zariski closed subset of affine space also called an <b><i>algebraic set</i></b>.</li>
+<li>More generally, if \(Z \subset \A^n_{\k}\) is an algebraic set, then a subset \(U \subset Z\) is  a <b><i>Zariski open  subset of \(Z\)</i></b> if \(U\) is the intersection of \(Z\) with a Zarski open subset of \(\A^n_{\k}\).</li>
+<li>A Zariski open subset of an algebraic set is called a <b><i>quasi-affine set</i></b>.</li>
+</ol>
+
+</div>
+
+<p>
+The reason for the terminology is: The Zariski open/closed sets satisfy the axioms of a topology.  Whenever we say "open" or "closed" in the context of algebraic sets, we refer to the Zariski topology.  
+</p>
+
+<div class="eg" id="orgfb7bbf8">
+<p>
+Some algebraic sets are more famous than others (for various reasons), and have names.
+</p>
+<ol class="org-ol">
+<li>The <i>parabola</i> \[\V(y-x^{2}) \subset \A^{2}_{\k}.\]</li>
+<li>The <i>quadric cone</i> \[\V(xy-z^2) \subset \A^3_{\k}.\]</li>
+<li>The <i>hyperboloid of one sheet</i> \[\V(xy-z) \subset \A^{3}_{\k}.\]</li>
+<li>The <i>nodal cubic</i> \[\V(y^2 - x^{2}-x^{3}) \subset \A^2_{\k}.\]</li>
+<li>The <i>cuspidal cubic</i> \[\V(y^2-x^3) \subset \A^2_{\k}.\]</li>
+<li>An / elliptic curve/ \[\V(y^2-x^3+x) \subset \A^2_{\k}.\]</li>
+<li>The <i>affine twisted cubic</i> \[\V(x^2-y,x^3-z) = \V(x^2-y, xy-z) \subset \A^3_{\k}.\]</li>
+<li>The <i>Whitney umbrella</i> \[\V(x^2+zy^2) \subset \A^{3}_{\k}.\]</li>
+</ol>
+
+
+<div id="org3ac02cc" class="figure">
+<p><img src="./images/whitney2.png" alt="whitney2.png" />
+</p>
+</div>
+
+<ol class="org-ol">
+<li>A <i>line and a plane</i>  \[\V(xz,yz) \subset \A^3_{\k}.\]</li>
+</ol>
+
+</div>
+
+
+<div class="exercise" id="org94e8c10">
+<p>
+Suppose \(I,J \subset \k[x_1, \dots, x_n]\) are two ideals. Show:
+</p>
+<ol class="org-ol">
+<li>\(\V(I \cdot J) = \V(I) \cup \V(J)\), and</li>
+<li>\(\V(I+J) = \V(I) \cap \V(J).\)</li>
+<li>Prove that two distinct ideals \(I\) and \(J\) can satisfy \(\V(I) = \V(J)\), and moreover, there exists an example where neither \(I \subset J\) nor \(J \subset I\).</li>
+<li>Prove that the Zariski open subsets of \(\A^{n}_{\k}\) satisfy the axioms of a topology. This topology is called the <b><i>Zariski topology on \(\A^n_{\k}\).</i></b></li>
+<li>Prove that the Zariski closed subsets of \(\A^{1}_{\k}\) are the finite sets.</li>
+<li>If \(S \subset \k[x_1, \dots, x_n]\) is a subset, and if \(\langle S \rangle\) denotes the ideal generated by \(S\), then prove that \(\V(S) = \V(\langle S \rangle)\).</li>
+<li>Prove that every finite subset of \(\A^{n}_{\k}\) is closed, but that the converse is not true for all \(n \geq 2\).</li>
+</ol>
+
+</div>
+
+<p>
+In light of this exercise, in order to create an algebraic set, we need only consider \(\V(I)\)'s for <i>ideals</i> \(I \subset \k[x_1, \dots,
+x_n]\).
+</p>
+
+<p>
+And so, the operation \(\V\) therefore provides a surjective function: \[\V(-): \big\{\,\textrm{ideals} \,\, I \subset \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{algebraic sets} \,\, X \subset \A^{n}_{\k} \big\}.\]
+</p>
+
+<p>
+We can also go backwards, from sets to ideals:
+</p>
+
+<div class="definition" id="orgeda844b">
+<p>
+Let \(Z \subset \A^n_{\k}\) be any subset.  We define the <b><i>ideal of \(Z\)</i></b> to be \[I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
+</p>
+
+</div>
+
+<div class="eg" id="org50d1ff0">
+<p>
+Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)\). Notice that \(I(\{p\}) \subset \k[x_1,\dots, x_n]\) is a <i>maximal ideal</i>.  So, we typically use the symbol \(\fm_p\) for this ideal.
+</p>
+
+</div>
+
+
+<div class="exercise" id="orgdce42c9">
+<ol class="org-ol">
+<li>Prove: For any subset \(Z \subset \A^{n}_{\k}\), we have \(Z \subset \V(I(Z))\).</li>
+<li>Prove:  \(Z \subset \A^n_{\k}\) is Zariski-closed if and only if \(Z = \V(I(Z))\).</li>
+<li>In fact, prove: For any \(Z \subset \A^n_{\k}\), \(\V(I(Z))\) is the closure of \(Z\) under the Zariski topology on \(\A^n_{\k}\).</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org93a4c3b" class="outline-3">
+<h3 id="org93a4c3b"><span class="section-number-3">1.2.</span> Regular functions</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Next, we must set the rules for how algebraic sets and quasi-affine sets are allowed to communicate with each other. In short, we allow ourselves, to the extent that it is possible, to use functions which are describable using polynomials and their ratios.  These functions are called regular functions.
+</p>
+
+<div class="definition" id="org3efc757">
+<p>
+Let \(U \subset Z\) be an open subset of an algebraic set.
+</p>
+<ol class="org-ol">
+<li>A function \(f: U \to \A^1_{\k}\) is <b><i>regular</i></b> if: for every \(x \in U\), the function \(f\) agrees with a ratio of polynomials \(p/q\) (with \(q(x) \neq 0\)) on some open subset \(V \subset U\) containing \(x\). The ring of regular functions on \(U\) is denoted \(\k[U]\).</li>
+<li>A map \(\varphi = (f_1, \dots, f_m): U \to \A^m_{\k}\) is <b><i>regular</i></b> if each coordinate function \(f_i\) is in \(\k[U]\).</li>
+<li>If \(V \subset W\) is another quasi-affine set, with \(W\) an algebraic subset of \(\A^m_{\k}\), then a <b><i>regular mapping</i></b> \(\varphi: U \to V\) is a regular map \(\varphi: U \to \A^m_{\k}\) whose image lies in \(V\).</li>
+</ol>
+
+</div>
+
+<div class="proposition" id="orga192228">
+<p>
+If \(U\) and \(V\) are quasi-affine sets, and if \(\varphi: U \to V\) is a regular mapping, then \(\varphi\) is continuous for the Zariski topologies on \(U\) and \(V\), i.e. the preimage of any closed set is closed.
+</p>
+
+</div>
+
+<div class="exercise" id="org11ffba8">
+<p>
+Let \(\varphi: U \to V\) be a regular mapping between quasi-affine sets.  Prove:
+</p>
+<ol class="org-ol">
+<li>If \(g \in \k[V]\)  then \(g \circ \varphi \in \k[U]\).</li>
+<li>The formula \(g \mapsto g \circ \varphi\) defines a \(\k\)-algebra homomorphism \(\k[V] \to \k[U]\).</li>
+<li>If \(U\) and \(V\) are affine sets, then, conversely, any homomorphism \(\k[V] \to \k[U]\) comes from a regular mapping \(g: U \to V\).</li>
+</ol>
+
+</div>
+
+
+<div class="theorem" id="org1fd8980">
+<p>
+Let \(Z \subset \A^n_{\k}\) be an algebraic set. Then every regular function on \(Z\) is the restriction of a polynomial.  Thus, the ring of regular functions on \(Z\) is isomorphic to \(\k[x_1, \dots, x_n]/\I(Z)\). 
+</p>
+
+</div>
+
+<div class="exercise" id="org7ff0c99">
+<p>
+Let \(Z \subset \A^n_{\k}\) be an algebraic subset, and let \(f \in \k[x_0, \dots, x_n]\) be any polynomial.  If \(\varphi: Z_f \to \A^1_{\k}\) is a regular function then there exists a polynomial \(a\) such that \(p = a/f^{m}\) for some \(m \geq 0\). 
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org83923ee" class="outline-3">
+<h3 id="org83923ee"><span class="section-number-3">1.3.</span> Hilbert's Nullstellensatz</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations \(\V(-)\) and \(I(-)\).  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to summarize the situation here:
+</p>
+
+<ol class="org-ol">
+<li>When \(\k\) is algebraically closed, the Nullstellensatz tells us that the only way for \(\V(I)\) to be empty is if \(I = (1)\), the unit ideal. In other words, any system of polynomial equations which is not equivalent to \(1=0\) <b><i>must have</i></b> solutions in \(\A^n_{\k}\).</li>
+<li>When \(\k\) is algebraically closed, the Nullstellensatz provides the precise list of <i>maximal ideals in</i> \(\k[x_1, \dots, x_n]\).</li>
+</ol>
+
+<div class="theorem" id="org919f149">
+<p>
+Let \(\k\) be an arbitrary field.
+</p>
+
+<ol class="org-ol">
+<li>If \(L\) is a finitely generated \(\k\)-algebra which is also a field, then \(L\) is a finite field extension of \(\k\).</li>
+
+<li>A polynomial system of equations \(\big\{f_1=0, f_2=0, \dots, f_m =0 \big\}\) with \(f_i \in \k[x_1, \dots, x_n]\) has a solution in <b><i>some</i></b> \(\k\)-algebra if and only if it has a solution \((\alpha_1, \dots, \alpha_n)\) where each \(\alpha_i\) is algebraic over \(\k\).</li>
+
+<li>If \(\k\) is algebraically closed, then every maximal ideal of \(\,\,\k[x_1, \dots, x_n]\) is of the form \((x_1-p_1, \dots, x_n-p_n)\) for some \(p_i \in \k\).</li>
+
+<li>If \(\k\) is algebraically closed, and if \(I \subset \k[x_1, \dots, x_n]\) satisfies \(\V(I) = \emptyset\), then \(I = (1)\), the unit ideal.</li>
+<li>If \(\k\) is algebraically closed, and if \(\fp \subset \k[x_1, \dots, x_n]\) is a prime ideal, then \(I(\V(\fp)) = \fp\).</li>
+</ol>
+
+</div>
+
+
+<div class="exercise" id="orgb5e2e17">
+<p>
+Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \dots, f_m \in \k[x]\) are finitely many polynomials.  Prove that the ring \(\k[x, \frac{1}{f_1}, \dots, \frac{1}{f_m}]\) is never a field. 
+</p>
+
+</div>
+</div>
+
+
+<div id="outline-container-org9593f0c" class="outline-4">
+<h4 id="org9593f0c"><span class="section-number-4">1.3.1.</span> Some  algebra: finite/integral extensions of rings</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<div class="definition" id="orgce4eb76">
+<ol class="org-ol">
+<li>An extension \(A \subset B\) of rings is <b><i>an integral extension</i></b> if every element of \(B\) satisfies a monic polynomial with coefficients in \(A\).</li>
+
+<li>An extension of rings \(A \subset B\) is <b><i>finite</i></b> if \(B\) is finitely generated as an \(A\)-module.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga772fd6" class="outline-2">
+<h2 id="orga772fd6"><span class="section-number-2">2.</span> Projective space \(\P^n_{\k}\) and projective varieties</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+For a multitude of reasons, it is useful to want to <i>compactify</i> affine space.  Take, for instance, the concept of the <i>slope of a line</i> from high school algebra.  Slopes were numbers, typically labelled \(m\).  Except, hold on, what about those pesky "vertical" lines?  It is clear that, geometrically, vertical lines are no more special than any other kind of line.  So we should extend the concept of slope \(m\) to include an "infinity" slope \(m =\infty\). By adding \(\infty\) to the \(\A^1\) of slopes, we arrive at the <i>projective line</i> \(\P^1\).
+</p>
+
+<p>
+Another way that projective space arises is in the following context:  We have a vector space \(V\), but we only really care  about elements of \(V\) <i>up to scaling</i>.  For instance, if we only care about the <i>location of the roots</i> of a quadratic polynomial \(ax^2+bx+c\), then for our purposes there is no difference between polynomials \(ax^2+bx+c\) and \(\lambda a x^2 + \lambda b x + \lambda c =0\), where \(\lambda\) a nonzero number.
+</p>
+</div>
+<div id="outline-container-orga131411" class="outline-3">
+<h3 id="orga131411"><span class="section-number-3">2.1.</span> Projective varieties</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+For simplicity, we work throughout over an algebraically closed field \(\k\).
+</p>
+
+<div class="definition" id="org3dd3504">
+<ol class="org-ol">
+<li>The \(n\)-dimensional projective space, denoted \(\P^n_{\k}\), is the set of equivalence classes of points of \(\left(\A^{n+1}_{\k}\right)^{\times}\) under the action of \(\k^{\times}\) by scaling.</li>
+<li>A point \(p \in  \P^n_{\k}\) is denoted by a tuple \([p_0 : p_1 : \ldots : p_n]\), and two tuples \([p_0 : p_1 : \ldots : p_n]\) and \([q_0 : q_1 : \dots : q_n]\) represent the same point in \(\P^n_{\k}\) if and only if there exists \(\lambda \in \k^{\times}\) such that \(p_i = \lambda q_i\) for all \(i = 0,\ldots, n\).</li>
+<li>The assignment \((p_0, \dots, p_n) \mapsto [p_0 : \dots : p_n]\) defines the <b><i>quotient mapping</i></b> \[\q : \left( \A^{n+1}_{\k}\right)^{\times} \to \P^n_{\k}.\]</li>
+<li>The <b><i>Zariski topology on \(\P^n_{\k}\)</i></b> is defined as follows: A subset \(U \subset \P^n_{\k}\) is open (resp. closed) if and only if \(\q^{-1}(U)\) is Zariski-open (resp. closed) in  \(\left( \A^{n+1}_{\k}\right)^{\times}\).</li>
+<li>For each \(i=0, \ldots, n\), we define the <b><i>\(i\)-th standard affine open chart of \(\P^n_{\k}\)</i></b> to be the open set \[U_{i} = \big\{ [p_{0}: \ldots : p_n] \mid p_i \neq 0 \big\}.\]</li>
+</ol>
+
+</div>
+
+<div class="exercise" id="org163562a">
+<ol class="org-ol">
+<li>For each \(i=0,\ldots, n\), let \(\gamma_i: \A^{n}_{\k} \to U_i\) denote the bijective function that sends \((a_0, \ldots, a_{i-1}, a_{i+1}, \ldots a_n)\) to the point \([a_0: \ldots: a_{i-1} : 1 : a_{i+1} : \ldots : a_n]\).  Prove that \(\gamma_i\) is a <i>homeomorphism</i> of topological spaces, meaning: \(Y \subset \A^n_{\k}\) is Zariski-open if and only if \(\gamma_i(Y) \subset U_i\) is Zariski-open.</li>
+<li>One could define another topology on \(\P^n_{\k}\) in the following way: A set \(Y \subset \P^n_{\k}\) is closed if and only if \(Y_{i} := Y \cap U_i\) is closed in \(U_i\) for all \(i\), where we think of \(U_i\) as an affine space under the indentifications \(\gamma_i\) in the previous exercise.  Prove that this topology is the same as the Zariski topology defined in the definition above.</li>
+</ol>
+
+</div>
+
+
+<div class="theorem" id="org07ecaa1">
+<p>
+Every closed subset of  \(\P^{n}_{\k}\) is obtained as the vanishing set of a graded ideal in \(\k[X_0, \dots, X_n]\). 
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org809c1e4" class="outline-3">
+<h3 id="org809c1e4"><span class="section-number-3">2.2.</span> Projective morphisms</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="theorem" id="org664972f">
+<p>
+The main theorem of elimination theory.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgccdc495" class="outline-3">
+<h3 id="orgccdc495"><span class="section-number-3">2.3.</span> Morphisms between projective spaces</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="definition" id="org7ddfc3a">
+<p>
+Let \(X, Y\) be two varieties, with \(X\) irreducible. A <b><i>rational map</i></b> from \(X\) to \(Y\), is an equivalence class of pairs \((\varphi, U)\) where:
+</p>
+<ol class="org-ol">
+<li>\(U \subset X\) is a non-empty open set, and \(\varphi: U \to Y\) is a regular map, and</li>
+<li>Two pairs \((\varphi, U)\) and \((\xi, V)\) are equivalent if there exists an open subset \(W \subset U \cap V\) where \(\varphi|_{W} = \xi|_{W}\).</li>
+</ol>
+
+</div>
+
+<div class="proposition" id="org44ad37e">
+<p>
+Let \(\varphi: X \dashrightarrow Y\) be a rational map.  Then there exists a maximal domain of definition, \(U_{\textrm{max}} \subset X\) for \(\varphi\), i.e. if \((\xi,U)\) represents \(\varphi\) then \(U \subset U_{\textrm{max}}\). 
+</p>
+
+</div>
+
+<p>
+(Proof: For all representatives \((\xi_{\alpha}, U_{\alpha})\) representing \(\varphi\), define \(U_{\textrm{max}}\) to be the union of all \(U_\alpha\). Suppose \((\xi_{\alpha}, U_{\alpha})\) and \((\xi_{\beta}, U_{\beta})\) both represent \(\varphi\). Then \(U_{\alpha} \cap U_{\beta}\) is an irreducible quasi-projective variety.  The two regular maps \(\xi_{\alpha}|_{U_{\alpha} \cap U_{\beta}}\) and \(\xi_{\beta}|_{U_{\alpha} \cap U_{\beta}}\) agree on an open set, and therefore agree everywhere.  Thus the \(\xi_{\alpha}\)'s glue together to produce a regular map on \(U_{\textrm{max}}\), which is what we needed.)
+</p>
+
+
+<div class="theorem" id="orgc8f016c">
+<p>
+Every regular mapping \(\varphi: \P^n_{\k} \to \P^m_{\k}\) is of the form \([x_0, \dots, x_n] \mapsto [F_0: \ldots : F_m]\) for some homogeneous forms \(F_{i}\) of the same degree, not all sharing a common zero.
+</p>
+
+</div>
+
+<div class="theorem" id="orgb5797fb">
+<p>
+Every regular automorphism of \(\P^n_{\k}\) is a linear change of variables.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge44de09" class="outline-2">
+<h2 id="orge44de09"><span class="section-number-2">3.</span> Tangent spaces</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+To each point \(x\) on a variety \(X\) we attach a \(k\)-vector space \(T_{X,x}\), called the <b><i>Zariski tangent space</i></b>.   This vector space unlocks the concept of <b><i>smoothness</i></b> of \(X\) at \(x\), which is the  algebro-geometric formulation of the intuition that \(X\) appears ``locally linear" around \(x\). 
+</p>
+
+
+<div class="definition" id="orge454f00">
+<p>
+Let \(x \in X\) be a point on a variety.  The <b><i>Zariski tangent space of \(X\) at \(x\)</i></b>, denoted \(T_{X,x}\), is the \(\k\)-vector space \[\left( {\fm_{x}}/{\fm_{x}^2} \right)^{\vee}.\]
+</p>
+
+</div>
+
+<p>
+The ring \(\k[\varepsilon]/(\varepsilon^2)\) provides a sometimes-useful alternate interpretation of the Zariski tangent space.  This is encoded in the following critical exercise. 
+</p>
+
+<div class="exercise" id="org74ff920">
+<p>
+Let \(x \in X\) be a point on a variety. Then there is a canonical identification between \(T_{X,x}\) and the set of $\k$-algebra homomorphisms \(\phi : \O_{X,x} \to \k[\varepsilon]/(\varepsilon^2)\) which send \(\fm_{x}\) into the ideal \((\varepsilon)\).
+</p>
+
+</div>
+</div>
+
+<div id="outline-container-org0dae1b3" class="outline-3">
+<h3 id="org0dae1b3"><span class="section-number-3">3.1.</span> Singular points and smooth points</h3>
+</div>
+
+<div id="outline-container-org1870e17" class="outline-3">
+<h3 id="org1870e17"><span class="section-number-3">3.2.</span> The nature of the local ring at a smooth point</h3>
+</div>
+
+<div id="outline-container-org7764f73" class="outline-3">
+<h3 id="org7764f73"><span class="section-number-3">3.3.</span> Bertini's theorem(s)</h3>
+<div class="outline-text-3" id="text-3-3">
+<div class="theorem" id="org64d84db">
+<p>
+Let \(f: X \to \P^n_{\k}\) be a map from a smooth, quasi-projective variety \(X\) to a projective space, and suppose \(\k\) is a <b><i>perfect</i></b>, algebraically closed field.  If \(H \subset \P^n_{\k}\) is a Zariski-general hyperplane, then \(f^{-1}(H) \subset X\) is a smooth divisor.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org7c31579" class="outline-2">
+<h2 id="org7c31579"><span class="section-number-2">4.</span> Constancy of number</h2>
+<div class="outline-text-2" id="text-4">
+<div class="theorem" id="orgf5b44c7">
+<p>
+Let \(f: X \to Y\) be a finite map, with \(X\) and \(Y\) smooth, irreducible affine varieties over a characteristic zero field. Then the length of every fiber is equal to the degree of \(f\). (Degree of extension fields.)
+</p>
+
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org3ae91dc" class="outline-2">
+<h2 id="org3ae91dc"><span class="section-number-2">5.</span> Hypersurfaces</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Let \(X = \V(F) \subset \P^n_{\k}\) be a hypersurface, defined by a degree \(d\) homogeneous form \(F(x_0, \dots, x_n)\).   Let \(p = (p_0, \ldots, p_n) \in \left( \A^{n+1} \right)^{\times}\) be a point such that \(F(p) = 0\), and let \(\hat{X} \subset  \A^{n+1}\) denote the affine cone over \(X\).  Then \(X\) is singular at \([p]\) if and only if \(\hat{X}\) is singular at \(p\). 
+</p>
+</div>
+</div>
+<div id="outline-container-orge4506b2" class="outline-2">
+<h2 id="orge4506b2"><span class="section-number-2">6.</span> Basics on vector bundles</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgf0ca755" class="outline-3">
+<h3 id="orgf0ca755"><span class="section-number-3">6.1.</span> The definition of a vector bundle</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+The concept of a <b><i>vector bundle</i></b> is ubiquitous in mathematics, and captures the idea of a "family of vector spaces parametrized by a base space."  In algebraic geometry, the definition is as follows:
+</p>
+<div class="definition" id="org4294ebf">
+<p>
+Let \(X\) be a variety.  A <b><i>rank \(r\) vector bundle over \(X\)</i></b> is a variety \(\E\) together with a regular map \(\pi: \E \to X\) such that:
+</p>
+<ul class="org-ul">
+<li>There is an open covering \(\{U_{\alpha}\}\) of \(X\)  and isomorphisms \(\phi_{\alpha}: \pi^{-1}(U_{\alpha}) \to U_{\alpha}\times \A^r_{\k}\) TODO</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgb681270" class="outline-3">
+<h3 id="orgb681270"><span class="section-number-3">6.2.</span> Line bundles</h3>
+<div class="outline-text-3" id="text-6-2">
+</div>
+<div id="outline-container-org6c07725" class="outline-4">
+<h4 id="org6c07725"><span class="section-number-4">6.2.1.</span> Line bundles on \(\A^n_{\k}\).</h4>
+<div class="outline-text-4" id="text-6-2-1">
+<p>
+Curiously, for affine varieties, the capacity for carrying interesting lines bundles is related to unique factorization.
+</p>
+<div class="theorem" id="org05e519c">
+<p>
+Every line bundle on \(\A^{n}_{\k}\) is isomorphic to the trivial line bundle.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org8ba96c2" class="outline-4">
+<h4 id="org8ba96c2"><span class="section-number-4">6.2.2.</span> Line bundles on \(\P^n_{\k}\).</h4>
+<div class="outline-text-4" id="text-6-2-2">
+<div class="definition" id="org258aa93">
+<p>
+Fix an integer \(d \in \Z\). The line bundle \(\O(d)\) on \(\P^{n}_{\k}\) is&#x2026;TODO 
+</p>
+
+</div>
+
+<div class="theorem" id="org7c11c4e">
+<p>
+Every line bundle on \(\P^n_{\k}\) is isomorphic to one of the line bundles \(\O(d)\).
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8c6dea3" class="outline-2">
+<h2 id="org8c6dea3"><span class="section-number-2">7.</span> The basic geometry of Grassmannians</h2>
+</div>
+<div id="outline-container-org8af654c" class="outline-2">
+<h2 id="org8af654c"><span class="section-number-2">8.</span> Algebraic Geometry in Linear Algebra</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org3b702d6" class="outline-3">
+<h3 id="org3b702d6"><span class="section-number-3">8.1.</span> Rank-dropping varieties</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+Suppose \(V\) and \(W\) are \(\k\)-vector spaces of dimensions \(n\), and \(m\) respectively.  In this document we will establish fundamental facts about the geometry of a particularly ubiquitous stratification of the vector space of linear homomorphisms \[\Hom(V,W)\]
+</p>
+
+
+<div class="definition" id="org908d840">
+<p>
+For each integer \(r \leq m\), we define the subset \[\mathsf{R}_{r} \subset \Hom(V,W)\] as the collection of homomorphisms \(\varphi: V \to W\) having rank \(\leq r\).  Furthermore, let \[\mathring{\mathsf{R}}_{r} = \mathsf{R}_{r}\setminus \mathsf{R}_{r-1}\] be the set of homomorphisms of rank \(r\).
+</p>
+
+</div>
+
+
+<p>
+On the extremes, \(\mathsf{R}_m = \Hom(V,W)\) and \(\mathsf{R}_{0} = \{0\}\).  After choosing bases of \(V\) and \(W\), every element of \(\Hom(V,W)\) is represented by a \(m \times n\) matrix. Let us write the <b><i>universal \(m \times n\) matrix</i></b> as 
+\[A = \big\{ x_{ij} \big\} \,\,\,  1 \leq i \leq m, 1 \leq j \leq n.\]
+Linear algebra says: 
+</p>
+
+<p>
+For each \(r\), the subset \(\mathsf{R}_{r}\) is the common vanishing locus of all determinants of \((r+1) \times (r+1)\) minors of the universal matrix \(A\).
+</p>
+
+<p>
+Thus, \(\mathsf{R}_{r}\) is a sub-variety of \(\Hom(V,W)\).  (In fact, it comes with a "usual" scheme structure given by the ideal in \(\k\left[\{X_{i,j}\}\right]\) generated by \((r+1) \times (r+1)\)-minors of \(A\).) 
+</p>
+
+
+
+<div class="exercise" id="orga744021">
+<p>
+In light of the canonical identification between \(\Hom(V,W)\) and \(\Hom(W^{\vee},V^{\vee})\), why is it enough to study the situation where \(n \leq m\)?
+</p>
+
+</div>
+
+
+<div class="exercise" id="org806439b">
+<p>
+Let \(I_{r} \subset \k[\{ x_{ij}\}]\) denote the ideal generated by the determinants of the \((r+1) \times (r+1)\) minors of \(A\).  Prove that \(I_{r-1}\) is generated by all partial derivatives of all elements in the ideal \(I_{r}\).
+</p>
+
+</div>
+
+
+<p>
+In the language of schemes, this translates to: <i>\(\mathsf{R_{r-1}}\) is
+the singular scheme of \(\mathsf{R_{r}}\).</i>
+</p>
+
+
+
+
+
+
+<div class="exercise" id="orga97b3dc">
+<p>
+Examine the geometry of the subvarieties \(\mathsf{R}_{r}\) when \(m=n=2\).
+</p>
+
+</div>
+</div>
+
+<div id="outline-container-org47ebc60" class="outline-4">
+<h4 id="org47ebc60"><span class="section-number-4">8.1.1.</span> The relevant incidence variety</h4>
+<div class="outline-text-4" id="text-8-1-1">
+<p>
+For each \(1 \leq r \leq m\) we define the subset 
+\[\widetilde{\mathsf{R}}_{r} \subset \Hom(V,W) \times \Gr(n-r,V)\] as the set of pairs \((\varphi, \Lambda)\)  satisfying  \[ \Lambda \subset \ker \varphi.\]
+</p>
+
+
+<p>
+Let \(\pi_{1}: \widetilde{\mathsf{R}}_{r} \to \Hom(V,W)\) denote the projection onto the first factor, \(\pi_{1}(\varphi, \Lambda) := \varphi\).  Then \(\pi_{1}\) is a projective morphism, and \(\pi_{1}(\widetilde{\mathsf{R}}_{r}) = \mathsf{R}_{r}\).
+</p>
+
+
+<div class="exercise" id="org5e58b33">
+<ol class="org-ol">
+<li>Prove, using standard affine charts on the \(\Gr(n-r,V)\), that \(\widetilde{\mathsf{R}}_{r}\) is a closed subvariety of \(\Hom(V,W) \times \Gr(n-r,V).\)  For a follow-up exercise, show it is irreducible.</li>
+<li>Prove that \(\pi_{1}: \widetilde{\mathsf{R}}_{r} \to \mathsf{R}_{r}\) is an isomorphism over \(\mathring{\mathsf{R}}_{r}\).</li>
+<li>(\(\varepsilon\)asy  with \(\varepsilon\)-skills.) Let \((\varphi, \Lambda)\) denote an arbitrary point of \(\widetilde{\mathsf{R}}_{r}\). Then the tangent space of \(\widetilde{\mathsf{R}}_{r}\) at \((\varphi, \Lambda)\) is the subspace of   \(Hom(V,W) \oplus Hom(\Lambda, V/\Lambda)\) consisting of pairs \((\psi,\alpha)\) such that \[\overline{\varphi} \circ \alpha + \psi|_{\Lambda} = 0\] as elements of \(Hom(\Lambda, W)\).  Here, \(\overline{\varphi}: V /\Lambda \to W\) is the map induced by \(\varphi\).</li>
+</ol>
+
+</div>
+
+<p>
+The conclusion from all exercises above is: 
+</p>
+
+<div class="theorem" id="orgfc36722">
+<p>
+Theorem on the Geometry of Rank-Dropping: 
+</p>
+<ol class="org-ol">
+<li>The variety \(\widetilde{\mathsf{R}}_{r}\) is smooth and irreducible.</li>
+<li>The map \(\pi_{1}: \widetilde{\mathsf{R}}_{r} \to \mathsf{R}_{r}\) is an isomorphism precisely over  \(\mathring{\mathsf{R}}_{r}\).  Hence, \(\mathsf{R}_{r}\) is irreducible, and has codimension \((n-r)(m-r)\) in \(\Hom(V,W)\).</li>
+<li>\(\sing(\mathsf{R}_{r}) = \mathsf{R}_{r-1}\).</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeea4b33" class="outline-3">
+<h3 id="orgeea4b33"><span class="section-number-3">8.2.</span> Symmetric linear algebra and the geometry of quadric hypersurfaces</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+Let \(V\) be an \((n+1)\)-dimensional vector space <b><i>over a ground field \(\k\) of characteristic not \(2\).</i></b>
+</p>
+
+<p>
+Let \(Q \in \Sym^{2}V^{\vee}\) be a quadratic form on \(V\). Choose a basis \((v_{i})_{i=0, \ldots, n}\) of \(V\), and the corresponding dual basis \((X_{i})\) of \(V^{\vee}\).  Then, the quadratic form \(Q\) is a homogeneous quadratic polynomial \(Q(X_0, \ldots, X_n)\), and defines a corresponding quadric hypersurface \[\mathsf{Q} \subset \P V\] defined as the vanishing (scheme) of \(Q\).
+</p>
+
+
+<div class="definition" id="orgb2db927">
+<p>
+The <b><i>rank of \(Q\)</i></b> (or <b><i>the rank of \(\mathsf{Q}\)</i></b>) is defined to be the rank of the symmetric matrix \(S(Q)\).
+</p>
+
+</div>
+
+
+<div class="exercise" id="orgb118b6c">
+<ol class="org-ol">
+<li>The singular locus (scheme) of \(\mathsf{Q}\) is a linear space, and is the projectivization of the kernel of the \((n+1)\times(n+1)\)-symmetric matrix \(S(Q)\).</li>
+
+<li>\(\mathsf{Q}\) is smooth if and only if it has full rank (\(= n+1\)). In general, \(\sing(\mathsf{Q}) \subset \P V\) is a linear space with codimension equal to the rank of \(\mathsf{Q}\).</li>
+
+<li>Using the fact that over an algebraically closed field all  symmetric matrices are diagonalizable, show that over such a field (characteristic not = \(2\)), every quadric is projectively equivalent to exactly one of the \((n+1)\) quadrics from the list:</li>
+<li>Suppose \(\mathsf{Q} \subset \P V\) is a quadric hypersurface with \(\dim \sing(\mathsf{Q}) = s \geq 0\).  Then there is a choice of homogeneous coordinates \((X_0, \dots, X_{n})\) of \(V\) in terms of which \(\mathsf{Q}\) has defining equation of the form \[Q(X_0, \ldots, X_n) = \sum_{i = 0}^{n-s-1}X_{i}L_{i}\] where \(L_{i}\) are linear forms in the variables \(X_0, \ldots, X_{n-s-1}\), and furthermore such that the common vanishing space of the \(L_{i}\) is the plane \(X_0 = \dots = X_{n-s-1}=0\).</li>
+</ol>
+<p>
+\[X_{0}^{2},\,\,\, X_{0}^2+X_{1}^2,\,\, \ldots\,\,\,, X_{0}^{2} + X_{1}^2 + \cdots +X_{n}^{2}.\]
+</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1b3fbf7" class="outline-2">
+<h2 id="org1b3fbf7"><span class="section-number-2">9.</span> The geometry of smooth cubic surfaces</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+The geometry of smooth cubic surfaces is extremely rich and interesting, and constitutes one of the earliest chapters  in classical algebraic geometry.  The first fundamental theorem, due to Cayley and Salmon, is: 
+</p>
+
+<div class="theorem" id="orgb5cd74b">
+<p>
+A cubic surface \(X \subset \P^3\) contains exactly \(27\) lines if and only if it is smooth. 
+</p>
+
+</div>
+
+
+<div class="definition" id="orga6f3263">
+<p>
+Define the <b><i>cubic-line</i></b> incidence correspondence to be the subset \[\Sigma \subset \P^{19}_{\cubics} \times \G(1,3)\] consisting of those pairs \((X,\ell)\) where \(X\) is a cubic surface and \(\ell\) is a line contained in \(X\).
+</p>
+
+</div>
+
+<div class="exercise" id="org5f84f28">
+<p>
+In this exercise, we assume the ground field \(\k\) is algebraically closed (arbitrary characteristic). 
+</p>
+<ol class="org-ol">
+<li>Prove that \(\Sigma\) is a smooth, \(19\)-dimensional variety by considering the structure of the second projection \(\pi_2:\Sigma \to \G(1,3)\).</li>
+<li>Let \(L\) denote the line \(x_0 = x_1 = 0\).  Show that any cubic \(X\) containing \(L\) is of the form \(\V(F)\) where \(F = x_0 \cdot Q_0 + x_1 \cdot Q_1\), where \(Q_i(x_0,x_1,x_2,x_3)\) are quadratic forms, and that \(X\) is singular at a point \(p \in L\) if and only if \(Q_0(p) = Q_1 (p) = 0\).</li>
+<li>Prove that a line \(L\) on a cubic surface \(X\) admits a non-trivial first order deformation <b><i>within \(X\)</i></b> if and only if there is a point \(p \in L\) where \(X\) is singular.</li>
+<li>Prove that if \(p \in X\) is a singular point on a cubic surface then there must be a line \(L \subset X\) containing \(p\).</li>
+<li>Conclude that the first projection \[\pi_{1}: \Sigma \to \P_{\cubics}^{19}\] is unramified at every point of \(\pi_{1}^{-1}([X])\) if and only if \(X\) is a smooth cubic surface.</li>
+<li>From the <b><i>Theorem on Conservation of Number</i></b>, conclude that <i>every smooth cubic surface contains the same number of lines as every other smooth cubic, and every singular cubic either contains strictly fewer lines, or infinitely many.</i></li>
+<li>Finally, by considering the particularly beautiful  cubic surface \(\V(x_{0}^2x_{1} + x_{1}^2x_{2} + x_{2}^{2}x_{3}+ x_{3}^{2}x_{0})\) conclude the theorem of Cayley and Salmon: <i>A cubic surface contains exactly \(27\) lines if and only if it is smooth.</i> (This cubic, the Clebsch cubic, has lines defined over \(\Z[\zeta_{5}]\), so it might be challenging to find the lines. It is also singular over \(\mathbb{F}_{5}\), which is consistent with the fact that \(\Z[\zeta_{5}]\) is ramified only over \(5\).)</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Anand Patel</p>
+<p class="date">Created: 2022-07-04 Mon 10:24</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

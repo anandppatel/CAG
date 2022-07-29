@@ -1,0 +1,386 @@
+#+TITLE: Elements of Classical Algebraic Geometry
+#+AUTHOR: Anand Patel
+#+SETUPFILE: latexpreamble.org
+#+OPTIONS: toc:nil
+#+BEGIN_SRC latex-macros
+  \newcommand{\A}{\mathbb{A}}
+  \renewcommand{\P}{\mathbb{P}}
+  \renewcommand{\O}{\mathcal{O}}
+  \renewcommand{\Z}{\mathbb{Z}}
+  \newcommand{\I}{\mathcal{I}}
+  \newcommand{\q}{\mathsf{q}}
+  \newcommand{\Gr}{\textrm{Gr}}
+  \newcommand{\G}{\mathbb{G}}
+  \renewcommand{\k}{\mathsf{k}}
+  \newcommand{\fm}{\mathfrak{m}}
+  \newcommand{\fp}{\mathfrak{p}}
+  \renewcommand{\to}{\longrightarrow}
+  \DeclareMathOperator{\Hom}{\mathsf{Hom}}
+  \DeclareMathOperator{\sing}{\mathsf{Sing}}
+  \DeclareMathOperator{\Sym}{\mathsf{Sym}}
+  \DeclareMathOperator{\V}{\mathcal{V}}
+  \DeclareMathOperator{\E}{\mathcal{E}}
+  \DeclareMathOperator{\cubics}{\textrm{cubics}}
+#+END_SRC
+
+* Affine space $\A^n_{\k}$, algebraic subsets, and the Zariski topology
+
+
+Affine varieties are the fundamental building blocks of the objects in classical algebraic geometry, /quasi-projective varieties/.  In essence, an affine variety is the  solution set of a system of polynomial equations with coefficients in some field $\k$. This solution set is made into a geometric object when we introduce a topology, the /Zariski topology/, on it.  Furthermore, two such solutions sets are allowed to communicate with each other using only a restricted class of functions, called */regular maps/*.  Using this, we are then able to codify what it means for two solution sets to be "the same", even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to witness the same abstract group in various guises.)  An affine variety $X$ is then defined to be an equivalence class of solution sets under the notion of regular isomorphism, and it turns out that $X$ is uniquely recoverable from the ring of regular functions on it, called the /coordinate ring/, denoted $\k[X]$.  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about $X$ into ring-theoretic notions about $\k[X]$, thereby securing geometric intuitions in the rigorous realm of algebra.
+
+The relationship between the originating system of equations and the solution set is tightest when this /ground field/ $\k$ is algebraically closed, and the main theorem(s) describing this relationship is Hilbert's Nullstellensatz in its various incarnations.  
+
+** Algebraic sets
+
+#+begin_definition
+1)   */Affine space of dimension $n$ (over $\k$)/*, denoted \[\A^{n}_{\k}\] is the set of $n$ -tuples $p = (p_1, \dots, p_{n})$, $p_{i} \in \k$.
+2)   For each $i$, we denote by \[x_{i}: \A^{n}_{\k} \to \A^{1}_{\k}\] the \(i\)-th coordinate function sending $(p_{1}, \dots, p_{n})$ to $p_i$.
+3)   If $S \subset \k[x_{1} \dots, x_n]$ is a subset of polynomials, we define the */vanishing set of $S$/* to be
+    \[\V(S) = \big\{p \in \A^n_{\k} \mid f(p)=0 \, \textrm{for all}\, f \in S \big\}.\]
+4) A subset $U \subset \A^{n}_{\k}$ is a */Zariski open set/* if its complement is $\V(S)$ for some $S \subset \k[x_1, \dots, x_n]$.
+5) Conversely, any subset $Z \subset \A^n_{\k}$ of the form $\V(S)$ is called a */Zariski closed/* (or, simply */closed/*) subset. A Zariski closed subset of affine space also called an */algebraic set/*.
+6) More generally, if $Z \subset \A^n_{\k}$ is an algebraic set, then a subset $U \subset Z$ is  a */Zariski open  subset of $Z$/* if $U$ is the intersection of $Z$ with a Zarski open subset of $\A^n_{\k}$.
+7) A Zariski open subset of an algebraic set is called a */quasi-affine set/*. 
+#+end_definition
+
+The reason for the terminology is: The Zariski open/closed sets satisfy the axioms of a topology.  Whenever we say "open" or "closed" in the context of algebraic sets, we refer to the Zariski topology.  
+
+#+begin_eg
+Some algebraic sets are more famous than others (for various reasons), and have names.
+ 1)  The /parabola/ \[\V(y-x^{2}) \subset \A^{2}_{\k}.\] 
+ 2)  The /quadric cone/ \[\V(xy-z^2) \subset \A^3_{\k}.\]
+ 3)  The /hyperboloid of one sheet/ \[\V(xy-z) \subset \A^{3}_{\k}.\]
+ 4)  The /nodal cubic/ \[\V(y^2 - x^{2}-x^{3}) \subset \A^2_{\k}.\] 
+ 5) The /cuspidal cubic/ \[\V(y^2-x^3) \subset \A^2_{\k}.\]
+ 6)  An / elliptic curve/ \[\V(y^2-x^3+x) \subset \A^2_{\k}.\]
+ 7)  The /affine twisted cubic/ \[\V(x^2-y,x^3-z) = \V(x^2-y, xy-z) \subset \A^3_{\k}.\]
+ 8)  The /Whitney umbrella/ \[\V(x^2+zy^2) \subset \A^{3}_{\k}.\]
+    
+[[./images/whitney2.png]]
+
+ 1) A /line and a plane/  \[\V(xz,yz) \subset \A^3_{\k}.\]
+#+end_eg
+
+
+#+begin_exercise
+Suppose $I,J \subset \k[x_1, \dots, x_n]$ are two ideals. Show:
+1)  \(\V(I \cdot J) = \V(I) \cup \V(J)\), and
+2)  \(\V(I+J) = \V(I) \cap \V(J).\)
+3)  Prove that two distinct ideals $I$ and $J$ can satisfy $\V(I) = \V(J)$, and moreover, there exists an example where neither $I \subset J$ nor $J \subset I$.
+4)  Prove that the Zariski open subsets of $\A^{n}_{\k}$ satisfy the axioms of a topology. This topology is called the */Zariski topology on $\A^n_{\k}$./*
+5)   Prove that the Zariski closed subsets of $\A^{1}_{\k}$ are the finite sets.
+6)   If $S \subset \k[x_1, \dots, x_n]$ is a subset, and if $\langle S \rangle$ denotes the ideal generated by $S$, then prove that $\V(S) = \V(\langle S \rangle)$.
+7)   Prove that every finite subset of $\A^{n}_{\k}$ is closed, but that the converse is not true for all $n \geq 2$.
+#+end_exercise
+
+In light of this exercise, in order to create an algebraic set, we need only consider $\V(I)$'s for /ideals/ $I \subset \k[x_1, \dots,
+x_n]$.
+
+And so, the operation $\V$ therefore provides a surjective function: \[\V(-): \big\{\,\textrm{ideals} \,\, I \subset \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{algebraic sets} \,\, X \subset \A^{n}_{\k} \big\}.\]
+
+We can also go backwards, from sets to ideals:
+
+#+begin_definition
+Let $Z \subset \A^n_{\k}$ be any subset.  We define the */ideal of $Z$/* to be \[I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
+#+end_definition
+
+#+begin_eg
+Let $p = (p_1, \dots, p_n) \in \A^n_{\k}$ be any point. Then $I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)$. Notice that $I(\{p\}) \subset \k[x_1,\dots, x_n]$ is a /maximal ideal/.  So, we typically use the symbol $\fm_p$ for this ideal.
+#+end_eg
+
+
+#+begin_exercise
+1)  Prove: For any subset $Z \subset \A^{n}_{\k}$, we have $Z \subset \V(I(Z))$.
+2)  Prove:  $Z \subset \A^n_{\k}$ is Zariski-closed if and only if $Z = \V(I(Z))$.
+3)  In fact, prove: For any $Z \subset \A^n_{\k}$, $\V(I(Z))$ is the closure of $Z$ under the Zariski topology on $\A^n_{\k}$.
+#+end_exercise
+
+** Regular functions
+
+Next, we must set the rules for how algebraic sets and quasi-affine sets are allowed to communicate with each other. In short, we allow ourselves, to the extent that it is possible, to use functions which are describable using polynomials and their ratios.  These functions are called regular functions.
+
+#+begin_definition
+Let $U \subset Z$ be an open subset of an algebraic set.
+1) A function $f: U \to \A^1_{\k}$ is */regular/* if: for every $x \in U$, the function $f$ agrees with a ratio of polynomials $p/q$ (with $q(x) \neq 0$) on some open subset $V \subset U$ containing $x$. The ring of regular functions on $U$ is denoted $\k[U]$. 
+2) A map $\varphi = (f_1, \dots, f_m): U \to \A^m_{\k}$ is */regular/* if each coordinate function $f_i$ is in $\k[U]$.
+3) If $V \subset W$ is another quasi-affine set, with $W$ an algebraic subset of $\A^m_{\k}$, then a */regular mapping/* $\varphi: U \to V$ is a regular map $\varphi: U \to \A^m_{\k}$ whose image lies in $V$.  
+#+end_definition
+
+#+begin_proposition
+If $U$ and $V$ are quasi-affine sets, and if $\varphi: U \to V$ is a regular mapping, then $\varphi$ is continuous for the Zariski topologies on $U$ and $V$, i.e. the preimage of any closed set is closed.
+#+end_proposition
+
+#+begin_exercise
+Let $\varphi: U \to V$ be a regular mapping between quasi-affine sets.  Prove:
+1) If $g \in \k[V]$  then $g \circ \varphi \in \k[U]$.
+2) The formula $g \mapsto g \circ \varphi$ defines a \(\k\)-algebra homomorphism $\k[V] \to \k[U]$.
+3) If $U$ and $V$ are affine sets, then, conversely, any homomorphism $\k[V] \to \k[U]$ comes from a regular mapping $g: U \to V$.
+#+end_exercise
+
+
+#+begin_theorem
+Let $Z \subset \A^n_{\k}$ be an algebraic set. Then every regular function on $Z$ is the restriction of a polynomial.  Thus, the ring of regular functions on $Z$ is isomorphic to $\k[x_1, \dots, x_n]/\I(Z)$. 
+#+end_theorem
+
+#+begin_exercise
+Let $Z \subset \A^n_{\k}$ be an algebraic subset, and let $f \in \k[x_0, \dots, x_n]$ be any polynomial.  If $\varphi: Z_f \to \A^1_{\k}$ is a regular function then there exists a polynomial $a$ such that $p = a/f^{m}$ for some $m \geq 0$. 
+#+end_exercise
+
+** Hilbert's Nullstellensatz
+
+Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations $\V(-)$ and $I(-)$.  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to summarize the situation here:
+
+1)  When $\k$ is algebraically closed, the Nullstellensatz tells us that the only way for $\V(I)$ to be empty is if $I = (1)$, the unit ideal. In other words, any system of polynomial equations which is not equivalent to $1=0$ */must have/* solutions in $\A^n_{\k}$.
+2)  When $\k$ is algebraically closed, the Nullstellensatz provides the precise list of /maximal ideals in/ $\k[x_1, \dots, x_n]$. 
+
+#+begin_theorem
+Let $\k$ be an arbitrary field.
+
+1) If $L$ is a finitely generated \(\k\)-algebra which is also a field, then $L$ is a finite field extension of $\k$.
+
+2) A polynomial system of equations \(\big\{f_1=0, f_2=0, \dots, f_m =0 \big\}\) with $f_i \in \k[x_1, \dots, x_n]$ has a solution in */some/* \(\k\)-algebra if and only if it has a solution $(\alpha_1, \dots, \alpha_n)$ where each $\alpha_i$ is algebraic over $\k$. 
+
+3) If \(\k\) is algebraically closed, then every maximal ideal of \(\,\,\k[x_1, \dots, x_n]\) is of the form $(x_1-p_1, \dots, x_n-p_n)$ for some $p_i \in \k$.
+
+4) If \(\k\) is algebraically closed, and if $I \subset \k[x_1, \dots, x_n]$ satisfies $\V(I) = \emptyset$, then $I = (1)$, the unit ideal.
+5) If \(\k\) is algebraically closed, and if $\fp \subset \k[x_1, \dots, x_n]$ is a prime ideal, then $I(\V(\fp)) = \fp$.
+#+end_theorem
+
+
+#+begin_exercise
+Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \dots, f_m \in \k[x]\) are finitely many polynomials.  Prove that the ring \(\k[x, \frac{1}{f_1}, \dots, \frac{1}{f_m}]\) is never a field. 
+#+end_exercise
+
+
+*** Some  algebra: finite/integral extensions of rings
+
+#+begin_definition
+1)  An extension $A \subset B$ of rings is */an integral extension/* if every element of $B$ satisfies a monic polynomial with coefficients in $A$.
+
+2)  An extension of rings $A \subset B$ is */finite/* if $B$ is finitely generated as an \(A\)-module.
+#+end_definition
+
+* Projective space $\P^n_{\k}$ and projective varieties
+For a multitude of reasons, it is useful to want to /compactify/ affine space.  Take, for instance, the concept of the /slope of a line/ from high school algebra.  Slopes were numbers, typically labelled $m$.  Except, hold on, what about those pesky "vertical" lines?  It is clear that, geometrically, vertical lines are no more special than any other kind of line.  So we should extend the concept of slope $m$ to include an "infinity" slope $m =\infty$. By adding $\infty$ to the $\A^1$ of slopes, we arrive at the /projective line/ $\P^1$.
+
+Another way that projective space arises is in the following context:  We have a vector space $V$, but we only really care  about elements of $V$ /up to scaling/.  For instance, if we only care about the /location of the roots/ of a quadratic polynomial $ax^2+bx+c$, then for our purposes there is no difference between polynomials $ax^2+bx+c$ and $\lambda a x^2 + \lambda b x + \lambda c =0$, where $\lambda$ a nonzero number.
+** Projective varieties
+For simplicity, we work throughout over an algebraically closed field \(\k\).
+
+#+begin_definition
+1) The \(n\)-dimensional projective space, denoted \(\P^n_{\k}\), is the set of equivalence classes of points of $\left(\A^{n+1}_{\k}\right)^{\times}$ under the action of $\k^{\times}$ by scaling.
+2)  A point $p \in  \P^n_{\k}$ is denoted by a tuple $[p_0 : p_1 : \ldots : p_n]$, and two tuples $[p_0 : p_1 : \ldots : p_n]$ and $[q_0 : q_1 : \dots : q_n]$ represent the same point in $\P^n_{\k}$ if and only if there exists $\lambda \in \k^{\times}$ such that $p_i = \lambda q_i$ for all $i = 0,\ldots, n$.
+3) The assignment $(p_0, \dots, p_n) \mapsto [p_0 : \dots : p_n]$ defines the */quotient mapping/* \[\q : \left( \A^{n+1}_{\k}\right)^{\times} \to \P^n_{\k}.\]
+4) The */Zariski topology on \(\P^n_{\k}\)/* is defined as follows: A subset $U \subset \P^n_{\k}$ is open (resp. closed) if and only if $\q^{-1}(U)$ is Zariski-open (resp. closed) in  \(\left( \A^{n+1}_{\k}\right)^{\times}\).
+5) For each $i=0, \ldots, n$, we define the */\(i\)-th standard affine open chart of $\P^n_{\k}$/* to be the open set \[U_{i} = \big\{ [p_{0}: \ldots : p_n] \mid p_i \neq 0 \big\}.\]
+#+end_definition
+
+#+begin_exercise
+1) For each $i=0,\ldots, n$, let $\gamma_i: \A^{n}_{\k} \to U_i$ denote the bijective function that sends $(a_0, \ldots, a_{i-1}, a_{i+1}, \ldots a_n)$ to the point $[a_0: \ldots: a_{i-1} : 1 : a_{i+1} : \ldots : a_n]$.  Prove that $\gamma_i$ is a /homeomorphism/ of topological spaces, meaning: $Y \subset \A^n_{\k}$ is Zariski-open if and only if $\gamma_i(Y) \subset U_i$ is Zariski-open.
+2) One could define another topology on $\P^n_{\k}$ in the following way: A set $Y \subset \P^n_{\k}$ is closed if and only if $Y_{i} := Y \cap U_i$ is closed in $U_i$ for all $i$, where we think of $U_i$ as an affine space under the indentifications $\gamma_i$ in the previous exercise.  Prove that this topology is the same as the Zariski topology defined in the definition above.
+#+end_exercise
+
+
+#+begin_theorem
+Every closed subset of  \(\P^{n}_{\k}\) is obtained as the vanishing set of a graded ideal in $\k[X_0, \dots, X_n]$. 
+#+end_theorem
+** Projective morphisms
+#+begin_theorem
+The main theorem of elimination theory.
+#+end_theorem 
+** Morphisms between projective spaces
+
+#+begin_definition
+Let $X, Y$ be two varieties, with $X$ irreducible. A */rational map/* from $X$ to $Y$, is an equivalence class of pairs $(\varphi, U)$ where:
+1) $U \subset X$ is a non-empty open set, and $\varphi: U \to Y$ is a regular map, and
+2) Two pairs $(\varphi, U)$ and $(\xi, V)$ are equivalent if there exists an open subset $W \subset U \cap V$ where $\varphi|_{W} = \xi|_{W}$. 
+#+end_definition
+
+#+begin_proposition
+Let $\varphi: X \dashrightarrow Y$ be a rational map.  Then there exists a maximal domain of definition, $U_{\textrm{max}} \subset X$ for $\varphi$, i.e. if $(\xi,U)$ represents $\varphi$ then $U \subset U_{\textrm{max}}$. 
+#+end_proposition
+
+(Proof: For all representatives $(\xi_{\alpha}, U_{\alpha})$ representing $\varphi$, define $U_{\textrm{max}}$ to be the union of all $U_\alpha$. Suppose $(\xi_{\alpha}, U_{\alpha})$ and $(\xi_{\beta}, U_{\beta})$ both represent $\varphi$. Then $U_{\alpha} \cap U_{\beta}$ is an irreducible quasi-projective variety.  The two regular maps $\xi_{\alpha}|_{U_{\alpha} \cap U_{\beta}}$ and $\xi_{\beta}|_{U_{\alpha} \cap U_{\beta}}$ agree on an open set, and therefore agree everywhere.  Thus the $\xi_{\alpha}$'s glue together to produce a regular map on $U_{\textrm{max}}$, which is what we needed.)
+
+
+#+begin_theorem
+Every regular mapping $\varphi: \P^n_{\k} \to \P^m_{\k}$ is of the form $[x_0, \dots, x_n] \mapsto [F_0: \ldots : F_m]$ for some homogeneous forms $F_{i}$ of the same degree, not all sharing a common zero.
+#+end_theorem
+
+#+begin_theorem
+Every regular automorphism of $\P^n_{\k}$ is a linear change of variables.
+#+end_theorem
+
+* Tangent spaces
+To each point $x$ on a variety $X$ we attach a \(k\)-vector space $T_{X,x}$, called the */Zariski tangent space/*.   This vector space unlocks the concept of */smoothness/* of $X$ at $x$, which is the  algebro-geometric formulation of the intuition that $X$ appears ``locally linear" around $x$. 
+
+
+#+begin_definition
+Let $x \in X$ be a point on a variety.  The */Zariski tangent space of $X$ at $x$/*, denoted $T_{X,x}$, is the \(\k\)-vector space \[\left( {\fm_{x}}/{\fm_{x}^2} \right)^{\vee}.\]
+#+end_definition
+
+The ring $\k[\varepsilon]/(\varepsilon^2)$ provides a sometimes-useful alternate interpretation of the Zariski tangent space.  This is encoded in the following critical exercise. 
+
+#+begin_exercise
+Let $x \in X$ be a point on a variety. Then there is a canonical identification between $T_{X,x}$ and the set of $\k$-algebra homomorphisms $\phi : \O_{X,x} \to \k[\varepsilon]/(\varepsilon^2)$ which send $\fm_{x}$ into the ideal $(\varepsilon)$.
+#+end_exercise
+
+** Singular points and smooth points
+
+** The nature of the local ring at a smooth point
+
+** Bertini's theorem(s) 
+
+#+begin_theorem
+Let $f: X \to \P^n_{\k}$ be a map from a smooth, quasi-projective variety $X$ to a projective space, and suppose $\k$ is a */perfect/*, algebraically closed field.  If $H \subset \P^n_{\k}$ is a Zariski-general hyperplane, then $f^{-1}(H) \subset X$ is a smooth divisor.
+#+end_theorem
+
+
+
+
+* Constancy of number
+
+#+begin_theorem
+Let $f: X \to Y$ be a finite map, with $X$ and $Y$ smooth, irreducible affine varieties over a characteristic zero field. Then the length of every fiber is equal to the degree of $f$. (Degree of extension fields.)
+#+end_theorem
+
+
+
+* Hypersurfaces
+
+Let $X = \V(F) \subset \P^n_{\k}$ be a hypersurface, defined by a degree $d$ homogeneous form $F(x_0, \dots, x_n)$.   Let \(p = (p_0, \ldots, p_n) \in \left( \A^{n+1} \right)^{\times}\) be a point such that $F(p) = 0$, and let $\hat{X} \subset  \A^{n+1}$ denote the affine cone over $X$.  Then $X$ is singular at $[p]$ if and only if $\hat{X}$ is singular at $p$. 
+* Basics on vector bundles
+** The definition of a vector bundle
+The concept of a */vector bundle/* is ubiquitous in mathematics, and captures the idea of a "family of vector spaces parametrized by a base space."  In algebraic geometry, the definition is as follows:
+#+begin_definition
+Let $X$ be a variety.  A */rank $r$ vector bundle over \(X\)/* is a variety $\E$ together with a regular map $\pi: \E \to X$ such that:
+- There is an open covering $\{U_{\alpha}\}$ of $X$  and isomorphisms $\phi_{\alpha}: \pi^{-1}(U_{\alpha}) \to U_{\alpha}\times \A^r_{\k}$ TODO
+#+end_definition
+** Line bundles
+*** Line bundles on $\A^n_{\k}$.
+Curiously, for affine varieties, the capacity for carrying interesting lines bundles is related to unique factorization.
+#+begin_theorem
+Every line bundle on $\A^{n}_{\k}$ is isomorphic to the trivial line bundle.
+#+end_theorem
+*** Line bundles on $\P^n_{\k}$.
+
+#+begin_definition
+Fix an integer $d \in \Z$. The line bundle $\O(d)$ on $\P^{n}_{\k}$ is...TODO 
+#+end_definition
+
+#+begin_theorem
+Every line bundle on $\P^n_{\k}$ is isomorphic to one of the line bundles $\O(d)$.
+#+end_theorem
+* The basic geometry of Grassmannians
+* Algebraic Geometry in Linear Algebra
+** Rank-dropping varieties
+
+Suppose $V$ and $W$ are \(\k\)-vector spaces of dimensions $n$, and $m$ respectively.  In this document we will establish fundamental facts about the geometry of a particularly ubiquitous stratification of the vector space of linear homomorphisms \[\Hom(V,W)\]
+
+
+#+begin_definition
+ For each integer $r \leq m$, we define the subset $$\mathsf{R}_{r} \subset \Hom(V,W)$$ as the collection of homomorphisms $\varphi: V \to W$ having rank $\leq r$.  Furthermore, let $$\mathring{\mathsf{R}}_{r} = \mathsf{R}_{r}\setminus \mathsf{R}_{r-1}$$ be the set of homomorphisms of rank $r$.
+ #+end_definition
+
+
+On the extremes, \(\mathsf{R}_m = \Hom(V,W)\) and \(\mathsf{R}_{0} = \{0\}\).  After choosing bases of $V$ and $W$, every element of $\Hom(V,W)$ is represented by a $m \times n$ matrix. Let us write the */universal $m \times n$ matrix/* as 
+\[A = \big\{ x_{ij} \big\} \,\,\,  1 \leq i \leq m, 1 \leq j \leq n.\]
+Linear algebra says: 
+
+For each $r$, the subset $\mathsf{R}_{r}$ is the common vanishing locus of all determinants of $(r+1) \times (r+1)$ minors of the universal matrix $A$.
+
+Thus, $\mathsf{R}_{r}$ is a sub-variety of $\Hom(V,W)$.  (In fact, it comes with a "usual" scheme structure given by the ideal in $\k\left[\{X_{i,j}\}\right]$ generated by \((r+1) \times (r+1)\)-minors of $A$.) 
+
+
+
+#+begin_exercise 
+In light of the canonical identification between $\Hom(V,W)$ and $\Hom(W^{\vee},V^{\vee})$, why is it enough to study the situation where $n \leq m$?
+#+end_exercise
+
+
+#+begin_exercise
+Let $I_{r} \subset \k[\{ x_{ij}\}]$ denote the ideal generated by the determinants of the $(r+1) \times (r+1)$ minors of $A$.  Prove that $I_{r-1}$ is generated by all partial derivatives of all elements in the ideal $I_{r}$.
+#+end_exercise
+
+
+In the language of schemes, this translates to: /\(\mathsf{R_{r-1}}\) is
+the singular scheme of \(\mathsf{R_{r}}\)./
+
+
+
+
+
+
+#+begin_exercise
+Examine the geometry of the subvarieties $\mathsf{R}_{r}$ when $m=n=2$.
+#+end_exercise
+
+*** The relevant incidence variety
+For each $1 \leq r \leq m$ we define the subset 
+\[\widetilde{\mathsf{R}}_{r} \subset \Hom(V,W) \times \Gr(n-r,V)\] as the set of pairs $(\varphi, \Lambda)$  satisfying  \[ \Lambda \subset \ker \varphi.\]
+
+
+Let $\pi_{1}: \widetilde{\mathsf{R}}_{r} \to \Hom(V,W)$ denote the projection onto the first factor, $\pi_{1}(\varphi, \Lambda) := \varphi$.  Then $\pi_{1}$ is a projective morphism, and $\pi_{1}(\widetilde{\mathsf{R}}_{r}) = \mathsf{R}_{r}$.
+
+
+#+begin_exercise
+1) Prove, using standard affine charts on the \(\Gr(n-r,V)\), that $\widetilde{\mathsf{R}}_{r}$ is a closed subvariety of \(\Hom(V,W) \times \Gr(n-r,V).\)  For a follow-up exercise, show it is irreducible.
+2) Prove that $\pi_{1}: \widetilde{\mathsf{R}}_{r} \to \mathsf{R}_{r}$ is an isomorphism over $\mathring{\mathsf{R}}_{r}$.
+3) (\(\varepsilon\)asy  with \(\varepsilon\)-skills.) Let $(\varphi, \Lambda)$ denote an arbitrary point of $\widetilde{\mathsf{R}}_{r}$. Then the tangent space of $\widetilde{\mathsf{R}}_{r}$ at $(\varphi, \Lambda)$ is the subspace of   $Hom(V,W) \oplus Hom(\Lambda, V/\Lambda)$ consisting of pairs $(\psi,\alpha)$ such that \[\overline{\varphi} \circ \alpha + \psi|_{\Lambda} = 0\] as elements of $Hom(\Lambda, W)$.  Here, $\overline{\varphi}: V /\Lambda \to W$ is the map induced by $\varphi$.
+#+end_exercise
+
+The conclusion from all exercises above is: 
+
+#+begin_theorem
+ Theorem on the Geometry of Rank-Dropping: 
+1. The variety $\widetilde{\mathsf{R}}_{r}$ is smooth and irreducible.
+2. The map $\pi_{1}: \widetilde{\mathsf{R}}_{r} \to \mathsf{R}_{r}$ is an isomorphism precisely over  $\mathring{\mathsf{R}}_{r}$.  Hence, $\mathsf{R}_{r}$ is irreducible, and has codimension $(n-r)(m-r)$ in $\Hom(V,W)$.
+3. $\sing(\mathsf{R}_{r}) = \mathsf{R}_{r-1}$.
+#+end_theorem
+
+** Symmetric linear algebra and the geometry of quadric hypersurfaces
+
+Let $V$ be an \((n+1)\)-dimensional vector space */over a ground field $\k$ of characteristic not $2$./*
+
+Let $Q \in \Sym^{2}V^{\vee}$ be a quadratic form on $V$. Choose a basis $(v_{i})_{i=0, \ldots, n}$ of $V$, and the corresponding dual basis $(X_{i})$ of $V^{\vee}$.  Then, the quadratic form $Q$ is a homogeneous quadratic polynomial $Q(X_0, \ldots, X_n)$, and defines a corresponding quadric hypersurface $$\mathsf{Q} \subset \P V$$ defined as the vanishing (scheme) of $Q$.
+
+
+#+begin_definition
+The */rank of $Q$/* (or */the rank of $\mathsf{Q}$/*) is defined to be the rank of the symmetric matrix \(S(Q)\).
+#+end_definition
+
+
+#+begin_exercise 
+1) The singular locus (scheme) of $\mathsf{Q}$ is a linear space, and is the projectivization of the kernel of the \((n+1)\times(n+1)\)-symmetric matrix $S(Q)$.
+   
+2) $\mathsf{Q}$ is smooth if and only if it has full rank ($= n+1$). In general, $\sing(\mathsf{Q}) \subset \P V$ is a linear space with codimension equal to the rank of $\mathsf{Q}$.
+
+3) Using the fact that over an algebraically closed field all  symmetric matrices are diagonalizable, show that over such a field (characteristic not = $2$), every quadric is projectively equivalent to exactly one of the $(n+1)$ quadrics from the list: 
+4) Suppose $\mathsf{Q} \subset \P V$ is a quadric hypersurface with $\dim \sing(\mathsf{Q}) = s \geq 0$.  Then there is a choice of homogeneous coordinates $(X_0, \dots, X_{n})$ of $V$ in terms of which $\mathsf{Q}$ has defining equation of the form $$Q(X_0, \ldots, X_n) = \sum_{i = 0}^{n-s-1}X_{i}L_{i}$$ where $L_{i}$ are linear forms in the variables $X_0, \ldots, X_{n-s-1}$, and furthermore such that the common vanishing space of the $L_{i}$ is the plane $X_0 = \dots = X_{n-s-1}=0$.
+\[X_{0}^{2},\,\,\, X_{0}^2+X_{1}^2,\,\, \ldots\,\,\,, X_{0}^{2} + X_{1}^2 + \cdots +X_{n}^{2}.\]
+#+end_exercise
+* The geometry of smooth cubic surfaces
+The geometry of smooth cubic surfaces is extremely rich and interesting, and constitutes one of the earliest chapters  in classical algebraic geometry.  The first fundamental theorem, due to Cayley and Salmon, is: 
+
+#+begin_theorem 
+A cubic surface $X \subset \P^3$ contains exactly $27$ lines if and only if it is smooth. 
+#+end_theorem
+
+
+#+begin_definition
+Define the */cubic-line/* incidence correspondence to be the subset \[\Sigma \subset \P^{19}_{\cubics} \times \G(1,3)\] consisting of those pairs $(X,\ell)$ where $X$ is a cubic surface and $\ell$ is a line contained in $X$.
+#+end_definition
+
+#+begin_exercise
+In this exercise, we assume the ground field $\k$ is algebraically closed (arbitrary characteristic). 
+1) Prove that $\Sigma$ is a smooth, \(19\)-dimensional variety by considering the structure of the second projection $\pi_2:\Sigma \to \G(1,3)$.
+2) Let $L$ denote the line $x_0 = x_1 = 0$.  Show that any cubic $X$ containing $L$ is of the form $\V(F)$ where $F = x_0 \cdot Q_0 + x_1 \cdot Q_1$, where $Q_i(x_0,x_1,x_2,x_3)$ are quadratic forms, and that $X$ is singular at a point $p \in L$ if and only if $Q_0(p) = Q_1 (p) = 0$.
+3) Prove that a line $L$ on a cubic surface $X$ admits a non-trivial first order deformation */within $X$/* if and only if there is a point $p \in L$ where $X$ is singular.  
+4) Prove that if $p \in X$ is a singular point on a cubic surface then there must be a line $L \subset X$ containing $p$. 
+5) Conclude that the first projection \[\pi_{1}: \Sigma \to \P_{\cubics}^{19}\] is unramified at every point of $\pi_{1}^{-1}([X])$ if and only if $X$ is a smooth cubic surface.  
+6) From the */Theorem on Conservation of Number/*, conclude that /every smooth cubic surface contains the same number of lines as every other smooth cubic, and every singular cubic either contains strictly fewer lines, or infinitely many./
+7) Finally, by considering the particularly beautiful  cubic surface $\V(x_{0}^2x_{1} + x_{1}^2x_{2} + x_{2}^{2}x_{3}+ x_{3}^{2}x_{0})$ conclude the theorem of Cayley and Salmon: /A cubic surface contains exactly $27$ lines if and only if it is smooth./ (This cubic, the Clebsch cubic, has lines defined over $\Z[\zeta_{5}]$, so it might be challenging to find the lines. It is also singular over $\mathbb{F}_{5}$, which is consistent with the fact that $\Z[\zeta_{5}]$ is ramified only over $5$.)
+#+end_exercise
+
+
+

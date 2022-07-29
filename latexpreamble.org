@@ -1,0 +1,32 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
+#+LATEX_CLASS: article
+#+LATEX_OPTIONS: [11pt, letterpaper]
+#+LATEX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \usepackage{amsmath, amssymb, amsthm, pgfplots, eucal}
+
+#+LATEX_HEADER_EXTRA: \newcommand{\A}{\mathbb A}
+
+#+LATEX_HEADER_EXTRA: \renewcommand{\k}{\mathsf{k}}
+
+#+LATEX_HEADER_EXTRA: \renewcommand{\P}{\mathbb P}
+
+#+LATEX_HEADER_EXTRA: \newcommand{\G}{\mathbb G}
+
+#+LATEX_HEADER_EXTRA: \DeclareMathOperator{\Gr}{Gr}
+
+
+#+LATEX_HEADER_EXTRA: \renewcommand{\to}{{\longrightarrow}}
+
+#+LATEX_HEADER_EXTRA: \newtheorem{theorem}{Theorem}[section]
+
+#+LATEX_HEADER_EXTRA: \newtheorem{proposition}{Proposition}[section]
+
+#+LATEX_HEADER_EXTRA: \newtheorem{lemma}{Lemma}[section]
+
+#+LATEX_HEADER_EXTRA: \newtheorem{corollary}{Corollary}[section]
+
+#+LATEX_HEADER_EXTRA: \newtheorem{definition}{Definition}[section]
+
+#+LATEX_HEADER_EXTRA: \newtheorem{eg}{Example}[section]
+
+#+LATEX_HEADER_EXTRA: \newtheorem{exercise}{Exercise}[section]

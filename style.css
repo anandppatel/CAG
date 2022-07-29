@@ -1,0 +1,206 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Noto+Serif&family=Roboto:wght@300&display=swap');
+
+
+
+body {
+	background-color: #F1EDE2;
+	font-family: Noto Serif, serif;
+	font-size: medium;
+	counter-reset: section;
+  }
+
+
+h1 {
+	font-family: Cinzel, serif;
+	font-size: xx-large; 
+	text-align:	left; 
+	counter-reset: subsection;
+  }
+
+h2 {
+	font-family: Cinzel, serif;
+	font-size: x-large;
+	text-align: left;
+	counter-reset: subsubsection;
+}
+
+h3 {
+	font-family: Noto Serif, serif;
+	font-size: larger;
+	text-align: left;
+}
+
+
+h4 {
+	font-family: Noto Serif, serif;
+	font-size: larger;
+	text-align: left;
+}
+
+.theorem::before {
+	background-color: #f8f4e8;
+	font-family: Cinzel, serif;
+	font-size: larger;
+	font-style: normal;
+        font-weight: bold;
+	text-align: center;
+	counter-increment: section;
+  content: "Theorem " counter(section) ": ";
+  border: 2px red;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.theorem {
+	background-color: #f8f4e8;
+	border: none;
+    border-radius: 2pt;
+    box-shadow: 0 0 3pt 2pt grey;
+    outline: none;
+    transition: .1s;
+	font-family: Noto Serif, serif;
+	font-size: medium;
+	font-style: italic;
+	margin: 40px;
+	padding: 10px;
+}
+
+
+.proposition::before {
+	background-color: #f8f4e8;
+	font-family: Cinzel, serif;
+	font-size: large;
+	font-style: normal;
+	text-align: center;
+	counter-reset: subsection;
+	counter-increment: subsubsection;
+  content: "Proposition " counter(subsubsection) ": ";
+  border: 2px  red;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.proposition {
+	background-color: #f8f4e8;
+	border: none;
+    border-radius: 2pt;
+    box-shadow: 0 0 3pt 2pt grey;
+    outline: none;
+    transition: .1s;
+	font-family: Noto Serif, serif;
+	font-size: medium;
+	font-style: italic;
+	margin: 40px;
+	padding: 10px;
+}
+
+.lemma::before {
+	counter-increment: subsubsection;
+	background-color: #f8f4e8;
+	font-family: Cinzel, serif;
+	font-size: large;
+	font-style: normal;
+	text-align: center;
+  content: "Lemma " counter(section) ": ";
+  border: 2px  red;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.lemma {
+	background-color: #f8f4e8;
+	border: none;
+    border-radius: 2pt;
+    box-shadow: 0 0 3pt 2pt grey;
+    outline: none;
+    transition: .1s;
+	font-family: Noto Serif, serif;
+	font-size: medium;
+	font-style: italic;
+	margin: 40px;
+	padding: 10px;
+}
+
+.definition {
+	background-color: #f8f4e8;
+	border: none;
+    border-radius: 2pt;
+    box-shadow: 0 0 3pt 2pt grey;
+    outline: none;
+    transition: .1s;
+	font-family: Noto Serif, serif;
+	font-size: medium;
+	margin: 40px;
+	padding: 10px;
+}
+
+
+.definition::before {
+	counter-increment: subsubsection;
+	font-family: Cinzel, serif;
+	background-color: #f8f4e8;
+	font-size: large;
+	content: "Definition " counter(subsubsection) ": ";
+	border: 2px;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+
+.eg::before {
+	counter-increment: section;
+	background-color: #f8f4e8;
+	font-family: Cinzel, serif;
+	font-size: large;
+  content: "Example " counter(section) ": ";
+  border: 2px;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.eg {
+	background-color: #f8f4e8;
+	border: none;
+    border-radius: 2pt;
+    box-shadow: 0 0 3pt 2pt grey;
+    outline: none;
+    transition: .1s;
+	font-family: Noto Serif, serif;
+	font-size: medium;
+	margin: 40px;
+	padding: 10px;
+}
+
+
+.exercise::before {
+	counter-increment: section;
+	background-color: #f8f4e8;
+	font-family: Cinzel, serif;
+	font-size: large;
+  content: "Exercise " counter(section) ": ";
+  border: 2px;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.exercise {
+	background-color: #f8f4e8;
+	border: none;
+    border-radius: 2pt;
+    box-shadow: 0 0 3pt 2pt grey;
+    outline: none;
+    transition: .1s;
+	font-family: Noto Serif, serif;
+	font-size: medium;
+	margin: 40px;
+	padding: 10px;
+}
+
+
+.title {
+	font-family: Cinzel, serif;
+	font-size: xx-large; 
+}
