@@ -1,4 +1,4 @@
-% Created 2022-06-24 Fri 11:36
+% Created 2022-08-17 Wed 11:46
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -60,7 +60,7 @@
 \maketitle
 
 \section{Affine space \(\A^n_{\k}\), algebraic subsets, and the Zariski topology}
-\label{sec:org6d41ec3}
+\label{sec:orge77b1ee}
 
 
 Affine varieties are the fundamental building blocks of the objects in classical algebraic geometry, \emph{quasi-projective varieties}.  In essence, an affine variety is the  solution set of a system of polynomial equations with coefficients in some field \(\k\). This solution set is made into a geometric object when we introduce a topology, the \emph{Zariski topology}, on it.  Furthermore, two such solutions sets are allowed to communicate with each other using only a restricted class of functions, called \textbf{\emph{regular maps}}.  Using this, we are then able to codify what it means for two solution sets to be "the same", even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to witness the same abstract group in various guises.)  An affine variety \(X\) is then defined to be an equivalence class of solution sets under the notion of regular isomorphism, and it turns out that \(X\) is uniquely recoverable from the ring of regular functions on it, called the \emph{coordinate ring}, denoted \(\k[X]\).  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about \(X\) into ring-theoretic notions about \(\k[X]\), thereby securing geometric intuitions in the rigorous realm of algebra.
@@ -68,7 +68,7 @@ Affine varieties are the fundamental building blocks of the objects in classical
 The relationship between the originating system of equations and the solution set is tightest when this \emph{ground field} \(\k\) is algebraically closed, and the main theorem(s) describing this relationship is Hilbert's Nullstellensatz in its various incarnations.  
 
 \subsection{Algebraic sets}
-\label{sec:orgf9f80b5}
+\label{sec:orgd083713}
 
 \begin{definition}
 \begin{enumerate}
@@ -146,7 +146,7 @@ Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(I(\{p\}) = (x_1
 \end{exercise}
 
 \subsection{Regular functions}
-\label{sec:orged41503}
+\label{sec:orgedd0624}
 
 Next, we must set the rules for how algebraic sets and quasi-affine sets are allowed to communicate with each other. In short, we allow ourselves, to the extent that it is possible, to use functions which are describable using polynomials and their ratios.  These functions are called regular functions.
 
@@ -173,16 +173,13 @@ Let \(\varphi: U \to V\) be a regular mapping between quasi-affine sets.  Prove:
 \end{exercise}
 
 
-\begin{theorem}
-Let \(Z \subset \A^n_{\k}\) be an algebraic set. Then every regular function on \(Z\) is the restriction of a polynomial.  Thus, the ring of regular functions on \(Z\) is isomorphic to \(\k[x_1, \dots, x_n]/\I(Z)\). 
-\end{theorem}
 
 \begin{exercise}
 Let \(Z \subset \A^n_{\k}\) be an algebraic subset, and let \(f \in \k[x_0, \dots, x_n]\) be any polynomial.  If \(\varphi: Z_f \to \A^1_{\k}\) is a regular function then there exists a polynomial \(a\) such that \(p = a/f^{m}\) for some \(m \geq 0\). 
 \end{exercise}
 
-\subsection{Hilbert's Nullstellensatz}
-\label{sec:orgdce084b}
+\subsubsection{Hilbert's Nullstellensatz}
+\label{sec:org0ebb6f2}
 
 Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations \(\V(-)\) and \(I(-)\).  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to summarize the situation here:
 
@@ -211,9 +208,13 @@ Let \(\k\) be an arbitrary field.
 Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \dots, f_m \in \k[x]\) are finitely many polynomials.  Prove that the ring \(\k[x, \frac{1}{f_1}, \dots, \frac{1}{f_m}]\) is never a field. 
 \end{exercise}
 
+\begin{theorem}
+Let \(Z \subset \A^n_{\k}\) be an algebraic set. Then every regular function on \(Z\) is the restriction of a polynomial.  Thus, the ring of regular functions on \(Z\) is isomorphic to \(\k[x_1, \dots, x_n]/\I(Z)\). 
+\end{theorem}
+
 
 \subsubsection{Some  algebra: finite/integral extensions of rings}
-\label{sec:org5c37bcf}
+\label{sec:org00a2814}
 
 \begin{definition}
 \begin{enumerate}
@@ -223,13 +224,14 @@ Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \do
 \end{enumerate}
 \end{definition}
 
+
 \section{Projective space \(\P^n_{\k}\) and projective varieties}
-\label{sec:orgf228950}
+\label{sec:org2d7dd4c}
 For a multitude of reasons, it is useful to want to \emph{compactify} affine space.  Take, for instance, the concept of the \emph{slope of a line} from high school algebra.  Slopes were numbers, typically labelled \(m\).  Except, hold on, what about those pesky "vertical" lines?  It is clear that, geometrically, vertical lines are no more special than any other kind of line.  So we should extend the concept of slope \(m\) to include an "infinity" slope \(m =\infty\). By adding \(\infty\) to the \(\A^1\) of slopes, we arrive at the \emph{projective line} \(\P^1\).
 
 Another way that projective space arises is in the following context:  We have a vector space \(V\), but we only really care  about elements of \(V\) \emph{up to scaling}.  For instance, if we only care about the \emph{location of the roots} of a quadratic polynomial \(ax^2+bx+c\), then for our purposes there is no difference between polynomials \(ax^2+bx+c\) and \(\lambda a x^2 + \lambda b x + \lambda c =0\), where \(\lambda\) a nonzero number.
 \subsection{Projective varieties}
-\label{sec:org6ea3458}
+\label{sec:orgb151089}
 For simplicity, we work throughout over an algebraically closed field \(\k\).
 
 \begin{definition}
@@ -254,12 +256,12 @@ For simplicity, we work throughout over an algebraically closed field \(\k\).
 Every closed subset of  \(\P^{n}_{\k}\) is obtained as the vanishing set of a graded ideal in \(\k[X_0, \dots, X_n]\). 
 \end{theorem}
 \subsection{Projective morphisms}
-\label{sec:orga3c073f}
+\label{sec:org6e7b1dd}
 \begin{theorem}
 The main theorem of elimination theory.
 \end{theorem}
 \subsection{Morphisms between projective spaces}
-\label{sec:org5a22a68}
+\label{sec:org134a56d}
 
 \begin{definition}
 Let \(X, Y\) be two varieties, with \(X\) irreducible. A \textbf{\emph{rational map}} from \(X\) to \(Y\), is an equivalence class of pairs \((\varphi, U)\) where:
@@ -285,7 +287,7 @@ Every regular automorphism of \(\P^n_{\k}\) is a linear change of variables.
 \end{theorem}
 
 \section{Tangent spaces}
-\label{sec:org725e215}
+\label{sec:orge014519}
 To each point \(x\) on a variety \(X\) we attach a \(k\)-vector space \(T_{X,x}\), called the \textbf{\emph{Zariski tangent space}}.   This vector space unlocks the concept of \textbf{\emph{smoothness}} of \(X\) at \(x\), which is the  algebro-geometric formulation of the intuition that \(X\) appears ``locally linear" around \(x\). 
 
 
@@ -300,13 +302,13 @@ Let \(x \in X\) be a point on a variety. Then there is a canonical identificatio
 \end{exercise}
 
 \subsection{Singular points and smooth points}
-\label{sec:org0b0b5a2}
+\label{sec:org4b9b0d3}
 
 \subsection{The nature of the local ring at a smooth point}
-\label{sec:org3f941b1}
+\label{sec:org82e3647}
 
 \subsection{Bertini's theorem(s)}
-\label{sec:orgd5ab332}
+\label{sec:org4e2e9b7}
 
 \begin{theorem}
 Let \(f: X \to \P^n_{\k}\) be a map from a smooth, quasi-projective variety \(X\) to a projective space, and suppose \(\k\) is a \textbf{\emph{perfect}}, algebraically closed field.  If \(H \subset \P^n_{\k}\) is a Zariski-general hyperplane, then \(f^{-1}(H) \subset X\) is a smooth divisor.
@@ -316,20 +318,22 @@ Let \(f: X \to \P^n_{\k}\) be a map from a smooth, quasi-projective variety \(X\
 
 
 \section{Constancy of number}
-\label{sec:org2cba497}
+\label{sec:orgf6740f7}
 
 \begin{theorem}
 Let \(f: X \to Y\) be a finite map, with \(X\) and \(Y\) smooth, irreducible affine varieties over a characteristic zero field. Then the length of every fiber is equal to the degree of \(f\). (Degree of extension fields.)
 \end{theorem}
 
+
+
 \section{Hypersurfaces}
-\label{sec:orgb2ed85c}
+\label{sec:org4f70767}
 
 Let \(X = \V(F) \subset \P^n_{\k}\) be a hypersurface, defined by a degree \(d\) homogeneous form \(F(x_0, \dots, x_n)\).   Let \(p = (p_0, \ldots, p_n) \in \left( \A^{n+1} \right)^{\times}\) be a point such that \(F(p) = 0\), and let \(\hat{X} \subset  \A^{n+1}\) denote the affine cone over \(X\).  Then \(X\) is singular at \([p]\) if and only if \(\hat{X}\) is singular at \(p\). 
 \section{Basics on vector bundles}
-\label{sec:org2fb6c44}
+\label{sec:orgb9f2dba}
 \subsection{The definition of a vector bundle}
-\label{sec:org86d9171}
+\label{sec:org1133eba}
 The concept of a \textbf{\emph{vector bundle}} is ubiquitous in mathematics, and captures the idea of a "family of vector spaces parametrized by a base space."  In algebraic geometry, the definition is as follows:
 \begin{definition}
 Let \(X\) be a variety.  A \textbf{\emph{rank \(r\) vector bundle over \(X\)}} is a variety \(\E\) together with a regular map \(\pi: \E \to X\) such that:
@@ -338,15 +342,15 @@ Let \(X\) be a variety.  A \textbf{\emph{rank \(r\) vector bundle over \(X\)}} i
 \end{itemize}
 \end{definition}
 \subsection{Line bundles}
-\label{sec:org256547f}
+\label{sec:orge6090c9}
 \subsubsection{Line bundles on \(\A^n_{\k}\).}
-\label{sec:orgc9c3e10}
+\label{sec:orgb41e603}
 Curiously, for affine varieties, the capacity for carrying interesting lines bundles is related to unique factorization.
 \begin{theorem}
 Every line bundle on \(\A^{n}_{\k}\) is isomorphic to the trivial line bundle.
 \end{theorem}
 \subsubsection{Line bundles on \(\P^n_{\k}\).}
-\label{sec:org42f55a9}
+\label{sec:org86c17e6}
 
 \begin{definition}
 Fix an integer \(d \in \Z\). The line bundle \(\O(d)\) on \(\P^{n}_{\k}\) is\ldots{}TODO 
@@ -356,11 +360,11 @@ Fix an integer \(d \in \Z\). The line bundle \(\O(d)\) on \(\P^{n}_{\k}\) is\ldo
 Every line bundle on \(\P^n_{\k}\) is isomorphic to one of the line bundles \(\O(d)\).
 \end{theorem}
 \section{The basic geometry of Grassmannians}
-\label{sec:org4e90a75}
+\label{sec:orge121edf}
 \section{Algebraic Geometry in Linear Algebra}
-\label{sec:orged4e243}
+\label{sec:org84d8ea5}
 \subsection{Rank-dropping varieties}
-\label{sec:orgc375af0}
+\label{sec:orgcf80b93}
 
 Suppose \(V\) and \(W\) are \(\k\)-vector spaces of dimensions \(n\), and \(m\) respectively.  In this document we will establish fundamental facts about the geometry of a particularly ubiquitous stratification of the vector space of linear homomorphisms \[\Hom(V,W)\]
 
@@ -403,7 +407,7 @@ Examine the geometry of the subvarieties \(\mathsf{R}_{r}\) when \(m=n=2\).
 \end{exercise}
 
 \subsubsection{The relevant incidence variety}
-\label{sec:orgcbe6583}
+\label{sec:org2ce1f54}
 For each \(1 \leq r \leq m\) we define the subset 
 \[\widetilde{\mathsf{R}}_{r} \subset \Hom(V,W) \times \Gr(n-r,V)\] as the set of pairs \((\varphi, \Lambda)\)  satisfying  \[ \Lambda \subset \ker \varphi.\]
 
@@ -431,7 +435,7 @@ Theorem on the Geometry of Rank-Dropping:
 \end{theorem}
 
 \subsection{Symmetric linear algebra and the geometry of quadric hypersurfaces}
-\label{sec:org19a8581}
+\label{sec:orgf1aebf7}
 
 Let \(V\) be an \((n+1)\)-dimensional vector space \textbf{\emph{over a ground field \(\k\) of characteristic not \(2\).}}
 
@@ -455,7 +459,7 @@ The \textbf{\emph{rank of \(Q\)}} (or \textbf{\emph{the rank of \(\mathsf{Q}\)}}
 \[X_{0}^{2},\,\,\, X_{0}^2+X_{1}^2,\,\, \ldots\,\,\,, X_{0}^{2} + X_{1}^2 + \cdots +X_{n}^{2}.\]
 \end{exercise}
 \section{The geometry of smooth cubic surfaces}
-\label{sec:org4b4bdbb}
+\label{sec:orgd0ade9d}
 The geometry of smooth cubic surfaces is extremely rich and interesting, and constitutes one of the earliest chapters  in classical algebraic geometry.  The first fundamental theorem, due to Cayley and Salmon, is: 
 
 \begin{theorem}

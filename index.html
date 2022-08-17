@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-08-17 Wed 14:10 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elements of Classical Algebraic Geometry</title>
+<meta name="author" content="Anand Patel" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<div style="display: none"> \(
+\newcommand{\A}{\mathbb{A}}
+\renewcommand{\P}{\mathbb{P}}
+\renewcommand{\O}{\mathcal{O}}
+\renewcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\q}{\mathsf{q}}
+\newcommand{\Gr}{\textrm{Gr}}
+\newcommand{\G}{\mathbb{G}}
+\renewcommand{\k}{\mathsf{k}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\renewcommand{\to}{\longrightarrow}
+\DeclareMathOperator{\Hom}{\mathsf{Hom}}
+\DeclareMathOperator{\sing}{\mathsf{Sing}}
+\DeclareMathOperator{\Sym}{\mathsf{Sym}}
+\DeclareMathOperator{\V}{\mathcal{V}}
+\DeclareMathOperator{\E}{\mathcal{E}}
+\DeclareMathOperator{\cubics}{\textrm{cubics}}
+\)</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Elements of Classical Algebraic Geometry</h1>
+
+<div id="outline-container-orgd113e6a" class="outline-2">
+<h2 id="orgd113e6a"><span class="section-number-2">1.</span> Affine space \(\A^n_{\k}\), algebraic subsets, and the Zariski topology</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Affine varieties are the fundamental building blocks of the objects in classical algebraic geometry, <i>quasi-projective varieties</i>.  In essence, an affine variety is the  solution set of a system of polynomial equations with coefficients in some field \(\k\). This solution set is made into a geometric object when we introduce a topology, the <i>Zariski topology</i>, on it.  Furthermore, two such solutions sets are allowed to communicate with each other using only a restricted class of functions, called <b><i>regular maps</i></b>.  Using this, we are then able to codify what it means for two solution sets to be "the same", even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to witness the same abstract group in various guises.)  An affine variety \(X\) is then defined to be an equivalence class of solution sets under the notion of regular isomorphism, and it turns out that \(X\) is uniquely recoverable from the ring of regular functions on it, called the <i>coordinate ring</i>, denoted \(\k[X]\).  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about \(X\) into ring-theoretic notions about \(\k[X]\), thereby securing geometric intuitions in the rigorous realm of algebra.
+</p>
+
+<p>
+The relationship between the originating system of equations and the solution set is tightest when this <i>ground field</i> \(\k\) is algebraically closed, and the main theorem(s) describing this relationship is Hilbert's Nullstellensatz in its various incarnations.  
+</p>
+</div>
+
+<div id="outline-container-org52ffa0e" class="outline-3">
+<h3 id="org52ffa0e"><span class="section-number-3">1.1.</span> Algebraic sets</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="definition" id="org60bb953">
+<ol class="org-ol">
+<li><b><i>Affine space of dimension \(n\) (over \(\k\))</i></b>, denoted \[\A^{n}_{\k}\] is the set of \(n\) -tuples \(p = (p_1, \dots, p_{n})\), \(p_{i} \in \k\).</li>
+<li>For each \(i\), we denote by \[x_{i}: \A^{n}_{\k} \to \A^{1}_{\k}\] the \(i\)-th coordinate function sending \((p_{1}, \dots, p_{n})\) to \(p_i\).</li>
+<li>If \(S \subset \k[x_{1} \dots, x_n]\) is a subset of polynomials, we define the <b><i>vanishing set of \(S\)</i></b> to be
+\[\V(S) = \big\{p \in \A^n_{\k} \mid f(p)=0 \, \textrm{for all}\, f \in S \big\}.\]</li>
+<li>A subset \(U \subset \A^{n}_{\k}\) is a <b><i>Zariski open set</i></b> if its complement is \(\V(S)\) for some \(S \subset \k[x_1, \dots, x_n]\).</li>
+<li>Conversely, any subset \(Z \subset \A^n_{\k}\) of the form \(\V(S)\) is called a <b><i>Zariski closed</i></b> (or, simply <b><i>closed</i></b>) subset. A Zariski closed subset of affine space also called an <b><i>algebraic set</i></b>.</li>
+<li>More generally, if \(Z \subset \A^n_{\k}\) is an algebraic set, then a subset \(U \subset Z\) is  a <b><i>Zariski open  subset of \(Z\)</i></b> if \(U\) is the intersection of \(Z\) with a Zarski open subset of \(\A^n_{\k}\).</li>
+<li>A Zariski open subset of an algebraic set is called a <b><i>quasi-affine set</i></b>.</li>
+</ol>
+
+</div>
+
+<p>
+The reason for the terminology is: The Zariski open/closed sets satisfy the axioms of a topology.  Whenever we say "open" or "closed" in the context of algebraic sets, we refer to the Zariski topology.  
+</p>
+
+<div class="eg" id="org10482c2">
+<p>
+Some algebraic sets are more famous than others (for various reasons), and have names.
+</p>
+<ol class="org-ol">
+<li>The <i>parabola</i> \[\V(y-x^{2}) \subset \A^{2}_{\k}.\]</li>
+<li>The <i>quadric cone</i> \[\V(xy-z^2) \subset \A^3_{\k}.\]</li>
+<li>The <i>hyperboloid of one sheet</i> \[\V(xy-z) \subset \A^{3}_{\k}.\]</li>
+<li>The <i>nodal cubic</i> \[\V(y^2 - x^{2}-x^{3}) \subset \A^2_{\k}.\]</li>
+<li>The <i>cuspidal cubic</i> \[\V(y^2-x^3) \subset \A^2_{\k}.\]</li>
+<li>A particular  <i>elliptic curve</i> \[\V(y^2-x^3+x) \subset \A^2_{\k}.\]</li>
+<li>The <i>affine twisted cubic</i> \[\V(x^2-y,x^3-z) = \V(x^2-y, xy-z) \subset \A^3_{\k}.\]</li>
+<li>The <i>Whitney umbrella</i> \[\V(x^2+zy^2) \subset \A^{3}_{\k}.\]</li>
+</ol>
+
+
+<div id="orgbecd545" class="figure">
+<p><img src="./images/whitney2.png" alt="whitney2.png" />
+</p>
+</div>
+
+<ol class="org-ol">
+<li>A <i>line and a plane</i>  \[\V(xz,yz) \subset \A^3_{\k}.\]</li>
+</ol>
+
+</div>
+
+
+<div class="exercise" id="org6d00ec3">
+<p>
+Suppose \(I,J \subset \k[x_1, \dots, x_n]\) are two ideals. Show:
+</p>
+<ol class="org-ol">
+<li>\(\V(I \cdot J) = \V(I) \cup \V(J)\), and</li>
+<li>\(\V(I+J) = \V(I) \cap \V(J).\)</li>
+<li>Prove that two distinct ideals \(I\) and \(J\) can satisfy \(\V(I) = \V(J)\), and moreover, there exists an example where neither \(I \subset J\) nor \(J \subset I\).</li>
+<li>Prove that the Zariski open subsets of \(\A^{n}_{\k}\) satisfy the axioms of a topology. This topology is called the <b><i>Zariski topology on \(\A^n_{\k}\).</i></b></li>
+<li>Prove that the Zariski closed subsets of \(\A^{1}_{\k}\) are the finite sets.</li>
+<li>If \(S \subset \k[x_1, \dots, x_n]\) is a subset, and if \(\langle S \rangle\) denotes the ideal generated by \(S\), then prove that \(\V(S) = \V(\langle S \rangle)\).</li>
+<li>Prove that every finite subset of \(\A^{n}_{\k}\) is closed, but that the converse is not true for all \(n \geq 2\).</li>
+</ol>
+
+</div>
+
+<p>
+In light of this exercise, in order to create an algebraic set, we need only consider \(\V(I)\)'s for <i>ideals</i> \(I \subset \k[x_1, \dots,
+x_n]\).
+</p>
+
+<p>
+And so, the operation \(\V\) therefore provides a surjective function: \[\V(-): \big\{\,\textrm{ideals} \,\, I \subset \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{algebraic sets} \,\, X \subset \A^{n}_{\k} \big\}.\]
+</p>
+
+<p>
+We can also go backwards, from sets to ideals:
+</p>
+
+<div class="definition" id="org23fa9c7">
+<p>
+Let \(Z \subset \A^n_{\k}\) be any subset.  We define the <b><i>ideal of \(Z\)</i></b> to be \[I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
+</p>
+
+</div>
+
+<div class="eg" id="org0cb37e5">
+<p>
+Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)\). Notice that \(I(\{p\}) \subset \k[x_1,\dots, x_n]\) is a <i>maximal ideal</i>.  So, we typically use the symbol \(\fm_p\) for this ideal.
+</p>
+
+</div>
+
+
+<div class="exercise" id="orgf6a0cdb">
+<ol class="org-ol">
+<li>Prove: For any subset \(Z \subset \A^{n}_{\k}\), we have \(Z \subset \V(I(Z))\).</li>
+<li>Prove:  \(Z \subset \A^n_{\k}\) is Zariski-closed if and only if \(Z = \V(I(Z))\).</li>
+<li>In fact, prove: For any \(Z \subset \A^n_{\k}\), \(\V(I(Z))\) is the closure of \(Z\) under the Zariski topology on \(\A^n_{\k}\).</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org66eef54" class="outline-3">
+<h3 id="org66eef54"><span class="section-number-3">1.2.</span> Regular functions</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Next, we must set the rules for how algebraic sets and quasi-affine sets are allowed to communicate with each other. In short, we allow ourselves, to the extent that it is possible, to use functions which are describable using polynomials and their ratios.  These functions are called regular functions.
+</p>
+
+<div class="definition" id="org6531f4c">
+<p>
+Let \(U \subset Z\) be an open subset of an algebraic set.
+</p>
+<ol class="org-ol">
+<li>A function \(f: U \to \A^1_{\k}\) is <b><i>regular</i></b> if: for every \(x \in U\), the function \(f\) agrees with a ratio of polynomials \(p/q\) (with \(q(x) \neq 0\)) on some open subset \(V \subset U\) containing \(x\). The ring of regular functions on \(U\) is denoted \(\k[U]\).</li>
+<li>A map \(\varphi = (f_1, \dots, f_m): U \to \A^m_{\k}\) is <b><i>regular</i></b> if each coordinate function \(f_i\) is in \(\k[U]\).</li>
+<li>If \(V \subset W\) is another quasi-affine set, with \(W\) an algebraic subset of \(\A^m_{\k}\), then a <b><i>regular mapping</i></b> \(\varphi: U \to V\) is a regular map \(\varphi: U \to \A^m_{\k}\) whose image lies in \(V\).</li>
+</ol>
+
+</div>
+
+<div class="proposition" id="org95bffe4">
+<p>
+If \(U\) and \(V\) are quasi-affine sets, and if \(\varphi: U \to V\) is a regular mapping, then \(\varphi\) is continuous for the Zariski topologies on \(U\) and \(V\), i.e. the preimage of any closed set is closed.
+</p>
+
+</div>
+
+<div class="exercise" id="org4bc92b8">
+<p>
+Let \(\varphi: U \to V\) be a regular mapping between quasi-affine sets.  Prove:
+</p>
+<ol class="org-ol">
+<li>If \(g \in \k[V]\)  then \(g \circ \varphi \in \k[U]\).</li>
+<li>The formula \(g \mapsto g \circ \varphi\) defines a \(\k\)-algebra homomorphism \(\k[V] \to \k[U]\).</li>
+<li>If \(U\) and \(V\) are affine sets, then, conversely, any homomorphism \(\k[V] \to \k[U]\) comes from a regular mapping \(g: U \to V\).</li>
+</ol>
+
+</div>
+
+
+
+<div class="exercise" id="org87b5dff">
+<p>
+Let \(Z \subset \A^n_{\k}\) be an algebraic subset, and let \(f \in \k[x_0, \dots, x_n]\) be any polynomial.  If \(\varphi: Z_f \to \A^1_{\k}\) is a regular function then there exists a polynomial \(a\) such that \(p = a/f^{m}\) for some \(m \geq 0\). 
+</p>
+
+</div>
+</div>
+
+<div id="outline-container-org326b25e" class="outline-4">
+<h4 id="org326b25e"><span class="section-number-4">1.2.1.</span> Hilbert's Nullstellensatz</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations \(\V(-)\) and \(I(-)\).  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to summarize the situation here:
+</p>
+
+<ol class="org-ol">
+<li>When \(\k\) is algebraically closed, the Nullstellensatz tells us that the only way for \(\V(I)\) to be empty is if \(I = (1)\), the unit ideal. In other words, any system of polynomial equations which is not equivalent to \(1=0\) <b><i>must have</i></b> solutions in \(\A^n_{\k}\).</li>
+<li>When \(\k\) is algebraically closed, the Nullstellensatz provides the precise list of <i>maximal ideals in</i> \(\k[x_1, \dots, x_n]\).</li>
+</ol>
+
+<div class="theorem" id="orgd75c87f">
+<p>
+Let \(\k\) be an arbitrary field.
+</p>
+
+<ol class="org-ol">
+<li>If \(L\) is a finitely generated \(\k\)-algebra which is also a field, then \(L\) is a finite field extension of \(\k\).</li>
+
+<li>A polynomial system of equations \(\big\{f_1=0, f_2=0, \dots, f_m =0 \big\}\) with \(f_i \in \k[x_1, \dots, x_n]\) has a solution in <b><i>some</i></b> \(\k\)-algebra if and only if it has a solution \((\alpha_1, \dots, \alpha_n)\) where each \(\alpha_i\) is algebraic over \(\k\).</li>
+
+<li>If \(\k\) is algebraically closed, then every maximal ideal of \(\,\,\k[x_1, \dots, x_n]\) is of the form \((x_1-p_1, \dots, x_n-p_n)\) for some \(p_i \in \k\).</li>
+
+<li>If \(\k\) is algebraically closed, and if \(I \subset \k[x_1, \dots, x_n]\) satisfies \(\V(I) = \emptyset\), then \(I = (1)\), the unit ideal.</li>
+<li>If \(\k\) is algebraically closed, and if \(\fp \subset \k[x_1, \dots, x_n]\) is a prime ideal, then \(I(\V(\fp)) = \fp\).</li>
+</ol>
+
+</div>
+
+
+<div class="exercise" id="orgc147cb3">
+<p>
+Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \dots, f_m \in \k[x]\) are finitely many polynomials.  Prove that the ring \(\k[x, \frac{1}{f_1}, \dots, \frac{1}{f_m}]\) is never a field. 
+</p>
+
+</div>
+
+<div class="theorem" id="orgc51e9b4">
+<p>
+Let \(Z \subset \A^n_{\k}\) be an algebraic set. Then every regular function on \(Z\) is the restriction of a polynomial.  Thus, the ring of regular functions on \(Z\) is isomorphic to \(\k[x_1, \dots, x_n]/\I(Z)\). 
+</p>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org7f8b8ec" class="outline-4">
+<h4 id="org7f8b8ec"><span class="section-number-4">1.2.2.</span> Some  algebra: finite/integral extensions of rings</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<div class="definition" id="orgdcb4200">
+<ol class="org-ol">
+<li>An extension \(A \subset B\) of rings is <b><i>an integral extension</i></b> if every element of \(B\) satisfies a monic polynomial with coefficients in \(A\).</li>
+
+<li>An extension of rings \(A \subset B\) is <b><i>finite</i></b> if \(B\) is finitely generated as an \(A\)-module.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Anand Patel</p>
+<p class="date">Created: 2022-08-17 Wed 14:10</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
