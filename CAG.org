@@ -7,30 +7,33 @@
   \renewcommand{\P}{\mathbb{P}}
   \renewcommand{\O}{\mathcal{O}}
   \renewcommand{\Z}{\mathbb{Z}}
-  \newcommand{\I}{\mathcal{I}}
+  \newcommand{\I}{\mathscr{I}}
   \newcommand{\q}{\mathsf{q}}
   \newcommand{\Gr}{\textrm{Gr}}
   \newcommand{\G}{\mathbb{G}}
-  \renewcommand{\k}{\mathsf{k}}
+  \newcommand{\R}{\mathbb{R}}
+  \renewcommand{\k}{\mathscr{k}}
   \newcommand{\fm}{\mathfrak{m}}
   \newcommand{\fp}{\mathfrak{p}}
   \renewcommand{\to}{\longrightarrow}
   \DeclareMathOperator{\Hom}{\mathsf{Hom}}
   \DeclareMathOperator{\sing}{\mathsf{Sing}}
   \DeclareMathOperator{\Sym}{\mathsf{Sym}}
-  \DeclareMathOperator{\V}{\mathcal{V}}
-  \DeclareMathOperator{\E}{\mathcal{E}}
+  \DeclareMathOperator{\V}{\mathscr{V}}
+  \DeclareMathOperator{\E}{\mathscr{E}}
   \DeclareMathOperator{\cubics}{\textrm{cubics}}
 #+END_SRC
 
 * Affine sets, the Zariski topology, and Hilbert's Nullstellensatz
 
 
-Affine varieties are the fundamental building blocks of the central objects we study in classical algebraic geometry, /quasi-projective varieties/.  In essence, an affine variety is the  solution set of a system of polynomial equations with coefficients in some field $\k$. This solution set is made into a geometric object after we introduce  the /Zariski topology/ on it.  Furthermore, two such solutions sets are allowed to communicate with each other only through a restricted class of functions, called */regular maps/*.  Setting things up this way allows us to define what it means for two solution sets to be "the same", even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to extract an abstract group from its  various guises.)  An affine variety $X$ is then basically an equivalence class of solution sets under the notion of regular isomorphism.  It turns out that $X$ is uniquely recoverable from the ring of /regular functions/ on it.  This ring is called its  /coordinate ring/, denoted $\k[X]$.  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about $X$ into ring-theoretic notions about $\k[X]$, thereby supporting our geometric intuitions in the rigorous algebra.
+Affine varieties are the fundamental building blocks of the central objects we study in classical algebraic geometry, /quasi-projective varieties/.  In essence, an affine variety is the  solution set of a system of polynomial equations $$f_1(x_1, \dots, x_n) = f_2(x_1, \dots, x_n) = \dots =f_{m}(x_1, \dots, x_n) = 0$$ with coefficients in some field $\k$. This solution set is made into a geometric object after we introduce  the /Zariski topology/ on it.  Furthermore, two such solutions sets are allowed to communicate with each other only through a restricted class of functions, called */regular maps/*.  Setting things up this way allows us to define what it means for two solution sets to be isomorphic, even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to extract an abstract group from its  various guises.)  An affine variety $X$ is then basically an equivalence class of solution sets under the notion of regular isomorphism.  It turns out that $X$ is uniquely recoverable from the ring of /regular functions/ on it.  This ring is called its  /coordinate ring/, denoted $\k[X]$.  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about $X$ into ring-theoretic notions about $\k[X]$, thereby supporting our geometric intuitions with rigorous algebra.
 
-The relationship between the originating system of equations and the solution set is tightest when the /ground field/ $\k$ is algebraically closed, and the main theorem(s) describing this relationship is Hilbert's Nullstellensatz in its various incarnations. This theorem is the most important piece of commutative algebra allowing us to set up the theory of affine varieties.  
+The relationship between the originating system of equations and its solution set is cleanest and makes most intuitive sense when the /ground field/ $\k$ is algebraically closed, and the main theorem(s) describing this relationship is Hilbert's Nullstellensatz in its various incarnations. This theorem is the most important piece of commutative algebra allowing us to set up the theory of affine varieties.  Because algebraic geometry is easiest to understand when $\k$ is algebraically closed, we will assume this throughout.  (Later, we will see that the characteristic $0$ situation is especially nice, but for now algebraic closed-ness is all we assume.)
 
 ** Affine sets
+
+We begin by defining the central geometric objects of this chapter.
 
 #+begin_definition
 1)   */Affine space of dimension $n$ (over $\k$)/*, denoted \[\A^{n}_{\k}\] is the set of $n$ -tuples $p = (p_1, \dots, p_{n})$, $p_{i} \in \k$.
@@ -43,7 +46,7 @@ The relationship between the originating system of equations and the solution se
 7) A Zariski open subset of an algebraic set is called a */quasi-affine set/*. 
 #+end_definition
 
-It is immediate that if $S \subset \k[x_1, \dots, x_n]$ is any subset, and if $\langle S \rangle$ is the ideal generated by $S$, then $\V(S) = \V(\langle S \rangle)$.  So, our focus quickly moves to ideals in $\k[x_1, \dots, x_n]$.  The following exercise gets us rolling. 
+It is immediate that if $S \subset \k[x_1, \dots, x_n]$ is any subset, and if $I$ is the ideal generated by $S$, then $\V(S) = \V(I)$.  So, our focus quickly moves to ideals in $\k[x_1, \dots, x_n]$.  The following exercise justifies the use of the words "closed/open."  
 
 
 #+begin_exercise
@@ -61,15 +64,14 @@ In light of this exercise, in order to create an algebraic set, we need only con
 x_n]$.    Whenever we say "open" or "closed", we refer to the Zariski topology. 
 
 
-The beauty in classical algebraic geometry is only seen through its countless, interesting examples.   
+The beauty in classical algebraic geometry is only seen through its countless, interesting examples.   Certain examples are more educational than others and have special names.  Here are a few to start:
 
 
 
 #+begin_eg
-Some affine sets are more famous than others (for various reasons), and have names.
  1)  The /parabola/ \[\V(y-x^{2}) \subset \A^{2}_{\k}.\] 
  2)  The /quadric cone/ \[\V(xy-z^2) \subset \A^3_{\k}.\]
- 3)  The /hyperboloid of one sheet/ \[\V(xy-z) \subset \A^{3}_{\k}.\]
+ 3)  An  /affine quadric surface/ \[\V(xy-z) \subset \A^{3}_{\k}.\]
  4)  The /nodal cubic/ \[\V(y^2 - x^{2}-x^{3}) \subset \A^2_{\k}.\] 
  5) The /cuspidal cubic/ \[\V(y^2-x^3) \subset \A^2_{\k}.\]
  6)  A particular  /elliptic curve/ \[\V(y^2-x^3+x) \subset \A^2_{\k}.\]
@@ -81,8 +83,11 @@ Some affine sets are more famous than others (for various reasons), and have nam
  9) A /line and a plane/  \[\V(xz,yz) \subset \A^3_{\k}.\]
 #+end_eg
 
+*** Pictures
 
-*** $\V$ and $\I$
+In the list of examples above, what do those pictures mean?  Clearly they are real images, meaning they exist in $\A^2_{\R}$ or $\A^{3}_{\R}$. But this is not our true context: we've assumed $\k$ is algebraically closed!  Unfortunately, it is not possible to draw a true representation in this case, so we refer to these sorts of images as "real cartoons."   
+
+*** Operations $\V$ and $\I$
 
 The operation $\V$ is a surjective  function: \[\V(-): \big\{\,\textrm{ideals} \,\, I \subset \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{algebraic sets} \,\, X \subset \A^{n}_{\k} \big\}.\]
 
@@ -103,8 +108,8 @@ Since $\V$ and $\I$ point in opposite directions, it's natural to wonder that th
 
 #+begin_exercise
 1)  Prove: For any subset $Z \subset \A^{n}_{\k}$, we have $Z \subset \V(\I(Z))$.
-2)  Prove:  $Z \subset \A^n_{\k}$ is Zariski-closed if and only if $Z = \V(I(Z))$.
-3)  In fact, prove: For any $Z \subset \A^n_{\k}$, $\V(I(Z))$ is the closure of $Z$ under the Zariski topology on $\A^n_{\k}$.
+2)  Prove:  $Z \subset \A^n_{\k}$ is Zariski-closed if and only if $Z = \V(\I(Z))$.
+3)  In fact, prove: For any $Z \subset \A^n_{\k}$, $\V(\I(Z))$ is the closure of $Z$ under the Zariski topology on $\A^n_{\k}$.
 #+end_exercise
 
 *** Prime ideals and irreducible affine sets

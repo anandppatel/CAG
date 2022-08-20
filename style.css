@@ -3,13 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Noto+Serif&family=Roboto:wght@300&display=swap');
 
-
-
 body {
 	background-color: #F1EDE2;
 	font-family: Noto Serif, serif;
 	font-size: medium;
 	counter-reset: section;
+        line-height: 1.7;
   }
 
 
@@ -52,6 +51,7 @@ h4 {
   border: 2px red;
   border-radius: 5px;
   padding: 4px;
+  line-height: 1.7;
 }
 
 .theorem {
@@ -66,6 +66,7 @@ h4 {
 	font-style: italic;
 	margin: 40px;
 	padding: 10px;
+        line-height: 1.7;
 }
 
 
@@ -81,6 +82,7 @@ h4 {
   border: 2px  red;
   border-radius: 5px;
   padding: 4px;
+  line-height: 1.7;
 }
 
 .proposition {
@@ -95,6 +97,7 @@ h4 {
 	font-style: italic;
 	margin: 40px;
 	padding: 10px;
+        line-height: 1.7;
 }
 
 .lemma::before {
@@ -108,6 +111,7 @@ h4 {
   border: 2px  red;
   border-radius: 5px;
   padding: 4px;
+  line-height: 1.7;
 }
 
 .lemma {
@@ -122,6 +126,7 @@ h4 {
 	font-style: italic;
 	margin: 40px;
 	padding: 10px;
+        line-height: 1.7;
 }
 
 .definition {
@@ -135,6 +140,7 @@ h4 {
 	font-size: medium;
 	margin: 40px;
 	padding: 10px;
+        line-height: 1.7;
 }
 
 
@@ -147,6 +153,7 @@ h4 {
 	border: 2px;
   border-radius: 5px;
   padding: 4px;
+  line-height: 1.7;
 }
 
 
@@ -159,6 +166,7 @@ h4 {
   border: 2px;
   border-radius: 5px;
   padding: 4px;
+  line-height: 1.7;
 }
 
 .eg {
@@ -172,6 +180,7 @@ h4 {
 	font-size: medium;
 	margin: 40px;
 	padding: 10px;
+        line-height: 1.7;
 }
 
 
@@ -184,6 +193,7 @@ h4 {
   border: 2px;
   border-radius: 5px;
   padding: 4px;
+  line-height: 1.7;
 }
 
 .exercise {
@@ -197,6 +207,7 @@ h4 {
 	font-size: medium;
 	margin: 40px;
 	padding: 10px;
+        line-height: 1.7;
 }
 
 

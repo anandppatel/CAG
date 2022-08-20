@@ -3,7 +3,8 @@
 #+LATEX_OPTIONS: [11pt, letterpaper]
 #+LATEX_HEADER: \usepackage{geometry}
 #+LATEX_HEADER: \usepackage{amsmath, amssymb, amsthm, pgfplots, eucal}
-
+#+LATEX_HEADER: \usepackage[mathscr]{euscript}
+#+LATEX_HEADER: \linespread{1.15}
 #+LATEX_HEADER_EXTRA: \newcommand{\A}{\mathbb A}
 
 #+LATEX_HEADER_EXTRA: \renewcommand{\k}{\mathsf{k}}
