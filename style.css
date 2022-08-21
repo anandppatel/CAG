@@ -47,7 +47,7 @@ h4 {
         font-weight: bold;
 	text-align: center;
 	counter-increment: section;
-  content: "Theorem " counter(section) ": ";
+  content: "Theorem "  ": ";
   border: 2px red;
   border-radius: 5px;
   padding: 4px;
@@ -65,7 +65,7 @@ h4 {
 	font-size: medium;
 	font-style: italic;
 	margin: 40px;
-	padding: 10px;
+	padding: 20px;
         line-height: 1.7;
 }
 
@@ -75,10 +75,11 @@ h4 {
 	font-family: Cinzel, serif;
 	font-size: large;
 	font-style: normal;
+        font-weight: bold;
 	text-align: center;
 	counter-reset: subsection;
 	counter-increment: subsubsection;
-  content: "Proposition " counter(subsubsection) ": ";
+  content: "Proposition "  ": ";
   border: 2px  red;
   border-radius: 5px;
   padding: 4px;
@@ -96,7 +97,7 @@ h4 {
 	font-size: medium;
 	font-style: italic;
 	margin: 40px;
-	padding: 10px;
+	padding: 20px;
         line-height: 1.7;
 }
 
@@ -106,8 +107,9 @@ h4 {
 	font-family: Cinzel, serif;
 	font-size: large;
 	font-style: normal;
+        font-weight: bold;
 	text-align: center;
-  content: "Lemma " counter(section) ": ";
+  content: "Lemma "  ": ";
   border: 2px  red;
   border-radius: 5px;
   padding: 4px;
@@ -125,7 +127,7 @@ h4 {
 	font-size: medium;
 	font-style: italic;
 	margin: 40px;
-	padding: 10px;
+	padding: 20px;
         line-height: 1.7;
 }
 
@@ -139,7 +141,7 @@ h4 {
 	font-family: Noto Serif, serif;
 	font-size: medium;
 	margin: 40px;
-	padding: 10px;
+	padding: 20px;
         line-height: 1.7;
 }
 
@@ -149,7 +151,8 @@ h4 {
 	font-family: Cinzel, serif;
 	background-color: #f8f4e8;
 	font-size: large;
-	content: "Definition " counter(subsubsection) ": ";
+        font-weight: bold;
+	content: "Definition "  ": ";
 	border: 2px;
   border-radius: 5px;
   padding: 4px;
@@ -162,7 +165,8 @@ h4 {
 	background-color: #f8f4e8;
 	font-family: Cinzel, serif;
 	font-size: large;
-  content: "Example " counter(section) ": ";
+        font-weight: bold;
+  content: "Example "  ": ";
   border: 2px;
   border-radius: 5px;
   padding: 4px;
@@ -179,7 +183,7 @@ h4 {
 	font-family: Noto Serif, serif;
 	font-size: medium;
 	margin: 40px;
-	padding: 10px;
+	padding: 20px;
         line-height: 1.7;
 }
 
@@ -189,7 +193,8 @@ h4 {
 	background-color: #f8f4e8;
 	font-family: Cinzel, serif;
 	font-size: large;
-  content: "Exercise " counter(section) ": ";
+        font-weight: bold;
+  content: "Exercise "  ": ";
   border: 2px;
   border-radius: 5px;
   padding: 4px;
@@ -206,7 +211,7 @@ h4 {
 	font-family: Noto Serif, serif;
 	font-size: medium;
 	margin: 40px;
-	padding: 10px;
+	padding: 20px;
         line-height: 1.7;
 }
 

@@ -5,32 +5,35 @@
 #+BEGIN_SRC latex-macros
   \newcommand{\A}{\mathbb{A}}
   \renewcommand{\P}{\mathbb{P}}
-  \renewcommand{\O}{\mathcal{O}}
+  \renewcommand{\O}{\mathscr{O}}
   \renewcommand{\Z}{\mathbb{Z}}
-  \newcommand{\I}{\mathcal{I}}
+  \newcommand{\I}{\mathscr{I}}
   \newcommand{\q}{\mathsf{q}}
   \newcommand{\Gr}{\textrm{Gr}}
   \newcommand{\G}{\mathbb{G}}
-  \renewcommand{\k}{\mathsf{k}}
-  \newcommand{\fm}{\mathfrak{m}}
-  \newcommand{\fp}{\mathfrak{p}}
+  \newcommand{\R}{\mathbb{R}}
+  \renewcommand{\k}{\mathscr{k}}
+  \newcommand{\fm}{\mathscr{m}}
+  \newcommand{\fp}{\mathscr{p}}
   \renewcommand{\to}{\longrightarrow}
   \DeclareMathOperator{\Hom}{\mathsf{Hom}}
   \DeclareMathOperator{\sing}{\mathsf{Sing}}
   \DeclareMathOperator{\Sym}{\mathsf{Sym}}
-  \DeclareMathOperator{\V}{\mathcal{V}}
-  \DeclareMathOperator{\E}{\mathcal{E}}
-  \DeclareMathOperator{\cubics}{\textrm{cubics}}
+  \DeclareMathOperator{\V}{\mathscr{V}}
+  \DeclareMathOperator{\E}{\mathscr{E}}
+  \DeclareMathOperator{\cubics}{\mathscr{cubics}}
 #+END_SRC
 
-* Affine space $\A^n_{\k}$, algebraic subsets, and the Zariski topology
+* Affine sets, the Zariski topology, and Hilbert's Nullstellensatz
 
 
-Affine varieties are the fundamental building blocks of the objects in classical algebraic geometry, /quasi-projective varieties/.  In essence, an affine variety is the  solution set of a system of polynomial equations with coefficients in some field $\k$. This solution set is made into a geometric object when we introduce a topology, the /Zariski topology/, on it.  Furthermore, two such solutions sets are allowed to communicate with each other using only a restricted class of functions, called */regular maps/*.  Using this, we are then able to codify what it means for two solution sets to be "the same", even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to witness the same abstract group in various guises.)  An affine variety $X$ is then defined to be an equivalence class of solution sets under the notion of regular isomorphism, and it turns out that $X$ is uniquely recoverable from the ring of regular functions on it, called the /coordinate ring/, denoted $\k[X]$.  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about $X$ into ring-theoretic notions about $\k[X]$, thereby securing geometric intuitions in the rigorous realm of algebra.
+Affine varieties are the fundamental building blocks of the central objects we study in classical algebraic geometry, /quasi-projective varieties/.  In essence, an affine variety is the  solution set of a system of polynomial equations $$f_1(x_1, \dots, x_n) = f_2(x_1, \dots, x_n) = \dots =f_{m}(x_1, \dots, x_n) = 0$$ with coefficients in some field $\k$. This solution set is made into a geometric object after we introduce  the /Zariski topology/ on it.  Furthermore, two such solutions sets are allowed to communicate with each other only through a restricted class of functions, called /regular maps/.  Setting things up this way allows us to define what it means for two solution sets to be isomorphic, even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to extract an abstract group from its  various guises.)  An affine variety $X$ is then basically an equivalence class of solution sets under the notion of regular isomorphism.  It turns out that $X$ is uniquely recoverable from the ring of /regular functions/ on it.  This ring is called its  /coordinate ring/, denoted $\k[X]$.  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about $X$ into ring-theoretic notions about $\k[X]$, thereby supporting our geometric intuitions with rigorous algebra.
 
-The relationship between the originating system of equations and the solution set is tightest when this /ground field/ $\k$ is algebraically closed, and the main theorem(s) describing this relationship is Hilbert's Nullstellensatz in its various incarnations.  
+The relationship between the originating system of equations and its solution set is cleanest and makes most intuitive sense when the /ground field/ $\k$ is algebraically closed, and the main theorem(s) describing this relationship is Hilbert's Nullstellensatz in its various incarnations. This theorem is the most important piece of commutative algebra allowing us to set up the theory of affine varieties.  Because algebraic geometry is easiest to understand when $\k$ is algebraically closed, we will assume this throughout.  (Later, we will see that the characteristic $0$ situation is especially nice, but for now algebraic closed-ness is all we assume.)
 
-** Algebraic sets
+** Affine sets
+
+We begin by defining the central geometric objects of this chapter.
 
 #+begin_definition
 1)   */Affine space of dimension $n$ (over $\k$)/*, denoted \[\A^{n}_{\k}\] is the set of $n$ -tuples $p = (p_1, \dots, p_{n})$, $p_{i} \in \k$.
@@ -38,28 +41,12 @@ The relationship between the originating system of equations and the solution se
 3)   If $S \subset \k[x_{1} \dots, x_n]$ is a subset of polynomials, we define the */vanishing set of $S$/* to be
     \[\V(S) = \big\{p \in \A^n_{\k} \mid f(p)=0 \, \textrm{for all}\, f \in S \big\}.\]
 4) A subset $U \subset \A^{n}_{\k}$ is a */Zariski open set/* if its complement is $\V(S)$ for some $S \subset \k[x_1, \dots, x_n]$.
-5) Conversely, any subset $Z \subset \A^n_{\k}$ of the form $\V(S)$ is called a */Zariski closed/* (or, simply */closed/*) subset. A Zariski closed subset of affine space also called an */algebraic set/*.
+5) Conversely, any subset $Z \subset \A^n_{\k}$ of the form $\V(S)$ is called a */Zariski closed/* (or, simply */closed/*) subset. A Zariski closed subset of affine space also called an */affine (or algebraic) set/*.
 6) More generally, if $Z \subset \A^n_{\k}$ is an algebraic set, then a subset $U \subset Z$ is  a */Zariski open  subset of $Z$/* if $U$ is the intersection of $Z$ with a Zarski open subset of $\A^n_{\k}$.
 7) A Zariski open subset of an algebraic set is called a */quasi-affine set/*. 
 #+end_definition
 
-The reason for the terminology is: The Zariski open/closed sets satisfy the axioms of a topology.  Whenever we say "open" or "closed" in the context of algebraic sets, we refer to the Zariski topology.  
-
-#+begin_eg
-Some algebraic sets are more famous than others (for various reasons), and have names.
- 1)  The /parabola/ \[\V(y-x^{2}) \subset \A^{2}_{\k}.\] 
- 2)  The /quadric cone/ \[\V(xy-z^2) \subset \A^3_{\k}.\]
- 3)  The /hyperboloid of one sheet/ \[\V(xy-z) \subset \A^{3}_{\k}.\]
- 4)  The /nodal cubic/ \[\V(y^2 - x^{2}-x^{3}) \subset \A^2_{\k}.\] 
- 5) The /cuspidal cubic/ \[\V(y^2-x^3) \subset \A^2_{\k}.\]
- 6)  A particular  /elliptic curve/ \[\V(y^2-x^3+x) \subset \A^2_{\k}.\]
- 7)  The /affine twisted cubic/ \[\V(x^2-y,x^3-z) = \V(x^2-y, xy-z) \subset \A^3_{\k}.\]
- 8)  The /Whitney umbrella/ \[\V(x^2+zy^2) \subset \A^{3}_{\k}.\]
-    
-[[./images/whitney2.png]]
-
- 1) A /line and a plane/  \[\V(xz,yz) \subset \A^3_{\k}.\]
-#+end_eg
+It is immediate that if $S \subset \k[x_1, \dots, x_n]$ is any subset, and if $I$ is the ideal generated by $S$, then $\V(S) = \V(I)$.  So, our focus quickly moves to ideals in $\k[x_1, \dots, x_n]$.  The following exercise justifies the use of the words "closed/open."  
 
 
 #+begin_exercise
@@ -68,67 +55,94 @@ Suppose $I,J \subset \k[x_1, \dots, x_n]$ are two ideals. Show:
 2)  \(\V(I+J) = \V(I) \cap \V(J).\)
 3)  Prove that two distinct ideals $I$ and $J$ can satisfy $\V(I) = \V(J)$, and moreover, there exists an example where neither $I \subset J$ nor $J \subset I$.
 4)  Prove that the Zariski open subsets of $\A^{n}_{\k}$ satisfy the axioms of a topology. This topology is called the */Zariski topology on $\A^n_{\k}$./*
-5)   Prove that the Zariski closed subsets of $\A^{1}_{\k}$ are the finite sets.
-6)   If $S \subset \k[x_1, \dots, x_n]$ is a subset, and if $\langle S \rangle$ denotes the ideal generated by $S$, then prove that $\V(S) = \V(\langle S \rangle)$.
-7)   Prove that every finite subset of $\A^{n}_{\k}$ is closed, but that the converse is not true for all $n \geq 2$.
+5)   Prove that the Zariski closed, proper subsets of $\A^{1}_{\k}$ are precisely the finite subsets.
+6)   Prove that every finite subset of $\A^{n}_{\k}$ is closed, but that the converse is false when $n \geq 2$.
+7)  If $Z \subset \A^n_{\k}$ is an affine set, prove that the subsets of $Z$ which are closed in $\A^n_{\k}$ satisfy the axioms satisfied by closed sets in a topology. This is called the */Zariski topology on $Z$./*
 #+end_exercise
 
 In light of this exercise, in order to create an algebraic set, we need only consider $\V(I)$'s for /ideals/ $I \subset \k[x_1, \dots,
-x_n]$.
+x_n]$.    Whenever we say "open" or "closed", we refer to the Zariski topology. 
 
-And so, the operation $\V$ therefore provides a surjective function: \[\V(-): \big\{\,\textrm{ideals} \,\, I \subset \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{algebraic sets} \,\, X \subset \A^{n}_{\k} \big\}.\]
 
-We can also go backwards, from sets to ideals:
+The beauty in classical algebraic geometry is only seen through its countless, interesting examples.   Certain examples are more educational than others and have special names.  Here are a few to start:
 
-#+begin_definition
-Let $Z \subset \A^n_{\k}$ be any subset.  We define the */ideal of $Z$/* to be \[I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
-#+end_definition
+
 
 #+begin_eg
-Let $p = (p_1, \dots, p_n) \in \A^n_{\k}$ be any point. Then $I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)$. Notice that $I(\{p\}) \subset \k[x_1,\dots, x_n]$ is a /maximal ideal/.  So, we typically use the symbol $\fm_p$ for this ideal.
+ 1)  The /parabola/ \[\V(y-x^{2}) \subset \A^{2}_{\k}.\] 
+ 2)  The /quadric cone/ \[\V(xy-z^2) \subset \A^3_{\k}.\]
+ 3)  An  /affine quadric surface/ \[\V(xy-z) \subset \A^{3}_{\k}.\]
+ 4)  The /nodal cubic/ \[\V(y^2 - x^{2}-x^{3}) \subset \A^2_{\k}.\] 
+ 5) The /cuspidal cubic/ \[\V(y^2-x^3) \subset \A^2_{\k}.\]
+ 6)  A particular  /elliptic curve/ \[\V(y^2-x^3+x) \subset \A^2_{\k}.\]
+ 7)  The /affine twisted cubic/ \[\V(x^2-y,x^3-z) = \V(x^2-y, xy-z) \subset \A^3_{\k}.\]
+ 8)  The /Whitney umbrella/ \[\V(x^2+zy^2) \subset \A^{3}_{\k}.\]
+    
+[[./images/whitney2.png]]
+
+ 9) A /line and a plane/  \[\V(xz,yz) \subset \A^3_{\k}.\]
 #+end_eg
 
+*** Pictures
 
-#+begin_exercise
-1)  Prove: For any subset $Z \subset \A^{n}_{\k}$, we have $Z \subset \V(I(Z))$.
-2)  Prove:  $Z \subset \A^n_{\k}$ is Zariski-closed if and only if $Z = \V(I(Z))$.
-3)  In fact, prove: For any $Z \subset \A^n_{\k}$, $\V(I(Z))$ is the closure of $Z$ under the Zariski topology on $\A^n_{\k}$.
-#+end_exercise
+In the list of examples above, what do those pictures mean?  Clearly they are real images, meaning they exist in $\A^2_{\R}$ or $\A^{3}_{\R}$. But this is not our true context: we've assumed $\k$ is algebraically closed!  Unfortunately, it is not possible to draw a true representation in this case, so we refer to these sorts of images as "real cartoons."   
 
-** Regular functions
+*** Operations $\V$ and $\I$
 
-Next, we must set the rules for how algebraic sets and quasi-affine sets are allowed to communicate with each other. In short, we allow ourselves, to the extent that it is possible, to use functions which are describable using polynomials and their ratios.  These functions are called regular functions.
+The operation $\V$ is a surjective  function: \[\V(-): \big\{\,\textrm{ideals in} \,\,  \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\}.\]
+
+But we can also go backwards, from sets to ideals:
 
 #+begin_definition
-Let $U \subset Z$ be an open subset of an algebraic set.
-1) A function $f: U \to \A^1_{\k}$ is */regular/* if: for every $x \in U$, the function $f$ agrees with a ratio of polynomials $p/q$ (with $q(x) \neq 0$) on some open subset $V \subset U$ containing $x$. The ring of regular functions on $U$ is denoted $\k[U]$. 
-2) A map $\varphi = (f_1, \dots, f_m): U \to \A^m_{\k}$ is */regular/* if each coordinate function $f_i$ is in $\k[U]$.
-3) If $V \subset W$ is another quasi-affine set, with $W$ an algebraic subset of $\A^m_{\k}$, then a */regular mapping/* $\varphi: U \to V$ is a regular map $\varphi: U \to \A^m_{\k}$ whose image lies in $V$.  
+Let $Z \subset \A^n_{\k}$ be any subset.  We define the */ideal of $Z$/* to be \[\I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
 #+end_definition
 
+And so, $\I$ defines a function:
+ \[\I(-): \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\} \to \big\{\,\textrm{ideals in}  \subset \k[x_1, \dots, x_n] \big\}.\]
+
+#+begin_eg
+Let $p = (p_1, \dots, p_n) \in \A^n_{\k}$ be any point. Then $\I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)$. Notice that $I(\{p\}) \subset \k[x_1,\dots, x_n]$ is a /maximal ideal/.  So, we typically use the symbol $\fm_p$ for this ideal.
+#+end_eg
+
+Since $\V$ and $\I$ point in opposite directions, it's natural to wonder that their compositions (both ways) are.  One composition, found in the next exercise, is easy to understand.  The other composition leads naturally to  Hilbert's Nullstellansatz, and so we postpone it.
+
+#+begin_exercise
+1)  Prove: For any subset $Z \subset \A^{n}_{\k}$, we have $Z \subset \V(\I(Z))$.
+2)  Prove:  $Z \subset \A^n_{\k}$ is Zariski-closed if and only if $Z = \V(\I(Z))$.
+3)  In fact, prove: For any $Z \subset \A^n_{\k}$, $\V(\I(Z))$ is the closure of $Z$ under the Zariski topology on $\A^n_{\k}$.
+#+end_exercise
+
+*** Prime ideals and irreducible affine sets
+
+Affine sets have their "main, big  pieces," called /irreducible components/.   For instance, in the irreducible components of the  /line and plane/ $\V(xz,yz) \subset \A^{3}_{\k}$ are the line $\V(x,y)$ and the plane $\V(z)$. To make this concept precise, we borrow the  notion of /reducibility/ from topology, which we elaborate on here.  
+
+#+begin_definition
+An affine set $Z$ is */reducible/* if it is the union of two non-empty, proper closed subsets. Otherwise, $Z$ is said to be */irreducible/*.  More generally, a topological space $X$ is */reducible/* if it is the union of two non-empty, proper closed subsets, and is */irreducible/* otherwise.
+
+If $X$ is any topological space, then a subset $Y \subset X$ is called an */irreducible component/* of $X$ if $Y$ is maximal among closed, irreducible subsets of $X$. 
+#+end_definition
+
+#+begin_exercise
+1) Prove: Any two non-empty open subsets of an irreducible topological space must intersect.
+2) Prove: If $U \subset X$ is a non-empty open set in an irreducible topological space $X$, then $X$ is the closure of $U$, i.e. $U$ is dense in $X$.
+3) Suppose $X$ is a topological space, and $A,B \subset X$ are proper closed subsets satisfying $X = A \cup B$.  Prove: If $A$ is also irreducible, then $A$ is in fact an irreducible component of $X$.
+#+end_exercise
+
+Our next proposition says that for affine sets, irreducibility has a
+really nice algebraic interpretation.
+
 #+begin_proposition
-If $U$ and $V$ are quasi-affine sets, and if $\varphi: U \to V$ is a regular mapping, then $\varphi$ is continuous for the Zariski topologies on $U$ and $V$, i.e. the preimage of any closed set is closed.
+An affine set $Z \subset \A^{n}_{\k}$ is irreducible if and only if $\I(Z) \subset \k[x_1, \dots, x_n]$ is a prime ideal.
 #+end_proposition
 
-#+begin_exercise
-Let $\varphi: U \to V$ be a regular mapping between quasi-affine sets.  Prove:
-1) If $g \in \k[V]$  then $g \circ \varphi \in \k[U]$.
-2) The formula $g \mapsto g \circ \varphi$ defines a \(\k\)-algebra homomorphism $\k[V] \to \k[U]$.
-3) If $U$ and $V$ are affine sets, then, conversely, any homomorphism $\k[V] \to \k[U]$ comes from a regular mapping $g: U \to V$.
-#+end_exercise
+** Important Algebra: The Nullstellensatz
+
+Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations $\V(-)$ and $\I(-)$.  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to give many different viewpoints here.  The theorem will also play an important role in laying the foundation for the concept of regular functions.
 
 
-
-#+begin_exercise
-Let $Z \subset \A^n_{\k}$ be an algebraic subset, and let $f \in \k[x_0, \dots, x_n]$ be any polynomial.  If $\varphi: Z_f \to \A^1_{\k}$ is a regular function then there exists a polynomial $a$ such that $p = a/f^{m}$ for some $m \geq 0$. 
-#+end_exercise
-
-*** Hilbert's Nullstellensatz
-
-Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations $\V(-)$ and $I(-)$.  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to summarize the situation here:
-
-1)  When $\k$ is algebraically closed, the Nullstellensatz tells us that the only way for $\V(I)$ to be empty is if $I = (1)$, the unit ideal. In other words, any system of polynomial equations which is not equivalent to $1=0$ */must have/* solutions in $\A^n_{\k}$.
-2)  When $\k$ is algebraically closed, the Nullstellensatz provides the precise list of /maximal ideals in/ $\k[x_1, \dots, x_n]$. 
+Here are two popular ways of thinking about the Nullstellensatz: 
+1) When $\k$ is algebraically closed, the Nullstellensatz says that the only way for $\V(I)$ to be empty is if $I = (1)$, the unit ideal. In other words, any system of polynomial equations which is not equivalent to $1=0$ */must have/* solutions in $\A^n_{\k}$.
+2) When $\k$ is algebraically closed, the Nullstellensatz provides the precise list of /maximal ideals in/ $\k[x_1, \dots, x_n]$: it says that every maximal ideal is of the form $\fm_{p}$ for some point $p \in \A^{\k}$.  
 
 #+begin_theorem
 Let $\k$ be an arbitrary field.
@@ -140,7 +154,7 @@ Let $\k$ be an arbitrary field.
 3) If \(\k\) is algebraically closed, then every maximal ideal of \(\,\,\k[x_1, \dots, x_n]\) is of the form $(x_1-p_1, \dots, x_n-p_n)$ for some $p_i \in \k$.
 
 4) If \(\k\) is algebraically closed, and if $I \subset \k[x_1, \dots, x_n]$ satisfies $\V(I) = \emptyset$, then $I = (1)$, the unit ideal.
-5) If \(\k\) is algebraically closed, and if $\fp \subset \k[x_1, \dots, x_n]$ is a prime ideal, then $I(\V(\fp)) = \fp$.
+5) If \(\k\) is algebraically closed, and if $\fp \subset \k[x_1, \dots, x_n]$ is a prime ideal, then $\I(\V(\fp)) = \fp$.
 #+end_theorem
 
 
@@ -153,10 +167,3 @@ Let $Z \subset \A^n_{\k}$ be an algebraic set. Then every regular function on $Z
 #+end_theorem
 
 
-*** Some  algebra: finite/integral extensions of rings
-
-#+begin_definition
-1)  An extension $A \subset B$ of rings is */an integral extension/* if every element of $B$ satisfies a monic polynomial with coefficients in $A$.
-
-2)  An extension of rings $A \subset B$ is */finite/* if $B$ is finitely generated as an \(A\)-module.
-#+end_definition

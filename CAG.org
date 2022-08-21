@@ -5,7 +5,7 @@
 #+BEGIN_SRC latex-macros
   \newcommand{\A}{\mathbb{A}}
   \renewcommand{\P}{\mathbb{P}}
-  \renewcommand{\O}{\mathcal{O}}
+  \renewcommand{\O}{\mathscr{O}}
   \renewcommand{\Z}{\mathbb{Z}}
   \newcommand{\I}{\mathscr{I}}
   \newcommand{\q}{\mathsf{q}}
@@ -13,21 +13,21 @@
   \newcommand{\G}{\mathbb{G}}
   \newcommand{\R}{\mathbb{R}}
   \renewcommand{\k}{\mathscr{k}}
-  \newcommand{\fm}{\mathfrak{m}}
-  \newcommand{\fp}{\mathfrak{p}}
+  \newcommand{\fm}{\mathscr{m}}
+  \newcommand{\fp}{\mathscr{p}}
   \renewcommand{\to}{\longrightarrow}
   \DeclareMathOperator{\Hom}{\mathsf{Hom}}
   \DeclareMathOperator{\sing}{\mathsf{Sing}}
   \DeclareMathOperator{\Sym}{\mathsf{Sym}}
   \DeclareMathOperator{\V}{\mathscr{V}}
   \DeclareMathOperator{\E}{\mathscr{E}}
-  \DeclareMathOperator{\cubics}{\textrm{cubics}}
+  \DeclareMathOperator{\cubics}{\mathscr{cubics}}
 #+END_SRC
 
 * Affine sets, the Zariski topology, and Hilbert's Nullstellensatz
 
 
-Affine varieties are the fundamental building blocks of the central objects we study in classical algebraic geometry, /quasi-projective varieties/.  In essence, an affine variety is the  solution set of a system of polynomial equations $$f_1(x_1, \dots, x_n) = f_2(x_1, \dots, x_n) = \dots =f_{m}(x_1, \dots, x_n) = 0$$ with coefficients in some field $\k$. This solution set is made into a geometric object after we introduce  the /Zariski topology/ on it.  Furthermore, two such solutions sets are allowed to communicate with each other only through a restricted class of functions, called */regular maps/*.  Setting things up this way allows us to define what it means for two solution sets to be isomorphic, even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to extract an abstract group from its  various guises.)  An affine variety $X$ is then basically an equivalence class of solution sets under the notion of regular isomorphism.  It turns out that $X$ is uniquely recoverable from the ring of /regular functions/ on it.  This ring is called its  /coordinate ring/, denoted $\k[X]$.  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about $X$ into ring-theoretic notions about $\k[X]$, thereby supporting our geometric intuitions with rigorous algebra.
+Affine varieties are the fundamental building blocks of the central objects we study in classical algebraic geometry, /quasi-projective varieties/.  In essence, an affine variety is the  solution set of a system of polynomial equations $$f_1(x_1, \dots, x_n) = f_2(x_1, \dots, x_n) = \dots =f_{m}(x_1, \dots, x_n) = 0$$ with coefficients in some field $\k$. This solution set is made into a geometric object after we introduce  the /Zariski topology/ on it.  Furthermore, two such solutions sets are allowed to communicate with each other only through a restricted class of functions, called /regular maps/.  Setting things up this way allows us to define what it means for two solution sets to be isomorphic, even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to extract an abstract group from its  various guises.)  An affine variety $X$ is then basically an equivalence class of solution sets under the notion of regular isomorphism.  It turns out that $X$ is uniquely recoverable from the ring of /regular functions/ on it.  This ring is called its  /coordinate ring/, denoted $\k[X]$.  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about $X$ into ring-theoretic notions about $\k[X]$, thereby supporting our geometric intuitions with rigorous algebra.
 
 The relationship between the originating system of equations and its solution set is cleanest and makes most intuitive sense when the /ground field/ $\k$ is algebraically closed, and the main theorem(s) describing this relationship is Hilbert's Nullstellensatz in its various incarnations. This theorem is the most important piece of commutative algebra allowing us to set up the theory of affine varieties.  Because algebraic geometry is easiest to understand when $\k$ is algebraically closed, we will assume this throughout.  (Later, we will see that the characteristic $0$ situation is especially nice, but for now algebraic closed-ness is all we assume.)
 
@@ -89,7 +89,7 @@ In the list of examples above, what do those pictures mean?  Clearly they are re
 
 *** Operations $\V$ and $\I$
 
-The operation $\V$ is a surjective  function: \[\V(-): \big\{\,\textrm{ideals} \,\, I \subset \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{algebraic sets} \,\, X \subset \A^{n}_{\k} \big\}.\]
+The operation $\V$ is a surjective  function: \[\V(-): \big\{\,\textrm{ideals in} \,\,  \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\}.\]
 
 But we can also go backwards, from sets to ideals:
 
@@ -98,7 +98,7 @@ Let $Z \subset \A^n_{\k}$ be any subset.  We define the */ideal of $Z$/* to be \
 #+end_definition
 
 And so, $\I$ defines a function:
- \[\I(-): \big\{\,\textrm{algebraic sets} \,\, X \subset \A^{n}_{\k} \big\} \to \big\{\,\textrm{ideals} \,\, I \subset \k[x_1, \dots, x_n] \big\}.\]
+ \[\I(-): \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\} \to \big\{\,\textrm{ideals in}  \subset \k[x_1, \dots, x_n] \big\}.\]
 
 #+begin_eg
 Let $p = (p_1, \dots, p_n) \in \A^n_{\k}$ be any point. Then $\I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)$. Notice that $I(\{p\}) \subset \k[x_1,\dots, x_n]$ is a /maximal ideal/.  So, we typically use the symbol $\fm_p$ for this ideal.
@@ -114,26 +114,32 @@ Since $\V$ and $\I$ point in opposite directions, it's natural to wonder that th
 
 *** Prime ideals and irreducible affine sets
 
-Affine sets can be decomposed into their ``main, atomic pieces."  This is captured by the notion of /reducibility/, which we elaborate on here.
+Affine sets have "main, atomic pieces," called /irreducible components/.   This requires that we define the notion of /reducibility/, which we elaborate on here.
 
 #+begin_definition
-An affine set $Z$ is /reducible/ if it is the union of two non-empty, proper closed subsets. Otherwise, $Z$ is said to be /irreducible/. 
+An affine set $Z$ is */reducible/* if it is the union of two non-empty, proper closed subsets. Otherwise, $Z$ is said to be */irreducible/*.  More generally, a topological space $X$ is */reducible/* if it is the union of two non-empty, proper closed subsets, and is */irreducible/* otherwise.
+
+If $X$ is any topological space, then a subset $Y \subset X$ is called an */irreducible component/* of $X$ if $Y$ is maximal among closed, irreducible subsets of $X$. 
 #+end_definition
 
-Irreducibility, which is a geometric notion, has a nice algebraic interpretation. 
+#+begin_exercise
+1) Prove: Any two non-empty open subsets of an irreducible topological space must intersect.
+2) Prove: If $U \subset X$ is a non-empty open set in an irreducible topological space $X$, then $X$ is the closure of $U$, i.e. $U$ is dense in $X$.
+#+end_exercise
+
+For affine sets, irreducibility has a nice algebraic interpretation. 
 
 #+begin_proposition
 An affine set $Z \subset \A^{n}_{\k}$ is irreducible if and only if $\I(Z) \subset \k[x_1, \dots, x_n]$ is a prime ideal.
 #+end_proposition
 
 
+*** Algebra: Hilbert's Nullstellensatz
 
-*** Hilbert's Nullstellensatz
+Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations $\V(-)$ and $\I(-)$.  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to give many different viewpoints here.
 
-Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations $\V(-)$ and $I(-)$.  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to summarize the situation here:
-
-1)  When $\k$ is algebraically closed, the Nullstellensatz tells us that the only way for $\V(I)$ to be empty is if $I = (1)$, the unit ideal. In other words, any system of polynomial equations which is not equivalent to $1=0$ */must have/* solutions in $\A^n_{\k}$.
-2)  When $\k$ is algebraically closed, the Nullstellensatz provides the precise list of /maximal ideals in/ $\k[x_1, \dots, x_n]$. 
+1) When $\k$ is algebraically closed, the Nullstellensatz tells us that the only way for $\V(I)$ to be empty is if $I = (1)$, the unit ideal. In other words, any system of polynomial equations which is not equivalent to $1=0$ */must have/* solutions in $\A^n_{\k}$.
+2) When $\k$ is algebraically closed, the Nullstellensatz provides the precise list of /maximal ideals in/ $\k[x_1, \dots, x_n]$. 
 
 #+begin_theorem
 Let $\k$ be an arbitrary field.
@@ -145,7 +151,7 @@ Let $\k$ be an arbitrary field.
 3) If \(\k\) is algebraically closed, then every maximal ideal of \(\,\,\k[x_1, \dots, x_n]\) is of the form $(x_1-p_1, \dots, x_n-p_n)$ for some $p_i \in \k$.
 
 4) If \(\k\) is algebraically closed, and if $I \subset \k[x_1, \dots, x_n]$ satisfies $\V(I) = \emptyset$, then $I = (1)$, the unit ideal.
-5) If \(\k\) is algebraically closed, and if $\fp \subset \k[x_1, \dots, x_n]$ is a prime ideal, then $I(\V(\fp)) = \fp$.
+5) If \(\k\) is algebraically closed, and if $\fp \subset \k[x_1, \dots, x_n]$ is a prime ideal, then $\I(\V(\fp)) = \fp$.
 #+end_theorem
 
 
@@ -264,7 +270,7 @@ Let $x \in X$ be a point on a variety.  The */Zariski tangent space of $X$ at $x
 The ring $\k[\varepsilon]/(\varepsilon^2)$ provides a sometimes-useful alternate interpretation of the Zariski tangent space.  This is encoded in the following critical exercise. 
 
 #+begin_exercise
-Let $x \in X$ be a point on a variety. Then there is a canonical identification between $T_{X,x}$ and the set of $\k$-algebra homomorphisms $\phi : \O_{X,x} \to \k[\varepsilon]/(\varepsilon^2)$ which send $\fm_{x}$ into the ideal $(\varepsilon)$.
+Let $x \in X$ be a point on a variety. Then there is a canonical identification between $T_{X,x}$ and the set of \(\k\)-algebra homomorphisms $\phi : \O_{X,x} \to \k[\varepsilon]/(\varepsilon^2)$ which send $\fm_{x}$ into the ideal $(\varepsilon)$.
 #+end_exercise
 
 ** Singular points and smooth points
