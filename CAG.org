@@ -159,10 +159,6 @@ Let $\k$ be an arbitrary field.
 Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \dots, f_m \in \k[x]\) are finitely many polynomials.  Prove that the ring \(\k[x, \frac{1}{f_1}, \dots, \frac{1}{f_m}]\) is never a field. 
 #+end_exercise
 
-#+begin_theorem
-Let $Z \subset \A^n_{\k}$ be an algebraic set. Then every regular function on $Z$ is the restriction of a polynomial.  Thus, the ring of regular functions on $Z$ is isomorphic to $\k[x_1, \dots, x_n]/\I(Z)$. 
-#+end_theorem
-
 
 
 ** Regular functions
@@ -186,6 +182,12 @@ Let $\varphi: U \to V$ be a regular mapping between quasi-affine sets.  Prove:
 2) The formula $g \mapsto g \circ \varphi$ defines a \(\k\)-algebra homomorphism $\k[V] \to \k[U]$.
 3) If $U$ and $V$ are affine sets, then, conversely, any homomorphism $\k[V] \to \k[U]$ comes from a regular mapping $g: U \to V$.
 #+end_exercise
+
+
+
+#+begin_theorem
+Let $Z \subset \A^n_{\k}$ be an affine set. Then every regular function on $Z$ is the restriction of a polynomial.  Thus, the natural homomorphism $\k[x_1, \dots, x_n]/\I(Z) \to \k[Z]$ is an isomorphism. 
+#+end_theorem
 
 
 

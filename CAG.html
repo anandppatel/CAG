@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-08-21 Sun 15:34 -->
+<!-- 2022-08-22 Mon 07:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elements of Classical Algebraic Geometry</title>
@@ -241,8 +241,8 @@
 <div id="content" class="content">
 <h1 class="title">Elements of Classical Algebraic Geometry</h1>
 
-<div id="outline-container-orgbbd32f8" class="outline-2">
-<h2 id="orgbbd32f8"><span class="section-number-2">1.</span> Affine sets, the Zariski topology, and Hilbert's Nullstellensatz</h2>
+<div id="outline-container-org8b0e994" class="outline-2">
+<h2 id="org8b0e994"><span class="section-number-2">1.</span> Affine sets, the Zariski topology, and Hilbert's Nullstellensatz</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Affine varieties are the fundamental building blocks of the central objects we study in classical algebraic geometry, <i>quasi-projective varieties</i>.  In essence, an affine variety is the  solution set of a system of polynomial equations \[f_1(x_1, \dots, x_n) = f_2(x_1, \dots, x_n) = \dots =f_{m}(x_1, \dots, x_n) = 0\] with coefficients in some field \(\k\). This solution set is made into a geometric object after we introduce  the <i>Zariski topology</i> on it.  Furthermore, two such solutions sets are allowed to communicate with each other only through a restricted class of functions, called <i>regular maps</i>.  Setting things up this way allows us to define what it means for two solution sets to be isomorphic, even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to extract an abstract group from its  various guises.)  An affine variety \(X\) is then basically an equivalence class of solution sets under the notion of regular isomorphism.  It turns out that \(X\) is uniquely recoverable from the ring of <i>regular functions</i> on it.  This ring is called its  <i>coordinate ring</i>, denoted \(\k[X]\).  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about \(X\) into ring-theoretic notions about \(\k[X]\), thereby supporting our geometric intuitions with rigorous algebra.
@@ -253,14 +253,14 @@ The relationship between the originating system of equations and its solution se
 </p>
 </div>
 
-<div id="outline-container-orgd1d6beb" class="outline-3">
-<h3 id="orgd1d6beb"><span class="section-number-3">1.1.</span> Affine sets</h3>
+<div id="outline-container-orgd5d3fb0" class="outline-3">
+<h3 id="orgd5d3fb0"><span class="section-number-3">1.1.</span> Affine sets</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 We begin by defining the central geometric objects of this chapter.
 </p>
 
-<div class="definition" id="org2169647">
+<div class="definition" id="orgb04c4b1">
 <ol class="org-ol">
 <li><b><i>Affine space of dimension \(n\) (over \(\k\))</i></b>, denoted \[\A^{n}_{\k}\] is the set of \(n\) -tuples \(p = (p_1, \dots, p_{n})\), \(p_{i} \in \k\).</li>
 <li>For each \(i\), we denote by \[x_{i}: \A^{n}_{\k} \to \A^{1}_{\k}\] the \(i\)-th coordinate function sending \((p_{1}, \dots, p_{n})\) to \(p_i\).</li>
@@ -279,7 +279,7 @@ It is immediate that if \(S \subset \k[x_1, \dots, x_n]\) is any subset, and if 
 </p>
 
 
-<div class="exercise" id="org6884a54">
+<div class="exercise" id="orgcecda05">
 <p>
 Suppose \(I,J \subset \k[x_1, \dots, x_n]\) are two ideals. Show:
 </p>
@@ -307,7 +307,7 @@ The beauty in classical algebraic geometry is only seen through its countless, i
 
 
 
-<div class="eg" id="org0e51e11">
+<div class="eg" id="orgc7434d1">
 <ol class="org-ol">
 <li>The <i>parabola</i> \[\V(y-x^{2}) \subset \A^{2}_{\k}.\]</li>
 <li>The <i>quadric cone</i> \[\V(xy-z^2) \subset \A^3_{\k}.\]</li>
@@ -320,7 +320,7 @@ The beauty in classical algebraic geometry is only seen through its countless, i
 </ol>
 
 
-<div id="org43f1ef1" class="figure">
+<div id="org9265510" class="figure">
 <p><img src="./images/whitney2.png" alt="whitney2.png" />
 </p>
 </div>
@@ -332,8 +332,8 @@ The beauty in classical algebraic geometry is only seen through its countless, i
 </div>
 </div>
 
-<div id="outline-container-orgce44b79" class="outline-4">
-<h4 id="orgce44b79"><span class="section-number-4">1.1.1.</span> Pictures</h4>
+<div id="outline-container-orgd78b067" class="outline-4">
+<h4 id="orgd78b067"><span class="section-number-4">1.1.1.</span> Pictures</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 In the list of examples above, what do those pictures mean?  Clearly they are real images, meaning they exist in \(\A^2_{\R}\) or \(\A^{3}_{\R}\). But this is not our true context: we've assumed \(\k\) is algebraically closed!  Unfortunately, it is not possible to draw a true representation in this case, so we refer to these sorts of images as "real cartoons."   
@@ -341,8 +341,8 @@ In the list of examples above, what do those pictures mean?  Clearly they are re
 </div>
 </div>
 
-<div id="outline-container-org0aa0b7e" class="outline-4">
-<h4 id="org0aa0b7e"><span class="section-number-4">1.1.2.</span> Operations \(\V\) and \(\I\)</h4>
+<div id="outline-container-org3397237" class="outline-4">
+<h4 id="org3397237"><span class="section-number-4">1.1.2.</span> Operations \(\V\) and \(\I\)</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 The operation \(\V\) is a surjective  function: \[\V(-): \big\{\,\textrm{ideals in} \,\,  \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\}.\]
@@ -352,7 +352,7 @@ The operation \(\V\) is a surjective  function: \[\V(-): \big\{\,\textrm{ideals 
 But we can also go backwards, from sets to ideals:
 </p>
 
-<div class="definition" id="org4d17373">
+<div class="definition" id="orge1ef17a">
 <p>
 Let \(Z \subset \A^n_{\k}\) be any subset.  We define the <b><i>ideal of \(Z\)</i></b> to be \[\I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
 </p>
@@ -364,7 +364,7 @@ And so, \(\I\) defines a function:
  \[\I(-): \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\} \to \big\{\,\textrm{ideals in}  \subset \k[x_1, \dots, x_n] \big\}.\]
 </p>
 
-<div class="eg" id="orgce78b7a">
+<div class="eg" id="org980eb3f">
 <p>
 Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(\I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)\). Notice that \(I(\{p\}) \subset \k[x_1,\dots, x_n]\) is a <i>maximal ideal</i>.  So, we typically use the symbol \(\fm_p\) for this ideal.
 </p>
@@ -375,7 +375,7 @@ Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(\I(\{p\}) = (x_
 Since \(\V\) and \(\I\) point in opposite directions, it's natural to wonder that their compositions (both ways) are.  One composition, found in the next exercise, is easy to understand.  The other composition leads naturally to  Hilbert's Nullstellansatz, and so we postpone it.
 </p>
 
-<div class="exercise" id="org0a6dcea">
+<div class="exercise" id="orgbf22fef">
 <ol class="org-ol">
 <li>Prove: For any subset \(Z \subset \A^{n}_{\k}\), we have \(Z \subset \V(\I(Z))\).</li>
 <li>Prove:  \(Z \subset \A^n_{\k}\) is Zariski-closed if and only if \(Z = \V(\I(Z))\).</li>
@@ -386,21 +386,25 @@ Since \(\V\) and \(\I\) point in opposite directions, it's natural to wonder tha
 </div>
 </div>
 
-<div id="outline-container-orgd1c9d8b" class="outline-4">
-<h4 id="orgd1c9d8b"><span class="section-number-4">1.1.3.</span> Prime ideals and irreducible affine sets</h4>
+<div id="outline-container-org6c23a6a" class="outline-4">
+<h4 id="org6c23a6a"><span class="section-number-4">1.1.3.</span> Prime ideals and irreducible affine sets</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 Affine sets have "main, atomic pieces," called <i>irreducible components</i>.   This requires that we define the notion of <i>reducibility</i>, which we elaborate on here.
 </p>
 
-<div class="definition" id="org879f4dd">
+<div class="definition" id="orgf7818f7">
 <p>
-An affine set \(Z\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets. Otherwise, \(Z\) is said to be <b><i>irreducible</i></b>.  More generally, a topological space \(X\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets, and is <b><i>irreducible</i></b> otherwise.  If \(X\) is any topological space, then a subset \(Y \subset X\) is called an <b><i>irreducible component</i></b> of \(X\) if \(Y\) is maximal among closed, irreducible subsets of \(X\). 
+An affine set \(Z\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets. Otherwise, \(Z\) is said to be <b><i>irreducible</i></b>.  More generally, a topological space \(X\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets, and is <b><i>irreducible</i></b> otherwise.
+</p>
+
+<p>
+If \(X\) is any topological space, then a subset \(Y \subset X\) is called an <b><i>irreducible component</i></b> of \(X\) if \(Y\) is maximal among closed, irreducible subsets of \(X\). 
 </p>
 
 </div>
 
-<div class="exercise" id="org0cf6262">
+<div class="exercise" id="org6bd27dc">
 <ol class="org-ol">
 <li>Prove: Any two non-empty open subsets of an irreducible topological space must intersect.</li>
 <li>Prove: If \(U \subset X\) is a non-empty open set in an irreducible topological space \(X\), then \(X\) is the closure of \(U\), i.e. \(U\) is dense in \(X\).</li>
@@ -412,7 +416,7 @@ An affine set \(Z\) is <b><i>reducible</i></b> if it is the union of two non-emp
 For affine sets, irreducibility has a nice algebraic interpretation. 
 </p>
 
-<div class="proposition" id="org3096913">
+<div class="proposition" id="org0d4bad3">
 <p>
 An affine set \(Z \subset \A^{n}_{\k}\) is irreducible if and only if \(\I(Z) \subset \k[x_1, \dots, x_n]\) is a prime ideal.
 </p>
@@ -422,8 +426,8 @@ An affine set \(Z \subset \A^{n}_{\k}\) is irreducible if and only if \(\I(Z) \s
 </div>
 
 
-<div id="outline-container-org185cc9e" class="outline-4">
-<h4 id="org185cc9e"><span class="section-number-4">1.1.4.</span> Algebra: Hilbert's Nullstellensatz</h4>
+<div id="outline-container-orgabdce53" class="outline-4">
+<h4 id="orgabdce53"><span class="section-number-4">1.1.4.</span> Algebra: Hilbert's Nullstellensatz</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <p>
 Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations \(\V(-)\) and \(\I(-)\).  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to give many different viewpoints here.
@@ -434,7 +438,7 @@ Our first fundamental  theorem, which appears in several different forms in seve
 <li>When \(\k\) is algebraically closed, the Nullstellensatz provides the precise list of <i>maximal ideals in</i> \(\k[x_1, \dots, x_n]\).</li>
 </ol>
 
-<div class="theorem" id="org98f467b">
+<div class="theorem" id="org4f76a4c">
 <p>
 Let \(\k\) be an arbitrary field.
 </p>
@@ -453,33 +457,26 @@ Let \(\k\) be an arbitrary field.
 </div>
 
 
-<div class="exercise" id="orgc53ea6e">
+<div class="exercise" id="org75816d2">
 <p>
 Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \dots, f_m \in \k[x]\) are finitely many polynomials.  Prove that the ring \(\k[x, \frac{1}{f_1}, \dots, \frac{1}{f_m}]\) is never a field. 
 </p>
 
 </div>
-
-<div class="theorem" id="orga367e36">
-<p>
-Let \(Z \subset \A^n_{\k}\) be an algebraic set. Then every regular function on \(Z\) is the restriction of a polynomial.  Thus, the ring of regular functions on \(Z\) is isomorphic to \(\k[x_1, \dots, x_n]/\I(Z)\). 
-</p>
-
-</div>
 </div>
 </div>
 </div>
 
 
 
-<div id="outline-container-org5e0b484" class="outline-3">
-<h3 id="org5e0b484"><span class="section-number-3">1.2.</span> Regular functions</h3>
+<div id="outline-container-org286aa12" class="outline-3">
+<h3 id="org286aa12"><span class="section-number-3">1.2.</span> Regular functions</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Next, we must set the rules for how algebraic sets and quasi-affine sets are allowed to communicate with each other. In short, we allow ourselves, to the extent that it is possible, to use functions which are describable using polynomials and their ratios.  These functions are called regular functions.
 </p>
 
-<div class="definition" id="org415630c">
+<div class="definition" id="orgc1bc46f">
 <p>
 Let \(U \subset Z\) be an open subset of an algebraic set.
 </p>
@@ -491,14 +488,14 @@ Let \(U \subset Z\) be an open subset of an algebraic set.
 
 </div>
 
-<div class="proposition" id="orgc0af1f6">
+<div class="proposition" id="org8b6e876">
 <p>
 If \(U\) and \(V\) are quasi-affine sets, and if \(\varphi: U \to V\) is a regular mapping, then \(\varphi\) is continuous for the Zariski topologies on \(U\) and \(V\), i.e. the preimage of any closed set is closed.
 </p>
 
 </div>
 
-<div class="exercise" id="org7c38d0c">
+<div class="exercise" id="org05d1faf">
 <p>
 Let \(\varphi: U \to V\) be a regular mapping between quasi-affine sets.  Prove:
 </p>
@@ -512,7 +509,16 @@ Let \(\varphi: U \to V\) be a regular mapping between quasi-affine sets.  Prove:
 
 
 
-<div class="exercise" id="org99d4043">
+<div class="theorem" id="orgf58f936">
+<p>
+Let \(Z \subset \A^n_{\k}\) be an affine set. Then every regular function on \(Z\) is the restriction of a polynomial.  Thus, the natural homomorphism \(\k[x_1, \dots, x_n]/\I(Z) \to \k[Z]\) is an isomorphism. 
+</p>
+
+</div>
+
+
+
+<div class="exercise" id="orge5dad28">
 <p>
 Let \(Z \subset \A^n_{\k}\) be an algebraic subset, and let \(f \in \k[x_0, \dots, x_n]\) be any polynomial.  If \(\varphi: Z_f \to \A^1_{\k}\) is a regular function then there exists a polynomial \(a\) such that \(p = a/f^{m}\) for some \(m \geq 0\). 
 </p>
@@ -521,24 +527,24 @@ Let \(Z \subset \A^n_{\k}\) be an algebraic subset, and let \(f \in \k[x_0, \dot
 </div>
 </div>
 
-<div id="outline-container-orgcd9daf9" class="outline-3">
-<h3 id="orgcd9daf9"><span class="section-number-3">1.3.</span> The various rings attached to an affine set</h3>
+<div id="outline-container-orgd43b0d1" class="outline-3">
+<h3 id="orgd43b0d1"><span class="section-number-3">1.3.</span> The various rings attached to an affine set</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-org272daa7" class="outline-4">
-<h4 id="org272daa7"><span class="section-number-4">1.3.1.</span> The ring \(\O(U)\) for an open set \(U \subset X\)</h4>
+<div id="outline-container-org87a51b7" class="outline-4">
+<h4 id="org87a51b7"><span class="section-number-4">1.3.1.</span> The ring \(\O(U)\) for an open set \(U \subset X\)</h4>
 </div>
-<div id="outline-container-org3d9edb2" class="outline-4">
-<h4 id="org3d9edb2"><span class="section-number-4">1.3.2.</span> The local ring \(\O_{X,p}\)  attached to point \(p \in X\)</h4>
+<div id="outline-container-org381dbe9" class="outline-4">
+<h4 id="org381dbe9"><span class="section-number-4">1.3.2.</span> The local ring \(\O_{X,p}\)  attached to point \(p \in X\)</h4>
 <div class="outline-text-4" id="text-1-3-2">
-<div class="definition" id="org57e84fb">
+<div class="definition" id="orgfd09399">
 <p>
 Let \(p \in X\) be a point on an algebraic set \(X\).  We define the <i>local ring of \(X\) at \(p\)</i> , denoted \(\O_{X,p}\), to be the ring consisting of regular functions defined on some open neighborhood of \(p\).
 </p>
 
 </div>
 
-<div class="exercise" id="orgfc3339f">
+<div class="exercise" id="org98fbf6b">
 <ol class="org-ol">
 <li>Let \(X = \V(y^2-x)\), and let \(p = (4,2)\). Draw a real cartoon of the situation.  Prove that \(\O_{X,p}\) is a principal ideal domain.</li>
 
@@ -553,8 +559,8 @@ Let \(p \in X\) be a point on an algebraic set \(X\).  We define the <i>local ri
 </div>
 </div>
 
-<div id="outline-container-org467df70" class="outline-2">
-<h2 id="org467df70"><span class="section-number-2">2.</span> Projective space \(\P^n_{\k}\) and projective varieties</h2>
+<div id="outline-container-org1f48b21" class="outline-2">
+<h2 id="org1f48b21"><span class="section-number-2">2.</span> Projective space \(\P^n_{\k}\) and projective varieties</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 For a multitude of reasons, it is useful to want to <i>compactify</i> affine space.  Take, for instance, the concept of the <i>slope of a line</i> from high school algebra.  Slopes were numbers, typically labelled \(m\).  Except, hold on, what about those pesky "vertical" lines?  It is clear that, geometrically, vertical lines are no more special than any other kind of line.  So we should extend the concept of slope \(m\) to include an "infinity" slope \(m =\infty\). By adding \(\infty\) to the \(\A^1\) of slopes, we arrive at the <i>projective line</i> \(\P^1\).
@@ -564,14 +570,14 @@ For a multitude of reasons, it is useful to want to <i>compactify</i> affine spa
 Another way that projective space arises is in the following context:  We have a vector space \(V\), but we only really care  about elements of \(V\) <i>up to scaling</i>.  For instance, if we only care about the <i>location of the roots</i> of a quadratic polynomial \(ax^2+bx+c\), then for our purposes there is no difference between polynomials \(ax^2+bx+c\) and \(\lambda a x^2 + \lambda b x + \lambda c =0\), where \(\lambda\) a nonzero number.
 </p>
 </div>
-<div id="outline-container-org5ff4151" class="outline-3">
-<h3 id="org5ff4151"><span class="section-number-3">2.1.</span> Projective varieties</h3>
+<div id="outline-container-org7068ce4" class="outline-3">
+<h3 id="org7068ce4"><span class="section-number-3">2.1.</span> Projective varieties</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 For simplicity, we work throughout over an algebraically closed field \(\k\).
 </p>
 
-<div class="definition" id="org5dddd6a">
+<div class="definition" id="orge61c7c6">
 <ol class="org-ol">
 <li>The \(n\)-dimensional projective space, denoted \(\P^n_{\k}\), is the set of equivalence classes of points of \(\left(\A^{n+1}_{\k}\right)^{\times}\) under the action of \(\k^{\times}\) by scaling.</li>
 <li>A point \(p \in  \P^n_{\k}\) is denoted by a tuple \([p_0 : p_1 : \ldots : p_n]\), and two tuples \([p_0 : p_1 : \ldots : p_n]\) and \([q_0 : q_1 : \dots : q_n]\) represent the same point in \(\P^n_{\k}\) if and only if there exists \(\lambda \in \k^{\times}\) such that \(p_i = \lambda q_i\) for all \(i = 0,\ldots, n\).</li>
@@ -582,7 +588,7 @@ For simplicity, we work throughout over an algebraically closed field \(\k\).
 
 </div>
 
-<div class="exercise" id="org4865929">
+<div class="exercise" id="orgaab9105">
 <ol class="org-ol">
 <li>For each \(i=0,\ldots, n\), let \(\gamma_i: \A^{n}_{\k} \to U_i\) denote the bijective function that sends \((a_0, \ldots, a_{i-1}, a_{i+1}, \ldots a_n)\) to the point \([a_0: \ldots: a_{i-1} : 1 : a_{i+1} : \ldots : a_n]\).  Prove that \(\gamma_i\) is a <i>homeomorphism</i> of topological spaces, meaning: \(Y \subset \A^n_{\k}\) is Zariski-open if and only if \(\gamma_i(Y) \subset U_i\) is Zariski-open.</li>
 <li>One could define another topology on \(\P^n_{\k}\) in the following way: A set \(Y \subset \P^n_{\k}\) is closed if and only if \(Y_{i} := Y \cap U_i\) is closed in \(U_i\) for all \(i\), where we think of \(U_i\) as an affine space under the indentifications \(\gamma_i\) in the previous exercise.  Prove that this topology is the same as the Zariski topology defined in the definition above.</li>
@@ -591,7 +597,7 @@ For simplicity, we work throughout over an algebraically closed field \(\k\).
 </div>
 
 
-<div class="theorem" id="org11b3922">
+<div class="theorem" id="orgc4598ee">
 <p>
 Every closed subset of  \(\P^{n}_{\k}\) is obtained as the vanishing set of a graded ideal in \(\k[X_0, \dots, X_n]\). 
 </p>
@@ -599,10 +605,10 @@ Every closed subset of  \(\P^{n}_{\k}\) is obtained as the vanishing set of a gr
 </div>
 </div>
 </div>
-<div id="outline-container-orgb6dbbc1" class="outline-3">
-<h3 id="orgb6dbbc1"><span class="section-number-3">2.2.</span> Projective morphisms</h3>
+<div id="outline-container-org081f498" class="outline-3">
+<h3 id="org081f498"><span class="section-number-3">2.2.</span> Projective morphisms</h3>
 <div class="outline-text-3" id="text-2-2">
-<div class="theorem" id="org3a3de9e">
+<div class="theorem" id="org9504ef7">
 <p>
 The main theorem of elimination theory.
 </p>
@@ -610,10 +616,10 @@ The main theorem of elimination theory.
 </div>
 </div>
 </div>
-<div id="outline-container-org1fb9039" class="outline-3">
-<h3 id="org1fb9039"><span class="section-number-3">2.3.</span> Morphisms between projective spaces</h3>
+<div id="outline-container-orgcd7779c" class="outline-3">
+<h3 id="orgcd7779c"><span class="section-number-3">2.3.</span> Morphisms between projective spaces</h3>
 <div class="outline-text-3" id="text-2-3">
-<div class="definition" id="org191c656">
+<div class="definition" id="orgfc82c6d">
 <p>
 Let \(X, Y\) be two varieties, with \(X\) irreducible. A <b><i>rational map</i></b> from \(X\) to \(Y\), is an equivalence class of pairs \((\varphi, U)\) where:
 </p>
@@ -624,7 +630,7 @@ Let \(X, Y\) be two varieties, with \(X\) irreducible. A <b><i>rational map</i><
 
 </div>
 
-<div class="proposition" id="org8eb4e78">
+<div class="proposition" id="orgaa91edd">
 <p>
 Let \(\varphi: X \dashrightarrow Y\) be a rational map.  Then there exists a maximal domain of definition, \(U_{\textrm{max}} \subset X\) for \(\varphi\), i.e. if \((\xi,U)\) represents \(\varphi\) then \(U \subset U_{\textrm{max}}\). 
 </p>
@@ -636,14 +642,14 @@ Let \(\varphi: X \dashrightarrow Y\) be a rational map.  Then there exists a max
 </p>
 
 
-<div class="theorem" id="org0b04be3">
+<div class="theorem" id="orge70e22e">
 <p>
 Every regular mapping \(\varphi: \P^n_{\k} \to \P^m_{\k}\) is of the form \([x_0, \dots, x_n] \mapsto [F_0: \ldots : F_m]\) for some homogeneous forms \(F_{i}\) of the same degree, not all sharing a common zero.
 </p>
 
 </div>
 
-<div class="theorem" id="orgf76060a">
+<div class="theorem" id="org2d165fb">
 <p>
 Every regular automorphism of \(\P^n_{\k}\) is a linear change of variables.
 </p>
@@ -653,15 +659,15 @@ Every regular automorphism of \(\P^n_{\k}\) is a linear change of variables.
 </div>
 </div>
 
-<div id="outline-container-org7d043e9" class="outline-2">
-<h2 id="org7d043e9"><span class="section-number-2">3.</span> Tangent spaces</h2>
+<div id="outline-container-org27de95a" class="outline-2">
+<h2 id="org27de95a"><span class="section-number-2">3.</span> Tangent spaces</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 To each point \(x\) on a variety \(X\) we attach a \(k\)-vector space \(T_{X,x}\), called the <b><i>Zariski tangent space</i></b>.   This vector space unlocks the concept of <b><i>smoothness</i></b> of \(X\) at \(x\), which is the  algebro-geometric formulation of the intuition that \(X\) appears ``locally linear" around \(x\). 
 </p>
 
 
-<div class="definition" id="org5125019">
+<div class="definition" id="orgbf565a1">
 <p>
 Let \(x \in X\) be a point on a variety.  The <b><i>Zariski tangent space of \(X\) at \(x\)</i></b>, denoted \(T_{X,x}\), is the \(\k\)-vector space \[\left( {\fm_{x}}/{\fm_{x}^2} \right)^{\vee}.\]
 </p>
@@ -672,7 +678,7 @@ Let \(x \in X\) be a point on a variety.  The <b><i>Zariski tangent space of \(X
 The ring \(\k[\varepsilon]/(\varepsilon^2)\) provides a sometimes-useful alternate interpretation of the Zariski tangent space.  This is encoded in the following critical exercise. 
 </p>
 
-<div class="exercise" id="org9ddeec1">
+<div class="exercise" id="orgd93b119">
 <p>
 Let \(x \in X\) be a point on a variety. Then there is a canonical identification between \(T_{X,x}\) and the set of \(\k\)-algebra homomorphisms \(\phi : \O_{X,x} \to \k[\varepsilon]/(\varepsilon^2)\) which send \(\fm_{x}\) into the ideal \((\varepsilon)\).
 </p>
@@ -680,18 +686,18 @@ Let \(x \in X\) be a point on a variety. Then there is a canonical identificatio
 </div>
 </div>
 
-<div id="outline-container-org602e4b2" class="outline-3">
-<h3 id="org602e4b2"><span class="section-number-3">3.1.</span> Singular points and smooth points</h3>
+<div id="outline-container-orge710f88" class="outline-3">
+<h3 id="orge710f88"><span class="section-number-3">3.1.</span> Singular points and smooth points</h3>
 </div>
 
-<div id="outline-container-orgee93cd1" class="outline-3">
-<h3 id="orgee93cd1"><span class="section-number-3">3.2.</span> The nature of the local ring at a smooth point</h3>
+<div id="outline-container-org38b7b96" class="outline-3">
+<h3 id="org38b7b96"><span class="section-number-3">3.2.</span> The nature of the local ring at a smooth point</h3>
 </div>
 
-<div id="outline-container-orge8f582f" class="outline-3">
-<h3 id="orge8f582f"><span class="section-number-3">3.3.</span> Bertini's theorem(s)</h3>
+<div id="outline-container-org4944e50" class="outline-3">
+<h3 id="org4944e50"><span class="section-number-3">3.3.</span> Bertini's theorem(s)</h3>
 <div class="outline-text-3" id="text-3-3">
-<div class="theorem" id="org0006b85">
+<div class="theorem" id="org789d09f">
 <p>
 Let \(f: X \to \P^n_{\k}\) be a map from a smooth, quasi-projective variety \(X\) to a projective space, and suppose \(\k\) is a <b><i>perfect</i></b>, algebraically closed field.  If \(H \subset \P^n_{\k}\) is a Zariski-general hyperplane, then \(f^{-1}(H) \subset X\) is a smooth divisor.
 </p>
@@ -704,10 +710,10 @@ Let \(f: X \to \P^n_{\k}\) be a map from a smooth, quasi-projective variety \(X\
 
 
 
-<div id="outline-container-org6d6199f" class="outline-2">
-<h2 id="org6d6199f"><span class="section-number-2">4.</span> Constancy of number</h2>
+<div id="outline-container-org7342269" class="outline-2">
+<h2 id="org7342269"><span class="section-number-2">4.</span> Constancy of number</h2>
 <div class="outline-text-2" id="text-4">
-<div class="theorem" id="org9ea44a9">
+<div class="theorem" id="org9198cce">
 <p>
 Let \(f: X \to Y\) be a finite map, with \(X\) and \(Y\) smooth, irreducible affine varieties over a characteristic zero field. Then the length of every fiber is equal to the degree of \(f\). (Degree of extension fields.)
 </p>
@@ -718,25 +724,25 @@ Let \(f: X \to Y\) be a finite map, with \(X\) and \(Y\) smooth, irreducible aff
 
 
 
-<div id="outline-container-org0b77f23" class="outline-2">
-<h2 id="org0b77f23"><span class="section-number-2">5.</span> Hypersurfaces</h2>
+<div id="outline-container-org4b3c2d9" class="outline-2">
+<h2 id="org4b3c2d9"><span class="section-number-2">5.</span> Hypersurfaces</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Let \(X = \V(F) \subset \P^n_{\k}\) be a hypersurface, defined by a degree \(d\) homogeneous form \(F(x_0, \dots, x_n)\).   Let \(p = (p_0, \ldots, p_n) \in \left( \A^{n+1} \right)^{\times}\) be a point such that \(F(p) = 0\), and let \(\hat{X} \subset  \A^{n+1}\) denote the affine cone over \(X\).  Then \(X\) is singular at \([p]\) if and only if \(\hat{X}\) is singular at \(p\). 
 </p>
 </div>
 </div>
-<div id="outline-container-orgf1e46b8" class="outline-2">
-<h2 id="orgf1e46b8"><span class="section-number-2">6.</span> Basics on vector bundles</h2>
+<div id="outline-container-org2e9996a" class="outline-2">
+<h2 id="org2e9996a"><span class="section-number-2">6.</span> Basics on vector bundles</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgf983e12" class="outline-3">
-<h3 id="orgf983e12"><span class="section-number-3">6.1.</span> The definition of a vector bundle</h3>
+<div id="outline-container-org7b3b13a" class="outline-3">
+<h3 id="org7b3b13a"><span class="section-number-3">6.1.</span> The definition of a vector bundle</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 The concept of a <b><i>vector bundle</i></b> is ubiquitous in mathematics, and captures the idea of a "family of vector spaces parametrized by a base space."  In algebraic geometry, the definition is as follows:
 </p>
-<div class="definition" id="org110a073">
+<div class="definition" id="org923459f">
 <p>
 Let \(X\) be a variety.  A <b><i>rank \(r\) vector bundle over \(X\)</i></b> is a variety \(\E\) together with a regular map \(\pi: \E \to X\) such that:
 </p>
@@ -747,17 +753,17 @@ Let \(X\) be a variety.  A <b><i>rank \(r\) vector bundle over \(X\)</i></b> is 
 </div>
 </div>
 </div>
-<div id="outline-container-orgdbf8143" class="outline-3">
-<h3 id="orgdbf8143"><span class="section-number-3">6.2.</span> Line bundles</h3>
+<div id="outline-container-org2450451" class="outline-3">
+<h3 id="org2450451"><span class="section-number-3">6.2.</span> Line bundles</h3>
 <div class="outline-text-3" id="text-6-2">
 </div>
-<div id="outline-container-orgca667cb" class="outline-4">
-<h4 id="orgca667cb"><span class="section-number-4">6.2.1.</span> Line bundles on \(\A^n_{\k}\).</h4>
+<div id="outline-container-org5bdd121" class="outline-4">
+<h4 id="org5bdd121"><span class="section-number-4">6.2.1.</span> Line bundles on \(\A^n_{\k}\).</h4>
 <div class="outline-text-4" id="text-6-2-1">
 <p>
 Curiously, for affine varieties, the capacity for carrying interesting lines bundles is related to unique factorization.
 </p>
-<div class="theorem" id="orgcf957ed">
+<div class="theorem" id="org665243f">
 <p>
 Every line bundle on \(\A^{n}_{\k}\) is isomorphic to the trivial line bundle.
 </p>
@@ -765,17 +771,17 @@ Every line bundle on \(\A^{n}_{\k}\) is isomorphic to the trivial line bundle.
 </div>
 </div>
 </div>
-<div id="outline-container-orgde0346b" class="outline-4">
-<h4 id="orgde0346b"><span class="section-number-4">6.2.2.</span> Line bundles on \(\P^n_{\k}\).</h4>
+<div id="outline-container-org5fd044b" class="outline-4">
+<h4 id="org5fd044b"><span class="section-number-4">6.2.2.</span> Line bundles on \(\P^n_{\k}\).</h4>
 <div class="outline-text-4" id="text-6-2-2">
-<div class="definition" id="org3b19a7d">
+<div class="definition" id="org961e642">
 <p>
 Fix an integer \(d \in \Z\). The line bundle \(\O(d)\) on \(\P^{n}_{\k}\) is&#x2026;TODO 
 </p>
 
 </div>
 
-<div class="theorem" id="org712e415">
+<div class="theorem" id="org616e794">
 <p>
 Every line bundle on \(\P^n_{\k}\) is isomorphic to one of the line bundles \(\O(d)\).
 </p>
@@ -785,22 +791,22 @@ Every line bundle on \(\P^n_{\k}\) is isomorphic to one of the line bundles \(\O
 </div>
 </div>
 </div>
-<div id="outline-container-org722a73c" class="outline-2">
-<h2 id="org722a73c"><span class="section-number-2">7.</span> The basic geometry of Grassmannians</h2>
+<div id="outline-container-org27c5b30" class="outline-2">
+<h2 id="org27c5b30"><span class="section-number-2">7.</span> The basic geometry of Grassmannians</h2>
 </div>
-<div id="outline-container-org3d4c492" class="outline-2">
-<h2 id="org3d4c492"><span class="section-number-2">8.</span> Algebraic Geometry in Linear Algebra</h2>
+<div id="outline-container-org6396549" class="outline-2">
+<h2 id="org6396549"><span class="section-number-2">8.</span> Algebraic Geometry in Linear Algebra</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-orgda9de80" class="outline-3">
-<h3 id="orgda9de80"><span class="section-number-3">8.1.</span> Rank-dropping varieties</h3>
+<div id="outline-container-org311700c" class="outline-3">
+<h3 id="org311700c"><span class="section-number-3">8.1.</span> Rank-dropping varieties</h3>
 <div class="outline-text-3" id="text-8-1">
 <p>
 Suppose \(V\) and \(W\) are \(\k\)-vector spaces of dimensions \(n\), and \(m\) respectively.  In this document we will establish fundamental facts about the geometry of a particularly ubiquitous stratification of the vector space of linear homomorphisms \[\Hom(V,W)\]
 </p>
 
 
-<div class="definition" id="org6e012d6">
+<div class="definition" id="orga7e47c9">
 <p>
 For each integer \(r \leq m\), we define the subset \[\mathsf{R}_{r} \subset \Hom(V,W)\] as the collection of homomorphisms \(\varphi: V \to W\) having rank \(\leq r\).  Furthermore, let \[\mathring{\mathsf{R}}_{r} = \mathsf{R}_{r}\setminus \mathsf{R}_{r-1}\] be the set of homomorphisms of rank \(r\).
 </p>
@@ -824,7 +830,7 @@ Thus, \(\mathsf{R}_{r}\) is a sub-variety of \(\Hom(V,W)\).  (In fact, it comes 
 
 
 
-<div class="exercise" id="orge3a3855">
+<div class="exercise" id="orgc14705a">
 <p>
 In light of the canonical identification between \(\Hom(V,W)\) and \(\Hom(W^{\vee},V^{\vee})\), why is it enough to study the situation where \(n \leq m\)?
 </p>
@@ -832,7 +838,7 @@ In light of the canonical identification between \(\Hom(V,W)\) and \(\Hom(W^{\ve
 </div>
 
 
-<div class="exercise" id="orgef8918e">
+<div class="exercise" id="org41bf8ad">
 <p>
 Let \(I_{r} \subset \k[\{ x_{ij}\}]\) denote the ideal generated by the determinants of the \((r+1) \times (r+1)\) minors of \(A\).  Prove that \(I_{r-1}\) is generated by all partial derivatives of all elements in the ideal \(I_{r}\).
 </p>
@@ -850,7 +856,7 @@ the singular scheme of \(\mathsf{R_{r}}\).</i>
 
 
 
-<div class="exercise" id="orgae32422">
+<div class="exercise" id="orgac9da60">
 <p>
 Examine the geometry of the subvarieties \(\mathsf{R}_{r}\) when \(m=n=2\).
 </p>
@@ -858,8 +864,8 @@ Examine the geometry of the subvarieties \(\mathsf{R}_{r}\) when \(m=n=2\).
 </div>
 </div>
 
-<div id="outline-container-org0668d62" class="outline-4">
-<h4 id="org0668d62"><span class="section-number-4">8.1.1.</span> The relevant incidence variety</h4>
+<div id="outline-container-org4cf5f5f" class="outline-4">
+<h4 id="org4cf5f5f"><span class="section-number-4">8.1.1.</span> The relevant incidence variety</h4>
 <div class="outline-text-4" id="text-8-1-1">
 <p>
 For each \(1 \leq r \leq m\) we define the subset 
@@ -872,7 +878,7 @@ Let \(\pi_{1}: \widetilde{\mathsf{R}}_{r} \to \Hom(V,W)\) denote the projection 
 </p>
 
 
-<div class="exercise" id="org69839c6">
+<div class="exercise" id="org2a59752">
 <ol class="org-ol">
 <li>Prove, using standard affine charts on the \(\Gr(n-r,V)\), that \(\widetilde{\mathsf{R}}_{r}\) is a closed subvariety of \(\Hom(V,W) \times \Gr(n-r,V).\)  For a follow-up exercise, show it is irreducible.</li>
 <li>Prove that \(\pi_{1}: \widetilde{\mathsf{R}}_{r} \to \mathsf{R}_{r}\) is an isomorphism over \(\mathring{\mathsf{R}}_{r}\).</li>
@@ -885,7 +891,7 @@ Let \(\pi_{1}: \widetilde{\mathsf{R}}_{r} \to \Hom(V,W)\) denote the projection 
 The conclusion from all exercises above is: 
 </p>
 
-<div class="theorem" id="org8a50296">
+<div class="theorem" id="orga8978c7">
 <p>
 Theorem on the Geometry of Rank-Dropping: 
 </p>
@@ -900,8 +906,8 @@ Theorem on the Geometry of Rank-Dropping:
 </div>
 </div>
 
-<div id="outline-container-org85ac9e2" class="outline-3">
-<h3 id="org85ac9e2"><span class="section-number-3">8.2.</span> Symmetric linear algebra and the geometry of quadric hypersurfaces</h3>
+<div id="outline-container-orgcdf756f" class="outline-3">
+<h3 id="orgcdf756f"><span class="section-number-3">8.2.</span> Symmetric linear algebra and the geometry of quadric hypersurfaces</h3>
 <div class="outline-text-3" id="text-8-2">
 <p>
 Let \(V\) be an \((n+1)\)-dimensional vector space <b><i>over a ground field \(\k\) of characteristic not \(2\).</i></b>
@@ -912,7 +918,7 @@ Let \(Q \in \Sym^{2}V^{\vee}\) be a quadratic form on \(V\). Choose a basis \((v
 </p>
 
 
-<div class="definition" id="org5cf4870">
+<div class="definition" id="orge783277">
 <p>
 The <b><i>rank of \(Q\)</i></b> (or <b><i>the rank of \(\mathsf{Q}\)</i></b>) is defined to be the rank of the symmetric matrix \(S(Q)\).
 </p>
@@ -920,7 +926,7 @@ The <b><i>rank of \(Q\)</i></b> (or <b><i>the rank of \(\mathsf{Q}\)</i></b>) is
 </div>
 
 
-<div class="exercise" id="org8628d61">
+<div class="exercise" id="org4d2617e">
 <ol class="org-ol">
 <li>The singular locus (scheme) of \(\mathsf{Q}\) is a linear space, and is the projectivization of the kernel of the \((n+1)\times(n+1)\)-symmetric matrix \(S(Q)\).</li>
 
@@ -937,14 +943,14 @@ The <b><i>rank of \(Q\)</i></b> (or <b><i>the rank of \(\mathsf{Q}\)</i></b>) is
 </div>
 </div>
 </div>
-<div id="outline-container-org4e12abb" class="outline-2">
-<h2 id="org4e12abb"><span class="section-number-2">9.</span> The geometry of smooth cubic surfaces</h2>
+<div id="outline-container-org7a352ba" class="outline-2">
+<h2 id="org7a352ba"><span class="section-number-2">9.</span> The geometry of smooth cubic surfaces</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 The geometry of smooth cubic surfaces is extremely rich and interesting, and constitutes one of the earliest chapters  in classical algebraic geometry.  The first fundamental theorem, due to Cayley and Salmon, is: 
 </p>
 
-<div class="theorem" id="org344738d">
+<div class="theorem" id="org5f9b331">
 <p>
 A cubic surface \(X \subset \P^3\) contains exactly \(27\) lines if and only if it is smooth. 
 </p>
@@ -952,14 +958,14 @@ A cubic surface \(X \subset \P^3\) contains exactly \(27\) lines if and only if 
 </div>
 
 
-<div class="definition" id="orgd8d0fc1">
+<div class="definition" id="org61422c4">
 <p>
 Define the <b><i>cubic-line</i></b> incidence correspondence to be the subset \[\Sigma \subset \P^{19}_{\cubics} \times \G(1,3)\] consisting of those pairs \((X,\ell)\) where \(X\) is a cubic surface and \(\ell\) is a line contained in \(X\).
 </p>
 
 </div>
 
-<div class="exercise" id="org596a9af">
+<div class="exercise" id="org53803c9">
 <p>
 In this exercise, we assume the ground field \(\k\) is algebraically closed (arbitrary characteristic). 
 </p>
@@ -979,7 +985,7 @@ In this exercise, we assume the ground field \(\k\) is algebraically closed (arb
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Anand Patel</p>
-<p class="date">Created: 2022-08-21 Sun 15:34</p>
+<p class="date">Created: 2022-08-22 Mon 07:46</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

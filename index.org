@@ -162,8 +162,4 @@ Let $\k$ be an arbitrary field.
 Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \dots, f_m \in \k[x]\) are finitely many polynomials.  Prove that the ring \(\k[x, \frac{1}{f_1}, \dots, \frac{1}{f_m}]\) is never a field. 
 #+end_exercise
 
-#+begin_theorem
-Let $Z \subset \A^n_{\k}$ be an algebraic set. Then every regular function on $Z$ is the restriction of a polynomial.  Thus, the ring of regular functions on $Z$ is isomorphic to $\k[x_1, \dots, x_n]/\I(Z)$. 
-#+end_theorem
-
 
