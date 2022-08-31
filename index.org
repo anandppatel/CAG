@@ -147,6 +147,41 @@ First assume $Z$ is an irreducible affine set, and $f,g \in \k[x_1, \dots, x_n]$
 Next assume $Z = A \cup B$ with \(A, B\) both proper closed subsets of $Z$. In particular, $A$ is not contained in $B$ and vice versa. Therefore, there exists a polynomial $f$ vanishing on $A$ but not entirely on $B$ and a polynomial $g$ vanishing on $B$ but not entirely on $A$. Then $fg \in \I(Z)$, yet neither $f$ nor $g$ is in $\I(Z)$.  So $\I(Z)$ is not prime. 
 #+end_proof
 
+** Algebra reminders
+
+Before seeing some of the more interesting algebra lying at the foundations of our subject, let's make sure certain algebraic concepts are solidified.  Throughout this section, suppose $R$ is an arbitrary ring.  "Ring" here means commutative ring with $1$.
+
+#+begin_exercise
+1) An ideal $I \subset R$ is maximal (resp. prime) if and only if $R/I$ is a field, (resp. integral domain).
+2) Dictionary: The assignment $\overline{J} \mapsto q^{-1}(\overline{J})$ sets up a bijection between the set of ideals of $R/I$ and the set of ideals in $R$ containing $I$, where \(q: R \to R/I\) is the quotient map.
+3) Does the Dictionary respect "primeness" and/or "maximality" of ideals?
+4) True or false: If $\varphi: A \to B$ is a ring homomorphism then the preimage of any prime ideal is again prime.
+5) True or false: If $\varphi: A \to B$ is a ring homomorphism, then the image of any ideal is again an ideal.
+6) True or false: If $\varphi: A \to B$ is a ring homomorphism, then the preimage of any maximal ideal is again maximal.
+#+end_exercise
+
+Now suppose $Z \subset \A^{n}_{\k}$ is an affine set, with ideal $\I(Z)$.
+
+#+begin_exercise
+1) $p \in \A^{n}_{\k}$ lies in $Z$ if and only if $\I(Z) \subset \fm_{p}$.
+2) A point of $Z$ is the same thing as a \(\k\)-algebra homomorphism $\kappa: \k[x_1, \dots, x_n]/\I(Z) \to \k$.
+#+end_exercise
+
+*** Ring-value points
+Suppose $R$ is a \(\k\)-algebra.  We will sometimes use the concept of a \(R\)-point of an affine set (or more generally, algebraic variety) $Z$.  The definition is as follows:
+
+#+begin_definition
+Let $R$ be a \(\k\)-algebra, and suppose $Z \subset \A^{n}_{\k}$ is an affine set. An /*\(R\)-point of \(Z\)*/ is a \(\k\)-algebra homomorphism $\k[x_1, \dots, x_{n}]/\I(Z) \to R$. 
+#+end_definition
+
+#+begin_exercise
+Why \(R\)-points are called \(R\)-points: Prove that the \(R\)-points of $Z$ are in natural bijection with the set of tuples \((r_1, \dots, r_n) \in R^{n}\) satisfying $f(r_1, \dots, r_n) = 0$ for all $f \in \I(Z)$.
+#+end_exercise
+
+#+begin_exercise
+One way to characterize integral domains: Prove that a ring $R$ is an integral domain if and only if there exists an injective homomorphism from \(R\) to a field.
+#+end_exercise
+
 ** Important Algebra: The Nullstellensatz
 
 Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations $\V(-)$ and $\I(-)$.  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to give many different viewpoints here.  The theorem will also play an important role in laying the foundation for the concept of regular functions.

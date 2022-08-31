@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-08-31 Wed 07:15 -->
+<!-- 2022-08-31 Wed 14:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elements of Classical Algebraic Geometry</title>
@@ -241,8 +241,8 @@
 <div id="content" class="content">
 <h1 class="title">Elements of Classical Algebraic Geometry</h1>
 
-<div id="outline-container-orgcc4e7b6" class="outline-2">
-<h2 id="orgcc4e7b6"><span class="section-number-2">1.</span> Affine sets, the Zariski topology, and Hilbert's Nullstellensatz</h2>
+<div id="outline-container-org1baa4de" class="outline-2">
+<h2 id="org1baa4de"><span class="section-number-2">1.</span> Affine sets, the Zariski topology, and Hilbert's Nullstellensatz</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Affine varieties are the fundamental building blocks of <i>quasi-projective varieties</i>, the central objects of study in classical algebraic geometry.  In essence, an affine variety is the  solution set of a system of polynomial equations \[f_1(x_1, \dots, x_n) = f_2(x_1, \dots, x_n) = \dots =f_{m}(x_1, \dots, x_n) = 0\] with coefficients in some field \(\k\). This solution set is made into a geometric object after we introduce  the <i>Zariski topology</i> on it.  Furthermore, two such solutions sets are allowed to communicate with each other only through a restricted class of functions, called <i>regular maps</i>.  Setting things up this way allows us to define what it means for two solution sets to be isomorphic, even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to extract an abstract group from its  various guises.)  An affine variety \(X\) is then basically an equivalence class of solution sets under the notion of regular isomorphism.  It turns out that \(X\) is uniquely recoverable from the ring of <i>regular functions</i> on it.  This ring is called its  <i>coordinate ring</i>, denoted \(\k[X]\).  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about \(X\) into ring-theoretic notions about \(\k[X]\), thereby supporting our geometric intuitions with rigorous algebra.
@@ -253,14 +253,14 @@ The relationship between the originating system of equations and its solution se
 </p>
 </div>
 
-<div id="outline-container-org4b9f9b3" class="outline-3">
-<h3 id="org4b9f9b3"><span class="section-number-3">1.1.</span> Affine sets</h3>
+<div id="outline-container-org35f04b9" class="outline-3">
+<h3 id="org35f04b9"><span class="section-number-3">1.1.</span> Affine sets</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 We begin by defining the central geometric objects of this chapter.
 </p>
 
-<div class="definition" id="org4d5571c">
+<div class="definition" id="org524c2ab">
 <ol class="org-ol">
 <li><b><i>Affine space of dimension \(n\) (over \(\k\))</i></b>, denoted \[\A^{n}_{\k}\] is the set of \(n\) -tuples \(p = (p_1, \dots, p_{n})\), \(p_{i} \in \k\).</li>
 <li>For each \(i\), we denote by \[x_{i}: \A^{n}_{\k} \to \A^{1}_{\k}\] the \(i\)-th coordinate function sending \((p_{1}, \dots, p_{n})\) to \(p_i\).</li>
@@ -279,7 +279,7 @@ It is immediate that if \(S \subset \k[x_1, \dots, x_n]\) is any subset, and if 
 </p>
 
 
-<div class="exercise" id="org532c858">
+<div class="exercise" id="org257ce3e">
 <p>
 Suppose \(I,J \subset \k[x_1, \dots, x_n]\) are two ideals. Show:
 </p>
@@ -307,7 +307,7 @@ The beauty in classical algebraic geometry is only seen through its countless, i
 
 
 
-<div class="eg" id="orgabd4074">
+<div class="eg" id="org6472b0b">
 <ol class="org-ol">
 <li>The <i>parabola</i> \[\V(y-x^{2}) \subset \A^{2}_{\k}.\]</li>
 <li>The <i>quadric cone</i> \[\V(xy-z^2) \subset \A^3_{\k}.\]</li>
@@ -320,7 +320,7 @@ The beauty in classical algebraic geometry is only seen through its countless, i
 </ol>
 
 
-<div id="org5c45ac5" class="figure">
+<div id="org64853d2" class="figure">
 <p><img src="./images/whitney2.png" alt="whitney2.png" />
 </p>
 </div>
@@ -332,8 +332,8 @@ The beauty in classical algebraic geometry is only seen through its countless, i
 </div>
 </div>
 
-<div id="outline-container-org8164483" class="outline-4">
-<h4 id="org8164483"><span class="section-number-4">1.1.1.</span> Pictures</h4>
+<div id="outline-container-org1f65c5c" class="outline-4">
+<h4 id="org1f65c5c"><span class="section-number-4">1.1.1.</span> Pictures</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 In the list of examples above, what do those pictures mean?  Clearly they are real images, meaning they exist in \(\A^2_{\R}\) or \(\A^{3}_{\R}\). But this is not our true context: we've assumed \(\k\) is algebraically closed!  Unfortunately, it is not possible to draw a true representation in this case, so we refer to these sorts of images as "real cartoons."   
@@ -341,8 +341,8 @@ In the list of examples above, what do those pictures mean?  Clearly they are re
 </div>
 </div>
 
-<div id="outline-container-orgbb344c1" class="outline-4">
-<h4 id="orgbb344c1"><span class="section-number-4">1.1.2.</span> Operations \(\V\) and \(\I\)</h4>
+<div id="outline-container-org60d1cc1" class="outline-4">
+<h4 id="org60d1cc1"><span class="section-number-4">1.1.2.</span> Operations \(\V\) and \(\I\)</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 The operation \(\V\) is a surjective  function: \[\V(-): \big\{\,\textrm{ideals in} \,\,  \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\}.\]
@@ -352,7 +352,7 @@ The operation \(\V\) is a surjective  function: \[\V(-): \big\{\,\textrm{ideals 
 But we can also go backwards, from sets to ideals:
 </p>
 
-<div class="definition" id="orge50fafb">
+<div class="definition" id="org782b549">
 <p>
 Let \(Z \subset \A^n_{\k}\) be any subset.  We define the <b><i>ideal of \(Z\)</i></b> to be \[\I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
 </p>
@@ -364,7 +364,7 @@ And so, \(\I\) defines a function:
  \[\I(-): \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\} \to \big\{\,\textrm{ideals in}  \subset \k[x_1, \dots, x_n] \big\}.\]
 </p>
 
-<div class="eg" id="org902f016">
+<div class="eg" id="org2a71f44">
 <p>
 Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(\I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)\). Notice that \(\I(\{p\}) \subset \k[x_1,\dots, x_n]\) is a <i>maximal ideal</i>.  So, we typically use the symbol \(\fm_p\) for this ideal.
 </p>
@@ -381,7 +381,7 @@ Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(\I(\{p\}) = (x_
 Since \(\V\) and \(\I\) point in opposite directions, it's natural to wonder that their compositions (both ways) are.  One composition, found in the next exercise, is easy to understand.  The other composition leads naturally to  Hilbert's Nullstellansatz, and so we postpone it.
 </p>
 
-<div class="exercise" id="orgbc4f706">
+<div class="exercise" id="org5069624">
 <ol class="org-ol">
 <li>Prove: For any subset \(Z \subset \A^{n}_{\k}\), we have \(Z \subset \V(\I(Z))\).</li>
 <li>Prove:  \(Z \subset \A^n_{\k}\) is Zariski-closed if and only if \(Z = \V(\I(Z))\).</li>
@@ -394,14 +394,14 @@ Since \(\V\) and \(\I\) point in opposite directions, it's natural to wonder tha
 </div>
 </div>
 
-<div id="outline-container-org109ebd3" class="outline-4">
-<h4 id="org109ebd3"><span class="section-number-4">1.1.3.</span> Prime ideals and irreducible affine sets</h4>
+<div id="outline-container-org527aae1" class="outline-4">
+<h4 id="org527aae1"><span class="section-number-4">1.1.3.</span> Prime ideals and irreducible affine sets</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 Affine sets have their "main, big  pieces," called <i>irreducible components</i>.   For instance, in the irreducible components of the  <i>line and plane</i> \(\V(xz,yz) \subset \A^{3}_{\k}\) are the line \(\V(x,y)\) and the plane \(\V(z)\). To make this concept precise, we borrow the  notion of <i>reducibility</i> from topology, which we elaborate on here.  
 </p>
 
-<div class="definition" id="org9632d3b">
+<div class="definition" id="orgd1b11bb">
 <p>
 An affine set \(Z\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets. Otherwise, \(Z\) is said to be <b><i>irreducible</i></b>.  More generally, a topological space \(X\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets, and is <b><i>irreducible</i></b> otherwise.
 </p>
@@ -412,7 +412,7 @@ If \(X\) is any topological space, then a subset \(Y \subset X\) is called an <b
 
 </div>
 
-<div class="exercise" id="org604def8">
+<div class="exercise" id="org95cc55e">
 <ol class="org-ol">
 <li>Prove: Any two non-empty open subsets of an irreducible topological space must intersect.</li>
 <li>Prove: If \(U \subset X\) is a non-empty open set in an irreducible topological space \(X\), then \(X\) is the closure of \(U\), i.e. \(U\) is dense in \(X\).</li>
@@ -426,14 +426,14 @@ Our next proposition says that for affine sets, irreducibility has a
 really nice algebraic interpretation.
 </p>
 
-<div class="proposition" id="orgf17ce0f">
+<div class="proposition" id="orgdc68029">
 <p>
 An affine set \(Z \subset \A^{n}_{\k}\) is irreducible if and only if \(\I(Z) \subset \k[x_1, \dots, x_n]\) is a prime ideal.
 </p>
 
 </div>
 
-<div class="proof" id="orge31b565">
+<div class="proof" id="orgad665c4">
 <p>
 First assume \(Z\) is an irreducible affine set, and \(f,g \in \k[x_1, \dots, x_n]\) satisfy \(fg \in \I(Z)\), and \(f \notin \I(Z)\). Then, \(fg \in \I(Z)\) implies \(Z = (\V(f) \cap Z) \cup (\V(g) \cap Z).\) And \(f \notin \I(Z)\) implies \(\V(f) \cap Z \neq Z.\) Thus, by irreducibility we deduce \(\V(g) \cap Z = Z\), i.e. \(g \in \I(Z)\). So \(\I(Z)\) is prime.
 </p>
@@ -447,9 +447,72 @@ Next assume \(Z = A \cup B\) with \(A, B\) both proper closed subsets of \(Z\). 
 </div>
 </div>
 
-<div id="outline-container-orgadeccfb" class="outline-3">
-<h3 id="orgadeccfb"><span class="section-number-3">1.2.</span> Important Algebra: The Nullstellensatz</h3>
+<div id="outline-container-orgc9bd8f6" class="outline-3">
+<h3 id="orgc9bd8f6"><span class="section-number-3">1.2.</span> Algebra reminders</h3>
 <div class="outline-text-3" id="text-1-2">
+<p>
+Before seeing some of the more interesting algebra lying at the foundations of our subject, let's make sure certain algebraic concepts are solidified.  Throughout this section, suppose \(R\) is an arbitrary ring.  "Ring" here means commutative ring with \(1\).
+</p>
+
+<div class="exercise" id="orga88b23d">
+<ol class="org-ol">
+<li>An ideal \(I \subset R\) is maximal (resp. prime) if and only if \(R/I\) is a field, (resp. integral domain).</li>
+<li>Dictionary: The assignment \(\overline{J} \mapsto q^{-1}(\overline{J})\) sets up a bijection between the set of ideals of \(R/I\) and the set of ideals in \(R\) containing \(I\), where \(q: R \to R/I\) is the quotient map.</li>
+<li>Does the Dictionary respect "primeness" and/or "maximality" of ideals?</li>
+<li>True or false: If \(\varphi: A \to B\) is a ring homomorphism then the preimage of any prime ideal is again prime.</li>
+<li>True or false: If \(\varphi: A \to B\) is a ring homomorphism, then the image of any ideal is again an ideal.</li>
+<li>True or false: If \(\varphi: A \to B\) is a ring homomorphism, then the preimage of any maximal ideal is again maximal.</li>
+</ol>
+
+</div>
+
+<p>
+Now suppose \(Z \subset \A^{n}_{\k}\) is an affine set, with ideal \(\I(Z)\).
+</p>
+
+<div class="exercise" id="org1718c17">
+<ol class="org-ol">
+<li>\(p \in \A^{n}_{\k}\) lies in \(Z\) if and only if \(\I(Z) \subset \fm_{p}\).</li>
+<li>A point of \(Z\) is the same thing as a \(\k\)-algebra homomorphism \(\kappa: \k[x_1, \dots, x_n]/\I(Z) \to \k\).</li>
+</ol>
+
+</div>
+</div>
+
+<div id="outline-container-org0204e56" class="outline-4">
+<h4 id="org0204e56"><span class="section-number-4">1.2.1.</span> Ring-value points</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Suppose \(R\) is a \(\k\)-algebra.  We will sometimes use the concept of a \(R\)-point of an affine set (or more generally, algebraic variety) \(Z\).  The definition is as follows:
+</p>
+
+<div class="definition" id="orgf798893">
+<p>
+Let \(R\) be a \(\k\)-algebra, and suppose \(Z \subset \A^{n}_{\k}\) is an affine set. An <i><b>\(R\)-point of \(Z\)</b></i> is a \(\k\)-algebra homomorphism \(\k[x_1, \dots, x_{n}]/\I(Z) \to R\). 
+</p>
+
+</div>
+
+<div class="exercise" id="orga20d612">
+<p>
+Why \(R\)-points are called \(R\)-points: Prove that the \(R\)-points of \(Z\) are in natural bijection with the set of tuples \((r_1, \dots, r_n) \in R^{n}\) satisfying \(f(r_1, \dots, r_n) = 0\) for all \(f \in \I(Z)\).
+</p>
+
+</div>
+
+<div class="exercise" id="org1ec1865">
+<p>
+One way to characterize integral domains: Prove that a ring \(R\) is an integral domain if and only if there exists an injective homomorphism from \(R\) to a field.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0b6e1d7" class="outline-3">
+<h3 id="org0b6e1d7"><span class="section-number-3">1.3.</span> Important Algebra: The Nullstellensatz</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations \(\V(-)\) and \(\I(-)\).  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to give many different viewpoints here.  The theorem will also play an important role in laying the foundation for the concept of regular functions.
 </p>
@@ -463,7 +526,7 @@ Here are two popular ways of thinking about the Nullstellensatz:
 <li>When \(\k\) is algebraically closed, the Nullstellensatz provides the precise list of <i>maximal ideals in</i> \(\k[x_1, \dots, x_n]\): it says that every maximal ideal is of the form \(\fm_{p}\) for some point \(p \in \A^{\k}\).</li>
 </ol>
 
-<div class="theorem" id="org3b349a6">
+<div class="theorem" id="orgdeef587">
 <p>
 Let \(\k\) be an arbitrary field.
 </p>
@@ -482,7 +545,7 @@ Let \(\k\) be an arbitrary field.
 </div>
 
 
-<div class="exercise" id="org26dc3b0">
+<div class="exercise" id="org5725368">
 <p>
 Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \dots, f_m \in \k[x]\) are finitely many polynomials.  Prove that the ring \(\k[x, \frac{1}{f_1}, \dots, \frac{1}{f_m}]\) is never a field. 
 </p>
@@ -494,7 +557,7 @@ Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \do
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Anand Patel</p>
-<p class="date">Created: 2022-08-31 Wed 07:15</p>
+<p class="date">Created: 2022-08-31 Wed 14:48</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
