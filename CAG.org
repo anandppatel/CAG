@@ -100,9 +100,15 @@ Let $Z \subset \A^n_{\k}$ be any subset.  We define the */ideal of $Z$/* to be \
 And so, $\I$ defines a function:
  \[\I(-): \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\} \to \big\{\,\textrm{ideals in}  \subset \k[x_1, \dots, x_n] \big\}.\]
 
+$\I(-)$ satisfies some obvious properties, for example if $Z_1 \subset Z_2$ is a proper containment of affine subsets, then we get a strict, opposite containment of ideals $\I(Z_2) \supset \I(Z_1)$. 
+
+
+
 #+begin_eg
 Let $p = (p_1, \dots, p_n) \in \A^n_{\k}$ be any point. Then $\I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)$. Notice that $I(\{p\}) \subset \k[x_1,\dots, x_n]$ is a /maximal ideal/.  So, we typically use the symbol $\fm_p$ for this ideal.
 #+end_eg
+
+
 
 Since $\V$ and $\I$ point in opposite directions, it's natural to wonder that their compositions (both ways) are.  One composition, found in the next exercise, is easy to understand.  The other composition leads naturally to  Hilbert's Nullstellansatz, and so we postpone it.
 
@@ -111,6 +117,9 @@ Since $\V$ and $\I$ point in opposite directions, it's natural to wonder that th
 2)  Prove:  $Z \subset \A^n_{\k}$ is Zariski-closed if and only if $Z = \V(\I(Z))$.
 3)  In fact, prove: For any $Z \subset \A^n_{\k}$, $\V(\I(Z))$ is the closure of $Z$ under the Zariski topology on $\A^n_{\k}$.
 #+end_exercise
+
+
+
 
 *** Prime ideals and irreducible affine sets
 

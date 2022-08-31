@@ -95,7 +95,7 @@ But we can also go backwards, from sets to ideals:
 
 #+begin_definition
 Let $Z \subset \A^n_{\k}$ be any subset.  We define the */ideal of $Z$/* to be \[\I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
-#+end_definition
+#+end_definitiongit
 
 And so, $\I$ defines a function:
  \[\I(-): \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\} \to \big\{\,\textrm{ideals in}  \subset \k[x_1, \dots, x_n] \big\}.\]
