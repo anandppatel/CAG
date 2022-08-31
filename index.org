@@ -42,7 +42,7 @@ We begin by defining the central geometric objects of this chapter.
     \[\V(S) = \big\{p \in \A^n_{\k} \mid f(p)=0 \, \textrm{for all}\, f \in S \big\}.\]
 4) A subset $U \subset \A^{n}_{\k}$ is a */Zariski open set/* if its complement is $\V(S)$ for some $S \subset \k[x_1, \dots, x_n]$.
 5) Conversely, any subset $Z \subset \A^n_{\k}$ of the form $\V(S)$ is called a */Zariski closed/* (or, simply */closed/*) subset. A Zariski closed subset of affine space also called an */affine (or algebraic) set/*.
-6) More generally, if $Z \subset \A^n_{\k}$ is an algebraic set, then a subset $U \subset Z$ is  a */Zariski open  subset of $Z$/* if $U$ is the intersection of $Z$ with a Zarski open subset of $\A^n_{\k}$.
+6) More generally, if $Z \subset \A^n_{\k}$ is an algebraic set, then a subset $U \subset Z$ is  a */Zariski open  subset of $Z$/* if $U$ is the intersection of $Z$ with a Zariski open subset of $\A^n_{\k}$.
 7) A Zariski open subset of an algebraic set is called a */quasi-affine set/*. 
 #+end_definition
 
@@ -95,13 +95,13 @@ But we can also go backwards, from sets to ideals:
 
 #+begin_definition
 Let $Z \subset \A^n_{\k}$ be any subset.  We define the */ideal of $Z$/* to be \[\I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
-#+end_definitiongit
+#+end_definition
 
 And so, $\I$ defines a function:
  \[\I(-): \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\} \to \big\{\,\textrm{ideals in}  \subset \k[x_1, \dots, x_n] \big\}.\]
 
 #+begin_eg
-Let $p = (p_1, \dots, p_n) \in \A^n_{\k}$ be any point. Then $\I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)$. Notice that $I(\{p\}) \subset \k[x_1,\dots, x_n]$ is a /maximal ideal/.  So, we typically use the symbol $\fm_p$ for this ideal.
+Let $p = (p_1, \dots, p_n) \in \A^n_{\k}$ be any point. Then $\I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)$. Notice that $\I(\{p\}) \subset \k[x_1,\dots, x_n]$ is a /maximal ideal/.  So, we typically use the symbol $\fm_p$ for this ideal.
 #+end_eg
 
 
@@ -114,6 +114,8 @@ Since $\V$ and $\I$ point in opposite directions, it's natural to wonder that th
 1)  Prove: For any subset $Z \subset \A^{n}_{\k}$, we have $Z \subset \V(\I(Z))$.
 2)  Prove:  $Z \subset \A^n_{\k}$ is Zariski-closed if and only if $Z = \V(\I(Z))$.
 3)  In fact, prove: For any $Z \subset \A^n_{\k}$, $\V(\I(Z))$ is the closure of $Z$ under the Zariski topology on $\A^n_{\k}$.
+4) Prove: If $Z_1$ and $Z_2$ are affine sets, then $\I(Z_1 \cup Z_2) = \I(Z_1) \cap \I(Z_2)$ and $\I(Z_1 \cap Z_2) = \I(Z_1) + \I(Z_2)$.
+5) Disprove: If $Z_1, Z_2$ are two affine sets, then $\I(Z_1) \cup \I(Z_2) = \I(Z_1) \cdot \I(Z_2)$. 
 #+end_exercise
 
 *** Prime ideals and irreducible affine sets
@@ -138,6 +140,12 @@ really nice algebraic interpretation.
 #+begin_proposition
 An affine set $Z \subset \A^{n}_{\k}$ is irreducible if and only if $\I(Z) \subset \k[x_1, \dots, x_n]$ is a prime ideal.
 #+end_proposition
+
+#+begin_proof
+First assume $Z$ is an irreducible affine set, and $f,g \in \k[x_1, \dots, x_n]$ satisfy $fg \in \I(Z)$, and $f \notin \I(Z)$. Then, \(fg \in \I(Z)\) implies \(Z = (\V(f) \cap Z) \cup (\V(g) \cap Z).\) And \(f \notin \I(Z)\) implies \(\V(f) \cap Z \neq Z.\) Thus, by irreducibility we deduce $\V(g) \cap Z = Z$, i.e. $g \in \I(Z)$. So $\I(Z)$ is prime.
+
+Next assume $Z = A \cup B$ with \(A, B\) both proper closed subsets of $Z$. In particular, $A$ is not contained in $B$ and vice versa. Therefore, there exists a polynomial $f$ vanishing on $A$ but not entirely on $B$ and a polynomial $g$ vanishing on $B$ but not entirely on $A$. Then $fg \in \I(Z)$, yet neither $f$ nor $g$ is in $\I(Z)$.  So $\I(Z)$ is not prime. 
+#+end_proof
 
 ** Important Algebra: The Nullstellensatz
 

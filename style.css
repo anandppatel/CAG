@@ -216,6 +216,40 @@ h4 {
 }
 
 
+
+.proof::before {
+	background-color: #f8f4e8;
+	font-family: Cinzel, serif;
+	font-size: large;
+	font-style: normal;
+        font-weight: bold;
+	text-align: center;
+	counter-reset: subsection;
+	counter-increment: subsubsection;
+  content: "Proof "  ": ";
+  border: 2px  red;
+  border-radius: 5px;
+  padding: 4px;
+  line-height: 1.7;
+}
+
+.proof {
+	background-color: #f8f4e8;
+	border: none;
+    border-radius: 2pt;
+    box-shadow: 0 0 3pt 2pt grey;
+    outline: none;
+    transition: .1s;
+	font-family: Noto Serif, serif;
+	font-size: medium;
+	font-style: italic;
+	margin: 40px;
+	padding: 20px;
+        line-height: 1.7;
+}
+
+
+
 .title {
 	font-family: Cinzel, serif;
 	font-size: xx-large; 
