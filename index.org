@@ -104,6 +104,10 @@ And so, $\I$ defines a function:
 Let $p = (p_1, \dots, p_n) \in \A^n_{\k}$ be any point. Then $\I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)$. Notice that $I(\{p\}) \subset \k[x_1,\dots, x_n]$ is a /maximal ideal/.  So, we typically use the symbol $\fm_p$ for this ideal.
 #+end_eg
 
+
+$\I(-)$ satisfies some obvious properties, for example if $Z_1 \subset Z_2$ is a proper containment of affine subsets, then we get a strict, opposite containment of ideals $\I(Z_2) \supset \I(Z_1)$. 
+
+
 Since $\V$ and $\I$ point in opposite directions, it's natural to wonder that their compositions (both ways) are.  One composition, found in the next exercise, is easy to understand.  The other composition leads naturally to  Hilbert's Nullstellansatz, and so we postpone it.
 
 #+begin_exercise

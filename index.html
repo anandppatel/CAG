@@ -3,37 +3,29 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-08-22 Mon 07:18 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elements of Classical Algebraic Geometry</title>
-<meta name="author" content="Anand Patel" />
-<meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+<!-- 2022-08-31 Wed 08:36 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Anand Patel" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -41,140 +33,43 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
+    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    top: -8px;
-    right: 12px;
+    background-color: white;
+    top: -10px;
+    right: 10px;
     padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
+    border: 1px solid black;
   }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -191,11 +86,104 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
+  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="style.css" />
-<div style="display: none"> \(
-\newcommand{\A}{\mathbb{A}}
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Elements of Classical Algebraic Geometry</h1>
+<div class="org-src-container">
+
+<pre class="src src-latex-macros">\newcommand{\A}{\mathbb{A}}
 \renewcommand{\P}{\mathbb{P}}
 \renewcommand{\O}{\mathscr{O}}
 \renewcommand{\Z}{\mathbb{Z}}
@@ -214,38 +202,14 @@
 \DeclareMathOperator{\V}{\mathscr{V}}
 \DeclareMathOperator{\E}{\mathscr{E}}
 \DeclareMathOperator{\cubics}{\mathsf{cubics}}
-\)</div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
+</pre>
+</div>
 
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
-</head>
-<body>
-<div id="content" class="content">
-<h1 class="title">Elements of Classical Algebraic Geometry</h1>
-
-<div id="outline-container-org34e839b" class="outline-2">
-<h2 id="org34e839b"><span class="section-number-2">1.</span> Affine sets, the Zariski topology, and Hilbert's Nullstellensatz</h2>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Affine sets, the Zariski topology, and Hilbert's Nullstellensatz</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Affine varieties are the fundamental building blocks of <i>quasi-projective varieties</i>, the central objects of study in classical algebraic geometry.  In essence, an affine variety is the  solution set of a system of polynomial equations \[f_1(x_1, \dots, x_n) = f_2(x_1, \dots, x_n) = \dots =f_{m}(x_1, \dots, x_n) = 0\] with coefficients in some field \(\k\). This solution set is made into a geometric object after we introduce  the <i>Zariski topology</i> on it.  Furthermore, two such solutions sets are allowed to communicate with each other only through a restricted class of functions, called <i>regular maps</i>.  Setting things up this way allows us to define what it means for two solution sets to be isomorphic, even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to extract an abstract group from its  various guises.)  An affine variety \(X\) is then basically an equivalence class of solution sets under the notion of regular isomorphism.  It turns out that \(X\) is uniquely recoverable from the ring of <i>regular functions</i> on it.  This ring is called its  <i>coordinate ring</i>, denoted \(\k[X]\).  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about \(X\) into ring-theoretic notions about \(\k[X]\), thereby supporting our geometric intuitions with rigorous algebra.
+Affine varieties are the fundamental building blocks of <i>quasi-projective varieties</i>, the central objects of study in classical algebraic geometry.  In essence, an affine variety is the  solution set of a system of polynomial equations $$f_1(x_1, \dots, x_n) = f_2(x_1, \dots, x_n) = \dots =f_{m}(x_1, \dots, x_n) = 0$$ with coefficients in some field \(\k\). This solution set is made into a geometric object after we introduce  the <i>Zariski topology</i> on it.  Furthermore, two such solutions sets are allowed to communicate with each other only through a restricted class of functions, called <i>regular maps</i>.  Setting things up this way allows us to define what it means for two solution sets to be isomorphic, even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to extract an abstract group from its  various guises.)  An affine variety \(X\) is then basically an equivalence class of solution sets under the notion of regular isomorphism.  It turns out that \(X\) is uniquely recoverable from the ring of <i>regular functions</i> on it.  This ring is called its  <i>coordinate ring</i>, denoted \(\k[X]\).  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about \(X\) into ring-theoretic notions about \(\k[X]\), thereby supporting our geometric intuitions with rigorous algebra.
 </p>
 
 <p>
@@ -253,23 +217,30 @@ The relationship between the originating system of equations and its solution se
 </p>
 </div>
 
-<div id="outline-container-orge1d595c" class="outline-3">
-<h3 id="orge1d595c"><span class="section-number-3">1.1.</span> Affine sets</h3>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Affine sets</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 We begin by defining the central geometric objects of this chapter.
 </p>
 
-<div class="definition" id="org9cbe15d">
+<div class="definition">
 <ol class="org-ol">
-<li><b><i>Affine space of dimension \(n\) (over \(\k\))</i></b>, denoted \[\A^{n}_{\k}\] is the set of \(n\) -tuples \(p = (p_1, \dots, p_{n})\), \(p_{i} \in \k\).</li>
-<li>For each \(i\), we denote by \[x_{i}: \A^{n}_{\k} \to \A^{1}_{\k}\] the \(i\)-th coordinate function sending \((p_{1}, \dots, p_{n})\) to \(p_i\).</li>
+<li><b><i>Affine space of dimension \(n\) (over \(\k\))</i></b>, denoted \[\A^{n}_{\k}\] is the set of \(n\) -tuples \(p = (p_1, \dots, p_{n})\), \(p_{i} \in \k\).
+</li>
+<li>For each \(i\), we denote by \[x_{i}: \A^{n}_{\k} \to \A^{1}_{\k}\] the \(i\)-th coordinate function sending \((p_{1}, \dots, p_{n})\) to \(p_i\).
+</li>
 <li>If \(S \subset \k[x_{1} \dots, x_n]\) is a subset of polynomials, we define the <b><i>vanishing set of \(S\)</i></b> to be
-\[\V(S) = \big\{p \in \A^n_{\k} \mid f(p)=0 \, \textrm{for all}\, f \in S \big\}.\]</li>
-<li>A subset \(U \subset \A^{n}_{\k}\) is a <b><i>Zariski open set</i></b> if its complement is \(\V(S)\) for some \(S \subset \k[x_1, \dots, x_n]\).</li>
-<li>Conversely, any subset \(Z \subset \A^n_{\k}\) of the form \(\V(S)\) is called a <b><i>Zariski closed</i></b> (or, simply <b><i>closed</i></b>) subset. A Zariski closed subset of affine space also called an <b><i>affine (or algebraic) set</i></b>.</li>
-<li>More generally, if \(Z \subset \A^n_{\k}\) is an algebraic set, then a subset \(U \subset Z\) is  a <b><i>Zariski open  subset of \(Z\)</i></b> if \(U\) is the intersection of \(Z\) with a Zarski open subset of \(\A^n_{\k}\).</li>
-<li>A Zariski open subset of an algebraic set is called a <b><i>quasi-affine set</i></b>.</li>
+\[\V(S) = \big\{p \in \A^n_{\k} \mid f(p)=0 \, \textrm{for all}\, f \in S \big\}.\]
+</li>
+<li>A subset \(U \subset \A^{n}_{\k}\) is a <b><i>Zariski open set</i></b> if its complement is \(\V(S)\) for some \(S \subset \k[x_1, \dots, x_n]\).
+</li>
+<li>Conversely, any subset \(Z \subset \A^n_{\k}\) of the form \(\V(S)\) is called a <b><i>Zariski closed</i></b> (or, simply <b><i>closed</i></b>) subset. A Zariski closed subset of affine space also called an <b><i>affine (or algebraic) set</i></b>.
+</li>
+<li>More generally, if \(Z \subset \A^n_{\k}\) is an algebraic set, then a subset \(U \subset Z\) is  a <b><i>Zariski open  subset of \(Z\)</i></b> if \(U\) is the intersection of \(Z\) with a Zarski open subset of \(\A^n_{\k}\).
+</li>
+<li>A Zariski open subset of an algebraic set is called a <b><i>quasi-affine set</i></b>. 
+</li>
 </ol>
 
 </div>
@@ -279,18 +250,25 @@ It is immediate that if \(S \subset \k[x_1, \dots, x_n]\) is any subset, and if 
 </p>
 
 
-<div class="exercise" id="org6e70594">
+<div class="exercise">
 <p>
 Suppose \(I,J \subset \k[x_1, \dots, x_n]\) are two ideals. Show:
 </p>
 <ol class="org-ol">
-<li>\(\V(I \cdot J) = \V(I) \cup \V(J)\), and</li>
-<li>\(\V(I+J) = \V(I) \cap \V(J).\)</li>
-<li>Prove that two distinct ideals \(I\) and \(J\) can satisfy \(\V(I) = \V(J)\), and moreover, there exists an example where neither \(I \subset J\) nor \(J \subset I\).</li>
-<li>Prove that the Zariski open subsets of \(\A^{n}_{\k}\) satisfy the axioms of a topology. This topology is called the <b><i>Zariski topology on \(\A^n_{\k}\).</i></b></li>
-<li>Prove that the Zariski closed, proper subsets of \(\A^{1}_{\k}\) are precisely the finite subsets.</li>
-<li>Prove that every finite subset of \(\A^{n}_{\k}\) is closed, but that the converse is false when \(n \geq 2\).</li>
-<li>If \(Z \subset \A^n_{\k}\) is an affine set, prove that the subsets of \(Z\) which are closed in \(\A^n_{\k}\) satisfy the axioms satisfied by closed sets in a topology. This is called the <b><i>Zariski topology on \(Z\).</i></b></li>
+<li>\(\V(I \cdot J) = \V(I) \cup \V(J)\), and
+</li>
+<li>\(\V(I+J) = \V(I) \cap \V(J).\)
+</li>
+<li>Prove that two distinct ideals \(I\) and \(J\) can satisfy \(\V(I) = \V(J)\), and moreover, there exists an example where neither \(I \subset J\) nor \(J \subset I\).
+</li>
+<li>Prove that the Zariski open subsets of \(\A^{n}_{\k}\) satisfy the axioms of a topology. This topology is called the <b><i>Zariski topology on \(\A^n_{\k}\).</i></b>
+</li>
+<li>Prove that the Zariski closed, proper subsets of \(\A^{1}_{\k}\) are precisely the finite subsets.
+</li>
+<li>Prove that every finite subset of \(\A^{n}_{\k}\) is closed, but that the converse is false when \(n \geq 2\).
+</li>
+<li>If \(Z \subset \A^n_{\k}\) is an affine set, prove that the subsets of \(Z\) which are closed in \(\A^n_{\k}\) satisfy the axioms satisfied by closed sets in a topology. This is called the <b><i>Zariski topology on \(Z\).</i></b>
+</li>
 </ol>
 
 </div>
@@ -307,33 +285,42 @@ The beauty in classical algebraic geometry is only seen through its countless, i
 
 
 
-<div class="eg" id="orgb8cbf0a">
+<div class="eg">
 <ol class="org-ol">
-<li>The <i>parabola</i> \[\V(y-x^{2}) \subset \A^{2}_{\k}.\]</li>
-<li>The <i>quadric cone</i> \[\V(xy-z^2) \subset \A^3_{\k}.\]</li>
-<li>An  <i>affine quadric surface</i> \[\V(xy-z) \subset \A^{3}_{\k}.\]</li>
-<li>The <i>nodal cubic</i> \[\V(y^2 - x^{2}-x^{3}) \subset \A^2_{\k}.\]</li>
-<li>The <i>cuspidal cubic</i> \[\V(y^2-x^3) \subset \A^2_{\k}.\]</li>
-<li>A particular  <i>elliptic curve</i> \[\V(y^2-x^3+x) \subset \A^2_{\k}.\]</li>
-<li>The <i>affine twisted cubic</i> \[\V(x^2-y,x^3-z) = \V(x^2-y, xy-z) \subset \A^3_{\k}.\]</li>
-<li>The <i>Whitney umbrella</i> \[\V(x^2+zy^2) \subset \A^{3}_{\k}.\]</li>
+<li>The <i>parabola</i> \[\V(y-x^{2}) \subset \A^{2}_{\k}.\] 
+</li>
+<li>The <i>quadric cone</i> \[\V(xy-z^2) \subset \A^3_{\k}.\]
+</li>
+<li>An  <i>affine quadric surface</i> \[\V(xy-z) \subset \A^{3}_{\k}.\]
+</li>
+<li>The <i>nodal cubic</i> \[\V(y^2 - x^{2}-x^{3}) \subset \A^2_{\k}.\] 
+</li>
+<li>The <i>cuspidal cubic</i> \[\V(y^2-x^3) \subset \A^2_{\k}.\]
+</li>
+<li>A particular  <i>elliptic curve</i> \[\V(y^2-x^3+x) \subset \A^2_{\k}.\]
+</li>
+<li>The <i>affine twisted cubic</i> \[\V(x^2-y,x^3-z) = \V(x^2-y, xy-z) \subset \A^3_{\k}.\]
+</li>
+<li>The <i>Whitney umbrella</i> \[\V(x^2+zy^2) \subset \A^{3}_{\k}.\]
+</li>
 </ol>
 
 
-<div id="orgdbe6d4b" class="figure">
+<div class="figure">
 <p><img src="./images/whitney2.png" alt="whitney2.png" />
 </p>
 </div>
 
 <ol class="org-ol">
-<li>A <i>line and a plane</i>  \[\V(xz,yz) \subset \A^3_{\k}.\]</li>
+<li>A <i>line and a plane</i>  \[\V(xz,yz) \subset \A^3_{\k}.\]
+</li>
 </ol>
 
 </div>
 </div>
 
-<div id="outline-container-org419fe9f" class="outline-4">
-<h4 id="org419fe9f"><span class="section-number-4">1.1.1.</span> Pictures</h4>
+<div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Pictures</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 In the list of examples above, what do those pictures mean?  Clearly they are real images, meaning they exist in \(\A^2_{\R}\) or \(\A^{3}_{\R}\). But this is not our true context: we've assumed \(\k\) is algebraically closed!  Unfortunately, it is not possible to draw a true representation in this case, so we refer to these sorts of images as "real cartoons."   
@@ -341,8 +328,8 @@ In the list of examples above, what do those pictures mean?  Clearly they are re
 </div>
 </div>
 
-<div id="outline-container-org3792547" class="outline-4">
-<h4 id="org3792547"><span class="section-number-4">1.1.2.</span> Operations \(\V\) and \(\I\)</h4>
+<div id="outline-container-sec-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Operations \(\V\) and \(\I\)</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 The operation \(\V\) is a surjective  function: \[\V(-): \big\{\,\textrm{ideals in} \,\,  \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\}.\]
@@ -352,7 +339,7 @@ The operation \(\V\) is a surjective  function: \[\V(-): \big\{\,\textrm{ideals 
 But we can also go backwards, from sets to ideals:
 </p>
 
-<div class="definition" id="org15201d8">
+<div class="definition">
 <p>
 Let \(Z \subset \A^n_{\k}\) be any subset.  We define the <b><i>ideal of \(Z\)</i></b> to be \[\I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
 </p>
@@ -364,36 +351,45 @@ And so, \(\I\) defines a function:
  \[\I(-): \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\} \to \big\{\,\textrm{ideals in}  \subset \k[x_1, \dots, x_n] \big\}.\]
 </p>
 
-<div class="eg" id="orgc31621c">
+<div class="eg">
 <p>
 Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(\I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)\). Notice that \(I(\{p\}) \subset \k[x_1,\dots, x_n]\) is a <i>maximal ideal</i>.  So, we typically use the symbol \(\fm_p\) for this ideal.
 </p>
 
 </div>
 
+
+<p>
+\(\I(-)\) satisfies some obvious properties, for example if \(Z_1 \subset Z_2\) is a proper containment of affine subsets, then we get a strict, opposite containment of ideals \(\I(Z_2) \supset \I(Z_1)\). 
+</p>
+
+
 <p>
 Since \(\V\) and \(\I\) point in opposite directions, it's natural to wonder that their compositions (both ways) are.  One composition, found in the next exercise, is easy to understand.  The other composition leads naturally to  Hilbert's Nullstellansatz, and so we postpone it.
 </p>
 
-<div class="exercise" id="orge96bb00">
+<div class="exercise">
 <ol class="org-ol">
-<li>Prove: For any subset \(Z \subset \A^{n}_{\k}\), we have \(Z \subset \V(\I(Z))\).</li>
-<li>Prove:  \(Z \subset \A^n_{\k}\) is Zariski-closed if and only if \(Z = \V(\I(Z))\).</li>
-<li>In fact, prove: For any \(Z \subset \A^n_{\k}\), \(\V(\I(Z))\) is the closure of \(Z\) under the Zariski topology on \(\A^n_{\k}\).</li>
+<li>Prove: For any subset \(Z \subset \A^{n}_{\k}\), we have \(Z \subset \V(\I(Z))\).
+</li>
+<li>Prove:  \(Z \subset \A^n_{\k}\) is Zariski-closed if and only if \(Z = \V(\I(Z))\).
+</li>
+<li>In fact, prove: For any \(Z \subset \A^n_{\k}\), \(\V(\I(Z))\) is the closure of \(Z\) under the Zariski topology on \(\A^n_{\k}\).
+</li>
 </ol>
 
 </div>
 </div>
 </div>
 
-<div id="outline-container-org75dac4d" class="outline-4">
-<h4 id="org75dac4d"><span class="section-number-4">1.1.3.</span> Prime ideals and irreducible affine sets</h4>
+<div id="outline-container-sec-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Prime ideals and irreducible affine sets</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 Affine sets have their "main, big  pieces," called <i>irreducible components</i>.   For instance, in the irreducible components of the  <i>line and plane</i> \(\V(xz,yz) \subset \A^{3}_{\k}\) are the line \(\V(x,y)\) and the plane \(\V(z)\). To make this concept precise, we borrow the  notion of <i>reducibility</i> from topology, which we elaborate on here.  
 </p>
 
-<div class="definition" id="org74f7777">
+<div class="definition">
 <p>
 An affine set \(Z\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets. Otherwise, \(Z\) is said to be <b><i>irreducible</i></b>.  More generally, a topological space \(X\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets, and is <b><i>irreducible</i></b> otherwise.
 </p>
@@ -404,11 +400,14 @@ If \(X\) is any topological space, then a subset \(Y \subset X\) is called an <b
 
 </div>
 
-<div class="exercise" id="org138481d">
+<div class="exercise">
 <ol class="org-ol">
-<li>Prove: Any two non-empty open subsets of an irreducible topological space must intersect.</li>
-<li>Prove: If \(U \subset X\) is a non-empty open set in an irreducible topological space \(X\), then \(X\) is the closure of \(U\), i.e. \(U\) is dense in \(X\).</li>
-<li>Suppose \(X\) is a topological space, and \(A,B \subset X\) are proper closed subsets satisfying \(X = A \cup B\).  Prove: If \(A\) is also irreducible, then \(A\) is in fact an irreducible component of \(X\).</li>
+<li>Prove: Any two non-empty open subsets of an irreducible topological space must intersect.
+</li>
+<li>Prove: If \(U \subset X\) is a non-empty open set in an irreducible topological space \(X\), then \(X\) is the closure of \(U\), i.e. \(U\) is dense in \(X\).
+</li>
+<li>Suppose \(X\) is a topological space, and \(A,B \subset X\) are proper closed subsets satisfying \(X = A \cup B\).  Prove: If \(A\) is also irreducible, then \(A\) is in fact an irreducible component of \(X\).
+</li>
 </ol>
 
 </div>
@@ -418,7 +417,7 @@ Our next proposition says that for affine sets, irreducibility has a
 really nice algebraic interpretation.
 </p>
 
-<div class="proposition" id="org5866a77">
+<div class="proposition">
 <p>
 An affine set \(Z \subset \A^{n}_{\k}\) is irreducible if and only if \(\I(Z) \subset \k[x_1, \dots, x_n]\) is a prime ideal.
 </p>
@@ -428,8 +427,8 @@ An affine set \(Z \subset \A^{n}_{\k}\) is irreducible if and only if \(\I(Z) \s
 </div>
 </div>
 
-<div id="outline-container-org63a7bf9" class="outline-3">
-<h3 id="org63a7bf9"><span class="section-number-3">1.2.</span> Important Algebra: The Nullstellensatz</h3>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Important Algebra: The Nullstellensatz</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations \(\V(-)\) and \(\I(-)\).  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to give many different viewpoints here.  The theorem will also play an important role in laying the foundation for the concept of regular functions.
@@ -440,30 +439,37 @@ Our first fundamental  theorem, which appears in several different forms in seve
 Here are two popular ways of thinking about the Nullstellensatz: 
 </p>
 <ol class="org-ol">
-<li>When \(\k\) is algebraically closed, the Nullstellensatz says that the only way for \(\V(I)\) to be empty is if \(I = (1)\), the unit ideal. In other words, any system of polynomial equations which is not equivalent to \(1=0\) <b><i>must have</i></b> solutions in \(\A^n_{\k}\).</li>
-<li>When \(\k\) is algebraically closed, the Nullstellensatz provides the precise list of <i>maximal ideals in</i> \(\k[x_1, \dots, x_n]\): it says that every maximal ideal is of the form \(\fm_{p}\) for some point \(p \in \A^{\k}\).</li>
+<li>When \(\k\) is algebraically closed, the Nullstellensatz says that the only way for \(\V(I)\) to be empty is if \(I = (1)\), the unit ideal. In other words, any system of polynomial equations which is not equivalent to \(1=0\) <b><i>must have</i></b> solutions in \(\A^n_{\k}\).
+</li>
+<li>When \(\k\) is algebraically closed, the Nullstellensatz provides the precise list of <i>maximal ideals in</i> \(\k[x_1, \dots, x_n]\): it says that every maximal ideal is of the form \(\fm_{p}\) for some point \(p \in \A^{\k}\).  
+</li>
 </ol>
 
-<div class="theorem" id="org6af5cca">
+<div class="theorem">
 <p>
 Let \(\k\) be an arbitrary field.
 </p>
 
 <ol class="org-ol">
-<li>If \(L\) is a finitely generated \(\k\)-algebra which is also a field, then \(L\) is a finite field extension of \(\k\).</li>
+<li>If \(L\) is a finitely generated \(\k\)-algebra which is also a field, then \(L\) is a finite field extension of \(\k\).
+</li>
 
-<li>A polynomial system of equations \(\big\{f_1=0, f_2=0, \dots, f_m =0 \big\}\) with \(f_i \in \k[x_1, \dots, x_n]\) has a solution in <b><i>some</i></b> \(\k\)-algebra if and only if it has a solution \((\alpha_1, \dots, \alpha_n)\) where each \(\alpha_i\) is algebraic over \(\k\).</li>
+<li>A polynomial system of equations \(\big\{f_1=0, f_2=0, \dots, f_m =0 \big\}\) with \(f_i \in \k[x_1, \dots, x_n]\) has a solution in <b><i>some</i></b> \(\k\)-algebra if and only if it has a solution \((\alpha_1, \dots, \alpha_n)\) where each \(\alpha_i\) is algebraic over \(\k\). 
+</li>
 
-<li>If \(\k\) is algebraically closed, then every maximal ideal of \(\,\,\k[x_1, \dots, x_n]\) is of the form \((x_1-p_1, \dots, x_n-p_n)\) for some \(p_i \in \k\).</li>
+<li>If \(\k\) is algebraically closed, then every maximal ideal of \(\,\,\k[x_1, \dots, x_n]\) is of the form \((x_1-p_1, \dots, x_n-p_n)\) for some \(p_i \in \k\).
+</li>
 
-<li>If \(\k\) is algebraically closed, and if \(I \subset \k[x_1, \dots, x_n]\) satisfies \(\V(I) = \emptyset\), then \(I = (1)\), the unit ideal.</li>
-<li>If \(\k\) is algebraically closed, and if \(\fp \subset \k[x_1, \dots, x_n]\) is a prime ideal, then \(\I(\V(\fp)) = \fp\).</li>
+<li>If \(\k\) is algebraically closed, and if \(I \subset \k[x_1, \dots, x_n]\) satisfies \(\V(I) = \emptyset\), then \(I = (1)\), the unit ideal.
+</li>
+<li>If \(\k\) is algebraically closed, and if \(\fp \subset \k[x_1, \dots, x_n]\) is a prime ideal, then \(\I(\V(\fp)) = \fp\).
+</li>
 </ol>
 
 </div>
 
 
-<div class="exercise" id="orgec77ef3">
+<div class="exercise">
 <p>
 Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \dots, f_m \in \k[x]\) are finitely many polynomials.  Prove that the ring \(\k[x, \frac{1}{f_1}, \dots, \frac{1}{f_m}]\) is never a field. 
 </p>
@@ -475,8 +481,9 @@ Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \do
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Anand Patel</p>
-<p class="date">Created: 2022-08-22 Mon 07:18</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2022-08-31 Wed 08:36</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.3.50.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
