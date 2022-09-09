@@ -210,8 +210,7 @@ Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \do
 #+end_exercise
 
 
-
-** Regular functions
+* Regular functions and regular mappings
 
 Next, we must fix the mechanism by which algebraic sets and quasi-affine sets  communicate with each other.  This will also allow us to talk about a quasi-affine set without reference to an ambient $\A^{n}_{\k}$.   In short, we allow ourselves only  to use functions which are locally describable using ratios of polynomial functions.  These functions are called /regular functions/. 
 
