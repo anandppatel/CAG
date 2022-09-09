@@ -210,3 +210,58 @@ Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \do
 #+end_exercise
 
 
+
+** Regular functions
+
+Next, we must fix the mechanism by which algebraic sets and quasi-affine sets  communicate with each other.  This will also allow us to talk about a quasi-affine set without reference to an ambient $\A^{n}_{\k}$.   In short, we allow ourselves only  to use functions which are locally describable using ratios of polynomial functions.  These functions are called /regular functions/. 
+
+#+begin_definition
+Let $U \subset \A^{n}_{\k}$ be a quasi-affine set.
+1) Let $z \in U$ be a point. A function $f: U \to \A^1_{\k}$ is */regular/* at $z$ if: there exists an open set $V \subset U$ containing $z$ and an element $p/q \in \k(x_1, \dots, x_n)$ defined on $V$ such that $f|_{V}$ agrees with $p/q$ on $V$. We say $f: U \to \A^{1}_{\k}$ is regular if it is regular at every point $z \in U$.  The set of regular functions $U \to \A^1_{\k}$ is naturally a \(\k\)-algebra, and we denote it by $\k[U]$. 
+2) A map $\varphi = (f_1, \dots, f_m): U \to \A^m_{\k}$ is */regular/* if each coordinate function $f_i$ is in $\k[U]$.
+3) If $U' \subset \A^{m}_{\k}$ is another quasi-affine set then a function  $\varphi: U \to V$ is */regular/* if the composite $U \to U' \hookrightarrow  \A^m_{\k}$ is regular as in part (2).
+4) Two quasi-affine sets $U \subset \A^{n}_{\k}$, $U' \subset \A^{m}_{\k}$ are /isomorphic/ if there exist regular mappings $\varphi: U \to U'$, $\varphi': U' \to U$  which compose to identity both ways.
+#+end_definition
+
+
+
+It would be nice if this restricted class of functions behaved well with respect to other choices we've made.  For instance, it comes as a relief that:
+
+#+begin_proposition
+Regular functions and mappings are continuous for the Zariski topology.
+#+end_proposition
+
+#+begin_proof
+In class.  (Then I'll put it here.)
+#+end_proof
+
+
+
+#+begin_exercise
+Let $\varphi: U \to U'$ be a regular mapping between quasi-affine sets.  Prove:
+1) If $g \in \k[U']$  then $g \circ \varphi \in \k[U]$.
+2) The formula $g \mapsto g \circ \varphi$ defines a \(\k\)-algebra homomorphism $\k[U'] \to \k[U]$.  (This homomorphism is denoted \(\varphi^{\sharp}\).)
+3) Without using anything later in the text, calculate $\k[\A^{1}_{\k}]$. 
+#+end_exercise
+
+After doing the previous exercise, one sees that the composition of regular mappings is again regular.  
+
+
+
+If $U \subset \A^{n}_{\k}$ is a quasi-affine set, then there is a very quick way to produce regular functions on $U$: restrict a polynomial $f(x_1, \dots, x_n)$ to $U$. Therefore, we always have a ring homomorphism $\k[x_1, \dots, x_n] \to \k[U]$.  Secondly, clearly if $f \in \I(U)$, then $f$ restricts to the zero function $0 \in \k[U]$.  Therefore, restriction of polynomials induces a homomorphism \[\k[x_1, \dots, x_n]/\I(U) \to \k[U].\]  One fundamental use of the Nullstellensatz provides great news in the case that $U \subset \A^{n}_{\k}$ is /affine/. 
+
+
+#+begin_theorem
+Let $Z \subset \A^n_{\k}$ be an affine set. Then every regular function on $Z$ is the restriction of a polynomial in $\k[x_1, \dots, x_n]$, and, the restriction homomorphism $\k[x_1, \dots, x_n]/\I(Z) \to \k[Z]$ is an isomorphism. 
+#+end_theorem
+
+#+begin_proof
+In class first, then I'll put here.
+#+end_proof
+
+This is why, when $Z \subset \A^{n}_{\k}$ is affine, the ring of regular functions $\k[Z]$ is called the /coordinate ring/ of $Z$ -- it just turns out to be the algebra of functions obtained by playing around with only the coordinate functions $x_1, \dots, x_n$ restricted to $Z$.
+
+#+begin_exercise
+Let $Z \subset \A^n_{\k}$ be an algebraic subset, and let $f \in \k[x_0, \dots, x_n]$ be any polynomial.  If $\varphi: Z_f \to \A^1_{\k}$ is a regular function then there exists a polynomial $a$ such that $p = a/f^{m}$ for some $m \geq 0$. 
+#+end_exercise
+
