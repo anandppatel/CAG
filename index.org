@@ -114,7 +114,7 @@ Since $\V$ and $\I$ point in opposite directions, it's natural to wonder that th
 1)  Prove: For any subset $Z \subset \A^{n}_{\k}$, we have $Z \subset \V(\I(Z))$.
 2)  Prove:  $Z \subset \A^n_{\k}$ is Zariski-closed if and only if $Z = \V(\I(Z))$.
 3)  In fact, prove: For any $Z \subset \A^n_{\k}$, $\V(\I(Z))$ is the closure of $Z$ under the Zariski topology on $\A^n_{\k}$.
-4) Prove: If $Z_1$ and $Z_2$ are affine sets, then $\I(Z_1 \cup Z_2) = \I(Z_1) \cap \I(Z_2)$ and $\I(Z_1 \cap Z_2) = \I(Z_1) + \I(Z_2)$.
+4) Prove: If $Z_1$ and $Z_2$ are affine sets, then $\I(Z_1 \cup Z_2) = \I(Z_1) \cap \I(Z_2)$.  (Careful: Is $\I(Z_1 \cap Z_2) = \I(Z_1) + \I(Z_2)$?)
 5) Disprove: If $Z_1, Z_2$ are two affine sets, then $\I(Z_1) \cup \I(Z_2) = \I(Z_1) \cdot \I(Z_2)$. 
 #+end_exercise
 
