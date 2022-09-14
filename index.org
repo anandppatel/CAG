@@ -261,6 +261,10 @@ In class first, then I'll put here.
 This is why, when $Z \subset \A^{n}_{\k}$ is affine, the ring of regular functions $\k[Z]$ is called the /coordinate ring/ of $Z$ -- it just turns out to be the algebra of functions obtained by playing around with only the coordinate functions $x_1, \dots, x_n$ restricted to $Z$.
 
 #+begin_exercise
-Let $Z \subset \A^n_{\k}$ be an algebraic subset, and let $f \in \k[x_0, \dots, x_n]$ be any polynomial.  If $\varphi: Z_f \to \A^1_{\k}$ is a regular function then there exists a polynomial $a$ such that $p = a/f^{m}$ for some $m \geq 0$. 
+1) Let $Z \subset \A^n_{\k}$ be an algebraic subset, and let $f \in \k[x_0, \dots, x_n]$ be any polynomial.  If $\varphi: Z_f \to \A^1_{\k}$ is a regular function then there exists a polynomial $a$ such that $p = a/f^{m}$ for some $m \geq 0$.
+2) Very far-reaching idea: Suppose $W$ is a quasi-affine set and $U \cup V = W$ is an open cover by Zariski open subsets. Prove that $\k[W]$ is in natural bijection with the set of pairs $(f,g)$ where $f \in \k[U]$, $g \in \k[V]$ satisfying $f|_{U \cap V} = g|_{U \cap V}$. (Somewhere, you must use that $U$ and $V$ are open. Provide an example illustrating why.)
+3) Compute $\k\left[\A^{2}\setminus \{(0,0)\}\right]$ using the ubiquitous idea in the previous exercise.
+4) Compute $\k\left[\A^{2}\setminus \{(0,0),(1,1)\}\right]$.
+5) Explain why punching out points in $\A^{2}_{\k}$ is more interesting than punching out points in $\A^{1}_{\k}$ from the point of view of this chapter.
 #+end_exercise
 
