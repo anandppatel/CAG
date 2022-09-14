@@ -69,14 +69,18 @@ The beauty in classical algebraic geometry is only seen through its countless, i
 
 
 #+begin_eg
- 1)  The /parabola/ \[\V(y-x^{2}) \subset \A^{2}_{\k}.\] 
- 2)  The /quadric cone/ \[\V(xy-z^2) \subset \A^3_{\k}.\]
- 3)  An  /affine quadric surface/ \[\V(xy-z) \subset \A^{3}_{\k}.\]
- 4)  The /nodal cubic/ \[\V(y^2 - x^{2}-x^{3}) \subset \A^2_{\k}.\] 
+ 1) The /parabola/ \[\V(y-x^{2}) \subset \A^{2}_{\k}.\] 
+ 2) The /quadric cone/ \[\V(xy-z^2) \subset \A^3_{\k}.\]
+ 3) An  /affine quadric surface/ \[\V(xy-z) \subset \A^{3}_{\k}.\]
+
+   [[./images/Affine quadric surface.png]]
+    
+ 4) The /nodal cubic/ \[\V(y^2 - x^{2}-x^{3}) \subset \A^2_{\k}.\]
+    
  5) The /cuspidal cubic/ \[\V(y^2-x^3) \subset \A^2_{\k}.\]
- 6)  A particular  /elliptic curve/ \[\V(y^2-x^3+x) \subset \A^2_{\k}.\]
- 7)  The /affine twisted cubic/ \[\V(x^2-y,x^3-z) = \V(x^2-y, xy-z) \subset \A^3_{\k}.\]
- 8)  The /Whitney umbrella/ \[\V(x^2+zy^2) \subset \A^{3}_{\k}.\]
+ 6) A particular  /elliptic curve/ \[\V(y^2-x^3+x) \subset \A^2_{\k}.\]
+ 7) The /affine twisted cubic/ \[\V(x^2-y,x^3-z) = \V(x^2-y, xy-z) \subset \A^3_{\k}.\]
+ 8) The /Whitney umbrella/ \[\V(x^2+zy^2) \subset \A^{3}_{\k}.\]
     
 [[./images/whitney2.png]]
 
@@ -266,5 +270,6 @@ This is why, when $Z \subset \A^{n}_{\k}$ is affine, the ring of regular functio
 3) Compute $\k\left[\A^{2}\setminus \{(0,0)\}\right]$ using the ubiquitous idea in the previous exercise.
 4) Compute $\k\left[\A^{2}\setminus \{(0,0),(1,1)\}\right]$.
 5) Explain why punching out points in $\A^{2}_{\k}$ is more interesting than punching out points in $\A^{1}_{\k}$ from the point of view of this chapter.
+6) Hands on: Consider the series of examples in the beginning of these notes.  Try to produce a non-constant regular mapping from any one to any other. How successful were you?
 #+end_exercise
 
