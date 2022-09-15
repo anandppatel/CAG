@@ -270,6 +270,7 @@ This is why, when $Z \subset \A^{n}_{\k}$ is affine, the ring of regular functio
 3) Compute $\k\left[\A^{2}\setminus \{(0,0)\}\right]$ using the ubiquitous idea in the previous exercise.
 4) Compute $\k\left[\A^{2}\setminus \{(0,0),(1,1)\}\right]$.
 5) Explain why punching out points in $\A^{2}_{\k}$ is more interesting than punching out points in $\A^{1}_{\k}$ from the point of view of this chapter.
-6) Hands on: Consider the series of examples in the beginning of these notes.  Try to produce a non-constant regular mapping from any one to any other. How successful were you?
+6) Hands-on: Consider the series of examples in the beginning of these notes.  Try to produce a non-constant regular mapping from any one to any other. How successful were you?
+7) Hands-on challenge: Prove that there is no non-constant regular mapping from /any/ non-empty open subset of $\A^{1}_{\k}$ to the elliptic curve $\V(y^{2} - x^{3}-1) \subset \A^{2}_{\k}$.  Reflect on this.
 #+end_exercise
 
