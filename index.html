@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-09-16 Fri 06:56 -->
+<!-- 2022-09-26 Mon 07:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elements of Classical Algebraic Geometry</title>
@@ -241,8 +241,8 @@
 <div id="content" class="content">
 <h1 class="title">Elements of Classical Algebraic Geometry</h1>
 
-<div id="outline-container-org08dcab1" class="outline-2">
-<h2 id="org08dcab1"><span class="section-number-2">1.</span> Affine sets, the Zariski topology, and Hilbert's Nullstellensatz</h2>
+<div id="outline-container-org1eea7f5" class="outline-2">
+<h2 id="org1eea7f5"><span class="section-number-2">1.</span> Affine sets, the Zariski topology, and Hilbert's Nullstellensatz</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Affine varieties are the fundamental building blocks of <i>quasi-projective varieties</i>, the central objects of study in classical algebraic geometry.  In essence, an affine variety is the  solution set of a system of polynomial equations \[f_1(x_1, \dots, x_n) = f_2(x_1, \dots, x_n) = \dots =f_{m}(x_1, \dots, x_n) = 0\] with coefficients in some field \(\k\). This solution set is made into a geometric object after we introduce  the <i>Zariski topology</i> on it.  Furthermore, two such solutions sets are allowed to communicate with each other only through a restricted class of functions, called <i>regular maps</i>.  Setting things up this way allows us to define what it means for two solution sets to be isomorphic, even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to extract an abstract group from its  various guises.)  An affine variety \(X\) is then basically an equivalence class of solution sets under the notion of regular isomorphism.  It turns out that \(X\) is uniquely recoverable from the ring of <i>regular functions</i> on it.  This ring is called its  <i>coordinate ring</i>, denoted \(\k[X]\).  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about \(X\) into ring-theoretic notions about \(\k[X]\), thereby supporting our geometric intuitions with rigorous algebra.
@@ -253,14 +253,14 @@ The relationship between the originating system of equations and its solution se
 </p>
 </div>
 
-<div id="outline-container-org40cbb20" class="outline-3">
-<h3 id="org40cbb20"><span class="section-number-3">1.1.</span> Affine sets</h3>
+<div id="outline-container-orgaa6507c" class="outline-3">
+<h3 id="orgaa6507c"><span class="section-number-3">1.1.</span> Affine sets</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 We begin by defining the central geometric objects of this chapter.
 </p>
 
-<div class="definition" id="org34c9162">
+<div class="definition" id="orgca0ab6e">
 <ol class="org-ol">
 <li><b><i>Affine space of dimension \(n\) (over \(\k\))</i></b>, denoted \[\A^{n}_{\k}\] is the set of \(n\) -tuples \(p = (p_1, \dots, p_{n})\), \(p_{i} \in \k\).</li>
 <li>For each \(i\), we denote by \[x_{i}: \A^{n}_{\k} \to \A^{1}_{\k}\] the \(i\)-th coordinate function sending \((p_{1}, \dots, p_{n})\) to \(p_i\).</li>
@@ -279,7 +279,7 @@ It is immediate that if \(S \subset \k[x_1, \dots, x_n]\) is any subset, and if 
 </p>
 
 
-<div class="exercise" id="orgde0e0e3">
+<div class="exercise" id="org8a278f1">
 <p>
 Suppose \(I,J \subset \k[x_1, \dots, x_n]\) are two ideals. Show:
 </p>
@@ -307,7 +307,7 @@ The beauty in classical algebraic geometry is only seen through its countless, i
 
 
 
-<div class="eg" id="org25d3566">
+<div class="eg" id="org0096947">
 <ol class="org-ol">
 <li>The <i>parabola</i> \[\V(y-x^{2}) \subset \A^{2}_{\k}.\]</li>
 <li>The <i>quadric cone</i> \[\V(xy-z^2) \subset \A^3_{\k}.\]</li>
@@ -316,7 +316,7 @@ An  <i>affine quadric surface</i> \[\V(xy-z) \subset \A^{3}_{\k}.\]
 </p>
 
 
-<div id="orga052b64" class="figure">
+<div id="orgdbd6a72" class="figure">
 <p><img src="./images/Affine quadric surface.png" alt="Affine quadric surface.png" />
 </p>
 </div></li>
@@ -330,7 +330,7 @@ An  <i>affine quadric surface</i> \[\V(xy-z) \subset \A^{3}_{\k}.\]
 </ol>
 
 
-<div id="orge051347" class="figure">
+<div id="org7cd715a" class="figure">
 <p><img src="./images/whitney2.png" alt="whitney2.png" />
 </p>
 </div>
@@ -342,8 +342,8 @@ An  <i>affine quadric surface</i> \[\V(xy-z) \subset \A^{3}_{\k}.\]
 </div>
 </div>
 
-<div id="outline-container-org46189fe" class="outline-4">
-<h4 id="org46189fe"><span class="section-number-4">1.1.1.</span> Pictures</h4>
+<div id="outline-container-org4817edc" class="outline-4">
+<h4 id="org4817edc"><span class="section-number-4">1.1.1.</span> Pictures</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 In the list of examples above, what do those pictures mean?  Clearly they are real images, meaning they exist in \(\A^2_{\R}\) or \(\A^{3}_{\R}\). But this is not our true context: we've assumed \(\k\) is algebraically closed!  Unfortunately, it is not possible to draw a true representation in this case, so we refer to these sorts of images as "real cartoons."   
@@ -351,8 +351,8 @@ In the list of examples above, what do those pictures mean?  Clearly they are re
 </div>
 </div>
 
-<div id="outline-container-org4891e43" class="outline-4">
-<h4 id="org4891e43"><span class="section-number-4">1.1.2.</span> Operations \(\V\) and \(\I\)</h4>
+<div id="outline-container-org2ac5aee" class="outline-4">
+<h4 id="org2ac5aee"><span class="section-number-4">1.1.2.</span> Operations \(\V\) and \(\I\)</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 The operation \(\V\) is a surjective  function: \[\V(-): \big\{\,\textrm{ideals in} \,\,  \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\}.\]
@@ -362,7 +362,7 @@ The operation \(\V\) is a surjective  function: \[\V(-): \big\{\,\textrm{ideals 
 But we can also go backwards, from sets to ideals:
 </p>
 
-<div class="definition" id="orge3f73da">
+<div class="definition" id="org9b0da62">
 <p>
 Let \(Z \subset \A^n_{\k}\) be any subset.  We define the <b><i>ideal of \(Z\)</i></b> to be \[\I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
 </p>
@@ -374,7 +374,7 @@ And so, \(\I\) defines a function:
  \[\I(-): \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\} \to \big\{\,\textrm{ideals in}  \subset \k[x_1, \dots, x_n] \big\}.\]
 </p>
 
-<div class="eg" id="org8c69ce7">
+<div class="eg" id="orgda044d8">
 <p>
 Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(\I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)\). Notice that \(\I(\{p\}) \subset \k[x_1,\dots, x_n]\) is a <i>maximal ideal</i>.  So, we typically use the symbol \(\fm_p\) for this ideal.
 </p>
@@ -391,7 +391,7 @@ Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(\I(\{p\}) = (x_
 Since \(\V\) and \(\I\) point in opposite directions, it's natural to wonder that their compositions (both ways) are.  One composition, found in the next exercise, is easy to understand.  The other composition leads naturally to  Hilbert's Nullstellansatz, and so we postpone it.
 </p>
 
-<div class="exercise" id="org22c13fc">
+<div class="exercise" id="org8c2e4df">
 <ol class="org-ol">
 <li>Prove: For any subset \(Z \subset \A^{n}_{\k}\), we have \(Z \subset \V(\I(Z))\).</li>
 <li>Prove:  \(Z \subset \A^n_{\k}\) is Zariski-closed if and only if \(Z = \V(\I(Z))\).</li>
@@ -404,14 +404,14 @@ Since \(\V\) and \(\I\) point in opposite directions, it's natural to wonder tha
 </div>
 </div>
 
-<div id="outline-container-orgacf93a2" class="outline-4">
-<h4 id="orgacf93a2"><span class="section-number-4">1.1.3.</span> Prime ideals and irreducible affine sets</h4>
+<div id="outline-container-org00103d9" class="outline-4">
+<h4 id="org00103d9"><span class="section-number-4">1.1.3.</span> Prime ideals and irreducible affine sets</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 Affine sets have their "main, big  pieces," called <i>irreducible components</i>.   For instance, in the irreducible components of the  <i>line and plane</i> \(\V(xz,yz) \subset \A^{3}_{\k}\) are the line \(\V(x,y)\) and the plane \(\V(z)\). To make this concept precise, we borrow the  notion of <i>reducibility</i> from topology, which we elaborate on here.  
 </p>
 
-<div class="definition" id="org540d05e">
+<div class="definition" id="org7bd0f49">
 <p>
 An affine set \(Z\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets. Otherwise, \(Z\) is said to be <b><i>irreducible</i></b>.  More generally, a topological space \(X\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets, and is <b><i>irreducible</i></b> otherwise.
 </p>
@@ -422,7 +422,7 @@ If \(X\) is any topological space, then a subset \(Y \subset X\) is called an <b
 
 </div>
 
-<div class="exercise" id="org40cba39">
+<div class="exercise" id="org3b074db">
 <ol class="org-ol">
 <li>Prove: Any two non-empty open subsets of an irreducible topological space must intersect.</li>
 <li>Prove: If \(U \subset X\) is a non-empty open set in an irreducible topological space \(X\), then \(X\) is the closure of \(U\), i.e. \(U\) is dense in \(X\).</li>
@@ -436,14 +436,14 @@ Our next proposition says that for affine sets, irreducibility has a
 really nice algebraic interpretation.
 </p>
 
-<div class="proposition" id="org5d0b814">
+<div class="proposition" id="org531d5e7">
 <p>
 An affine set \(Z \subset \A^{n}_{\k}\) is irreducible if and only if \(\I(Z) \subset \k[x_1, \dots, x_n]\) is a prime ideal.
 </p>
 
 </div>
 
-<div class="proof" id="org07e6c4f">
+<div class="proof" id="org3f89a6c">
 <p>
 First assume \(Z\) is an irreducible affine set, and \(f,g \in \k[x_1, \dots, x_n]\) satisfy \(fg \in \I(Z)\), and \(f \notin \I(Z)\). Then, \(fg \in \I(Z)\) implies \(Z = (\V(f) \cap Z) \cup (\V(g) \cap Z).\) And \(f \notin \I(Z)\) implies \(\V(f) \cap Z \neq Z.\) Thus, by irreducibility we deduce \(\V(g) \cap Z = Z\), i.e. \(g \in \I(Z)\). So \(\I(Z)\) is prime.
 </p>
@@ -457,14 +457,14 @@ Next assume \(Z = A \cup B\) with \(A, B\) both proper closed subsets of \(Z\). 
 </div>
 </div>
 
-<div id="outline-container-org9ffef21" class="outline-3">
-<h3 id="org9ffef21"><span class="section-number-3">1.2.</span> Algebra reminders</h3>
+<div id="outline-container-orgafb44a4" class="outline-3">
+<h3 id="orgafb44a4"><span class="section-number-3">1.2.</span> Algebra reminders</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Before seeing some of the more interesting algebra lying at the foundations of our subject, let's make sure certain algebraic concepts are solidified.  Throughout this section, suppose \(R\) is an arbitrary ring.  "Ring" here means commutative ring with \(1\).
 </p>
 
-<div class="exercise" id="org8cd6962">
+<div class="exercise" id="org5a3d4c1">
 <ol class="org-ol">
 <li>An ideal \(I \subset R\) is maximal (resp. prime) if and only if \(R/I\) is a field, (resp. integral domain).</li>
 <li>Dictionary: The assignment \(\overline{J} \mapsto q^{-1}(\overline{J})\) sets up a bijection between the set of ideals of \(R/I\) and the set of ideals in \(R\) containing \(I\), where \(q: R \to R/I\) is the quotient map.</li>
@@ -480,7 +480,7 @@ Before seeing some of the more interesting algebra lying at the foundations of o
 Now suppose \(Z \subset \A^{n}_{\k}\) is an affine set, with ideal \(\I(Z)\).
 </p>
 
-<div class="exercise" id="org0bf889b">
+<div class="exercise" id="org12a58df">
 <ol class="org-ol">
 <li>\(p \in \A^{n}_{\k}\) lies in \(Z\) if and only if \(\I(Z) \subset \fm_{p}\).</li>
 <li>A point of \(Z\) is the same thing as a \(\k\)-algebra homomorphism \(\kappa: \k[x_1, \dots, x_n]/\I(Z) \to \k\).</li>
@@ -489,28 +489,28 @@ Now suppose \(Z \subset \A^{n}_{\k}\) is an affine set, with ideal \(\I(Z)\).
 </div>
 </div>
 
-<div id="outline-container-org74a50ce" class="outline-4">
-<h4 id="org74a50ce"><span class="section-number-4">1.2.1.</span> Ring-value points</h4>
+<div id="outline-container-org6a7ae95" class="outline-4">
+<h4 id="org6a7ae95"><span class="section-number-4">1.2.1.</span> Ring-value points</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 Suppose \(R\) is a \(\k\)-algebra.  We will sometimes use the concept of a \(R\)-point of an affine set (or more generally, algebraic variety) \(Z\).  The definition is as follows:
 </p>
 
-<div class="definition" id="org07a017e">
+<div class="definition" id="org4038bb7">
 <p>
 Let \(R\) be a \(\k\)-algebra, and suppose \(Z \subset \A^{n}_{\k}\) is an affine set. An <i><b>\(R\)-point of \(Z\)</b></i> is a \(\k\)-algebra homomorphism \(\k[x_1, \dots, x_{n}]/\I(Z) \to R\). 
 </p>
 
 </div>
 
-<div class="exercise" id="org522cc6b">
+<div class="exercise" id="orgc2cf54b">
 <p>
 Why \(R\)-points are called \(R\)-points: Prove that the \(R\)-points of \(Z\) are in natural bijection with the set of tuples \((r_1, \dots, r_n) \in R^{n}\) satisfying \(f(r_1, \dots, r_n) = 0\) for all \(f \in \I(Z)\).
 </p>
 
 </div>
 
-<div class="exercise" id="orgb570ad8">
+<div class="exercise" id="orgf8e1b47">
 <p>
 One way to characterize integral domains: Prove that a ring \(R\) is an integral domain if and only if there exists an injective homomorphism from \(R\) to a field.
 </p>
@@ -520,8 +520,8 @@ One way to characterize integral domains: Prove that a ring \(R\) is an integral
 </div>
 </div>
 
-<div id="outline-container-org78fb678" class="outline-3">
-<h3 id="org78fb678"><span class="section-number-3">1.3.</span> Important Algebra: The Nullstellensatz</h3>
+<div id="outline-container-org60af29c" class="outline-3">
+<h3 id="org60af29c"><span class="section-number-3">1.3.</span> Important Algebra: The Nullstellensatz</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations \(\V(-)\) and \(\I(-)\).  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to give many different viewpoints here.  The theorem will also play an important role in laying the foundation for the concept of regular functions.
@@ -536,7 +536,7 @@ Here are two popular ways of thinking about the Nullstellensatz:
 <li>When \(\k\) is algebraically closed, the Nullstellensatz provides the precise list of <i>maximal ideals in</i> \(\k[x_1, \dots, x_n]\): it says that every maximal ideal is of the form \(\fm_{p}\) for some point \(p \in \A^{\k}\).</li>
 </ol>
 
-<div class="theorem" id="org682fbaf">
+<div class="theorem" id="org29785a5">
 <p>
 Let \(\k\) be an arbitrary field.
 </p>
@@ -555,7 +555,7 @@ Let \(\k\) be an arbitrary field.
 </div>
 
 
-<div class="exercise" id="org53059b5">
+<div class="exercise" id="org1abf0d2">
 <p>
 Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \dots, f_m \in \k[x]\) are finitely many polynomials.  Prove that the ring \(\k[x, \frac{1}{f_1}, \dots, \frac{1}{f_m}]\) is never a field. 
 </p>
@@ -566,14 +566,14 @@ Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \do
 </div>
 
 
-<div id="outline-container-org9cf5317" class="outline-2">
-<h2 id="org9cf5317"><span class="section-number-2">2.</span> Regular functions and regular mappings</h2>
+<div id="outline-container-org8d154b8" class="outline-2">
+<h2 id="org8d154b8"><span class="section-number-2">2.</span> Regular functions and regular mappings</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Next, we must fix the mechanism by which algebraic sets and quasi-affine sets  communicate with each other.  This will also allow us to talk about a quasi-affine set without reference to an ambient \(\A^{n}_{\k}\).   In short, we allow ourselves only  to use functions which are locally describable using ratios of polynomial functions.  These functions are called <i>regular functions</i>. 
 </p>
 
-<div class="definition" id="org496e76c">
+<div class="definition" id="org67cded1">
 <p>
 Let \(U \subset \A^{n}_{\k}\) be a quasi-affine set.
 </p>
@@ -592,14 +592,14 @@ Let \(U \subset \A^{n}_{\k}\) be a quasi-affine set.
 It would be nice if this restricted class of functions behaved well with respect to other choices we've made.  For instance, it comes as a relief that:
 </p>
 
-<div class="proposition" id="org323a12c">
+<div class="proposition" id="org1a3c9a4">
 <p>
 Regular functions and mappings are continuous for the Zariski topology.
 </p>
 
 </div>
 
-<div class="proof" id="org4b2425f">
+<div class="proof" id="org8d648c4">
 <p>
 In class.  (Then I'll put it here.)
 </p>
@@ -608,7 +608,7 @@ In class.  (Then I'll put it here.)
 
 
 
-<div class="exercise" id="org988b990">
+<div class="exercise" id="org656153e">
 <p>
 Let \(\varphi: U \to U'\) be a regular mapping between quasi-affine sets.  Prove:
 </p>
@@ -631,14 +631,14 @@ If \(U \subset \A^{n}_{\k}\) is a quasi-affine set, then there is a very quick w
 </p>
 
 
-<div class="theorem" id="org4695706">
+<div class="theorem" id="org4cd71a5">
 <p>
 Let \(Z \subset \A^n_{\k}\) be an affine set. Then every regular function on \(Z\) is the restriction of a polynomial in \(\k[x_1, \dots, x_n]\), and, the restriction homomorphism \(\k[x_1, \dots, x_n]/\I(Z) \to \k[Z]\) is an isomorphism. 
 </p>
 
 </div>
 
-<div class="proof" id="org81d14d4">
+<div class="proof" id="orge98028f">
 <p>
 In class first, then I'll put here.
 </p>
@@ -649,7 +649,7 @@ In class first, then I'll put here.
 This is why, when \(Z \subset \A^{n}_{\k}\) is affine, the ring of regular functions \(\k[Z]\) is called the <i>coordinate ring</i> of \(Z\) &#x2013; it just turns out to be the algebra of functions obtained by playing around with only the coordinate functions \(x_1, \dots, x_n\) restricted to \(Z\).
 </p>
 
-<div class="exercise" id="orgf036113">
+<div class="exercise" id="org0b402ce">
 <ol class="org-ol">
 <li>Let \(Z \subset \A^n_{\k}\) be an algebraic subset, and let \(f \in \k[x_0, \dots, x_n]\) be any polynomial.  If \(\varphi: Z_f \to \A^1_{\k}\) is a regular function then there exists a polynomial \(a\) such that \(p = a/f^{m}\) for some \(m \geq 0\).</li>
 <li>Very far-reaching idea: Suppose \(W\) is a quasi-affine set and \(U \cup V = W\) is an open cover by Zariski open subsets. Prove that \(\k[W]\) is in natural bijection with the set of pairs \((f,g)\) where \(f \in \k[U]\), \(g \in \k[V]\) satisfying \(f|_{U \cap V} = g|_{U \cap V}\). (Somewhere, you must use that \(U\) and \(V\) are open. Provide an example illustrating why.)</li>
@@ -663,11 +663,103 @@ This is why, when \(Z \subset \A^{n}_{\k}\) is affine, the ring of regular funct
 
 </div>
 </div>
+
+<div id="outline-container-org8896c3c" class="outline-3">
+<h3 id="org8896c3c"><span class="section-number-3">2.1.</span> The many rings attached to a quasi-affine variety</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+If \(X\) is a quasi-affine set, then for each open set \(U \subset X\) we may consider the ring of regular functions \(\k[U]\) defined on \(U\).  In this way, \(X\) defines an entire constellation of rings, namely the \(\k[U]\)'s, and these rings have natural <i>restriction maps</i> among some of them: If \(V \subset U\) is an inclusion of open sets, then each regular function on \(U\) can be restricted to a regular function on \(V\), giving a map \(\rho_{U,V}: \k[U] \to \k[V]\).  If \(W \subset V \subset U\) is a sequence of inclusions, then the two intermediate restriction maps compose to \(\rho_{U,W}\), obviously.
+</p>
+
+<p>
+The constellation of rings and restriction maps has a further property: If \[\{U_{\alpha}\}, \alpha \in A\] is an open cover of an open set \(U \subset X\), then the natural product of restriction maps \[\rho: \k[U] \to \prod_{\alpha \in A}\k[U_{\alpha}]\] is injective, and its image is precisely the set of tuples \((f_{\alpha})_{\alpha \in A}\) satisfying <i>compatibility</i> \[f_{\alpha}|_{U_{\alpha} \cap U_{\beta}} = f_{\beta}|_{U_{\alpha} \cap U_{\beta}}\] for all \(\alpha, \beta \in A\).
+</p>
+
+<p>
+The term for this sort of assignment \(\big\{\,\textrm{open sets in }
+\,\, X \big\} \to \big\{\,\textrm{Rings} \big\}\) is a <i>sheaf of
+\(\k\)-algebras</i>.  Typically, this assignment is denoted \(\O_{X}\), and
+is sometimes called the <i>sheaf of regular functions on \(X\)</i>, or other
+times called the <i>structure sheaf</i> of \(X\). For each open set \(U\),
+\(\O_{X}(U)\) is simply the ring \(\k[U]\).  Modern algebraic geometry
+takes the perspective that the true objects of study are certain kinds of
+<i>pairs</i> \((X,\O_{X})\) where \(X\) is a an abstract topological space and
+\(\O_{X}\) a sheaf of rings on \(X\).  We will not need that perspective right now &#x2013; this is just meant to bridge what we do here with what you might see later.
+</p>
+</div>
+
+<div id="outline-container-org6b649ef" class="outline-4">
+<h4 id="org6b649ef"><span class="section-number-4">2.1.1.</span> The local ring \(\O_{X,p}\)</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Some geometric notions are <i>local</i>, in that they describe the geometry "around" a given point,  and some geometric notions are <i>global</i>, describing some aspect of the entire geometry of a (quasi-)affine variety \(X\).  To codify local information into ring theory (which is our overall project so far) we use the <i>local ring of \(X\) at a point \(p\)</i>, denoted \(\O_{X,p}\).
+</p>
+
+<p>
+\(\O_{X,p}\) is the ring of <i>germs</i> of functions regular at \(p\). A
+<i>germ</i> is an equivalence class of pairs \((f,U)\) where \(U\) is an open
+neighborhood of \(p\), and \(f \in \O_{X}(U)\).  Equivalence is defined as
+follows: \((f,U)\) is equivalent to \((g,V)\) if there exists an open
+neighborhood \(W \subset U \cap V\) of \(p\) such that \(f|_{W} = g|_{W}\).
+In other words, we identify locally-defined functions if they agree on
+a sufficiently small neighborhood of \(p\).
+</p>
+
+<div class="exercise" id="org0b3317d">
+<ol class="org-ol">
+<li>Let \(p \in \A^{1}_{\k}\) be any point. Prove that \(\O_{\A^{1}_{\k},p}\) is the ring of ratios of polynomials \(a(t)/b(t)\) such that \(b(p) \neq 0\).</li>
+
+<li>Prove that \(\O_{\A^{1}_{\k},p}\) is not a finitely generated \(\k\)-algebra, and hence is not the coordinate ring of an affine variety.</li>
+</ol>
+
+</div>
+
+<p>
+In general, the local ring \(\O_{X,p}\) is an especially simple kind of ring &#x2013; it is a <i>local ring</i>, meaning it has a unique maximal ideal:
+</p>
+
+<div class="exercise" id="org694a3a9">
+<ol class="org-ol">
+<li>Prove that any germ \((g,V) \in \O_{X,p}\) satisfying \(g(p) \neq 0\) is a unit in \(\O_{X,p}\).</li>
+
+<li>Prove that the set of germs \((f,U)\) satisfying \(f(p) = 0\) is a maximal ideal in \(\O_{X,p}\), and that it is the unique maximal ideal in \(\O_{X,p}\).</li>
+</ol>
+
+</div>
+
+<p>
+The unique maximal ideal of \(\O_{X,p}\) is denoted \(\fm_{p} \subset \O_{X,p}\).  Many local properties of \(X\) near \(p\) are captured by ring-theoretic properties involving the structure of the maximal ideal \(\fm_p\) in the ring \(\O_{X,p}\).  The two most important examples are: the definition of the  <i>dimension of \(X\) at \(p\)</i>, and the notion of \(X\) being <i>smooth</i> or <i>singular</i> at \(p\).  We will investigate these later.  For now, let us collect more examples.
+</p>
+
+<div class="exercise" id="org4246967">
+<ol class="org-ol">
+<li>Let \(X\) denote the cuspidal cubic \(\V(y^2-x^3)\).  Provide a
+description of the local ring \(\O_{X,(0,0)}\).  Prove that
+\(\fm_{(0,0)} \subset \O_{X,(0,0)}\) is not principal.  Compare with
+local rings of points on \(\A^{1}_{\k}\).</li>
+<li>Prove that if \(U \subset X\) is any open set containing \(p\), then \(\O_{X,p}\) is naturally isomorphic to \(\O_{U,p}\). And so, when computing local rings, the case of affine \(X\) is all that we must consider.</li>
+</ol>
+
+</div>
+
+<p>
+When \(X\) is an irreducible affine variety, \(\O_{X,p}\) has a very concrete general description.  First, we introduce the <i>function field</i> \(\k(X)\) to be the fraction field of the integral domain \(\k[X]\).  (This is only available because \(X\) is irreducible.)  Next, inside \(\k(X)\) we define consider those elements which can be represented by a fraction \(a/b\), \(a,b \in \k[X]\) such that \(b(p) \neq 0\).  These elements form a ring.
+</p>
+
+<div class="exercise" id="orge060cdd">
+<p>
+Prove that the ring just described is isomorphic to \(\O_{X,p}\). 
+</p>
+
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Anand Patel</p>
-<p class="date">Created: 2022-09-16 Fri 06:56</p>
+<p class="date">Created: 2022-09-26 Mon 07:25</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

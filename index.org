@@ -275,3 +275,61 @@ This is why, when $Z \subset \A^{n}_{\k}$ is affine, the ring of regular functio
 8) Similarly, show that there is no non-constant regular mapping from any non-empty open subset of $\A^{1}_{\k}$ to the Fermat curve $\V(x^3+y^3-1)$, assuming the characteristic of $\k$ is not $3$.
 #+end_exercise
 
+** The many rings attached to a quasi-affine variety
+If $X$ is a quasi-affine set, then for each open set $U \subset X$ we may consider the ring of regular functions $\k[U]$ defined on $U$.  In this way, $X$ defines an entire constellation of rings, namely the \(\k[U]\)'s, and these rings have natural /restriction maps/ among some of them: If $V \subset U$ is an inclusion of open sets, then each regular function on $U$ can be restricted to a regular function on $V$, giving a map $\rho_{U,V}: \k[U] \to \k[V]$.  If $W \subset V \subset U$ is a sequence of inclusions, then the two intermediate restriction maps compose to $\rho_{U,W}$, obviously.
+
+The constellation of rings and restriction maps has a further property: If $$\{U_{\alpha}\}, \alpha \in A$$ is an open cover of an open set $U \subset X$, then the natural product of restriction maps $$\rho: \k[U] \to \prod_{\alpha \in A}\k[U_{\alpha}]$$ is injective, and its image is precisely the set of tuples $(f_{\alpha})_{\alpha \in A}$ satisfying /compatibility/ $$f_{\alpha}|_{U_{\alpha} \cap U_{\beta}} = f_{\beta}|_{U_{\alpha} \cap U_{\beta}}$$ for all $\alpha, \beta \in A$.
+
+The term for this sort of assignment \(\big\{\,\textrm{open sets in }
+\,\, X \big\} \to \big\{\,\textrm{Rings} \big\}\) is a /sheaf of
+\(\k\)-algebras/.  Typically, this assignment is denoted $\O_{X}$, and
+is sometimes called the /sheaf of regular functions on $X$/, or other
+times called the /structure sheaf/ of $X$. For each open set $U$,
+$\O_{X}(U)$ is simply the ring $\k[U]$.  Modern algebraic geometry
+takes the perspective that the true objects of study are certain kinds of
+/pairs/ $(X,\O_{X})$ where $X$ is a an abstract topological space and
+$\O_{X}$ a sheaf of rings on $X$.  We will not need that perspective right now -- this is just meant to bridge what we do here with what you might see later.
+
+*** The local ring $\O_{X,p}$
+
+Some geometric notions are /local/, in that they describe the geometry "around" a given point,  and some geometric notions are /global/, describing some aspect of the entire geometry of a (quasi-)affine variety $X$.  To codify local information into ring theory (which is our overall project so far) we use the /local ring of $X$ at a point $p$/, denoted $\O_{X,p}$.
+
+$\O_{X,p}$ is the ring of /germs/ of functions regular at $p$. A
+/germ/ is an equivalence class of pairs $(f,U)$ where $U$ is an open
+neighborhood of $p$, and $f \in \O_{X}(U)$.  Equivalence is defined as
+follows: $(f,U)$ is equivalent to $(g,V)$ if there exists an open
+neighborhood $W \subset U \cap V$ of $p$ such that $f|_{W} = g|_{W}$.
+In other words, we identify locally-defined functions if they agree on
+a sufficiently small neighborhood of $p$.
+
+#+begin_exercise
+1) Let $p \in \A^{1}_{\k}$ be any point. Prove that $\O_{\A^{1}_{\k},p}$ is the ring of ratios of polynomials $a(t)/b(t)$ such that $b(p) \neq 0$.
+
+2) Prove that $\O_{\A^{1}_{\k},p}$ is not a finitely generated \(\k\)-algebra, and hence is not the coordinate ring of an affine variety.
+#+end_exercise
+
+In general, the local ring $\O_{X,p}$ is an especially simple kind of ring -- it is a /local ring/, meaning it has a unique maximal ideal:
+
+#+begin_exercise
+1) Prove that any germ $(g,V) \in \O_{X,p}$ satisfying $g(p) \neq 0$ is a unit in $\O_{X,p}$.
+
+2) Prove that the set of germs $(f,U)$ satisfying $f(p) = 0$ is a maximal ideal in $\O_{X,p}$, and that it is the unique maximal ideal in $\O_{X,p}$.
+#+end_exercise
+
+The unique maximal ideal of $\O_{X,p}$ is denoted $\fm_{p} \subset \O_{X,p}$.  Many local properties of $X$ near $p$ are captured by ring-theoretic properties involving the structure of the maximal ideal $\fm_p$ in the ring $\O_{X,p}$.  The two most important examples are: the definition of the  /dimension of $X$ at $p$/, and the notion of $X$ being /smooth/ or /singular/ at $p$.  We will investigate these later.  For now, let us collect more examples.
+
+#+begin_exercise
+1) Let $X$ denote the cuspidal cubic $\V(y^2-x^3)$.  Provide a
+   description of the local ring $\O_{X,(0,0)}$.  Prove that
+   $\fm_{(0,0)} \subset \O_{X,(0,0)}$ is not principal.  Compare with
+   local rings of points on $\A^{1}_{\k}$.
+2) Prove that if $U \subset X$ is any open set containing $p$, then $\O_{X,p}$ is naturally isomorphic to $\O_{U,p}$. And so, when computing local rings, the case of affine $X$ is all that we must consider.
+#+end_exercise
+
+When $X$ is an irreducible affine variety, $\O_{X,p}$ has a very concrete general description.  First, we introduce the /function field/ $\k(X)$ to be the fraction field of the integral domain $\k[X]$.  (This is only available because $X$ is irreducible.)  Next, inside $\k(X)$ we consider those elements which can be represented by a fraction $a/b$, $a,b \in \k[X]$ such that $b(p) \neq 0$.  These elements form a sub-ring.
+
+#+begin_exercise
+Prove that the sub-ring of $\k(X)$ just described is isomorphic to $\O_{X,p}$. 
+#+end_exercise
+
+
