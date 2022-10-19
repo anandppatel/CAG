@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-10-18 Tue 08:14 -->
+<!-- 2022-10-19 Wed 10:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elements of Classical Algebraic Geometry</title>
@@ -241,8 +241,8 @@
 <div id="content" class="content">
 <h1 class="title">Elements of Classical Algebraic Geometry</h1>
 
-<div id="outline-container-org482a192" class="outline-2">
-<h2 id="org482a192"><span class="section-number-2">1.</span> Affine sets, the Zariski topology, and Hilbert's Nullstellensatz</h2>
+<div id="outline-container-org9c81769" class="outline-2">
+<h2 id="org9c81769"><span class="section-number-2">1.</span> Affine sets, the Zariski topology, and Hilbert's Nullstellensatz</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Affine varieties are the fundamental building blocks of <i>quasi-projective varieties</i>, the central objects of study in classical algebraic geometry.  In essence, an affine variety is the  solution set of a system of polynomial equations \[f_1(x_1, \dots, x_n) = f_2(x_1, \dots, x_n) = \dots =f_{m}(x_1, \dots, x_n) = 0\] with coefficients in some field \(\k\). This solution set is made into a geometric object after we introduce  the <i>Zariski topology</i> on it.  Furthermore, two such solutions sets are allowed to communicate with each other only through a restricted class of functions, called <i>regular maps</i>.  Setting things up this way allows us to define what it means for two solution sets to be isomorphic, even though they may arise in totally different contexts.  (Much like in group theory, the notion of homomorphism and isomorphism allows us to extract an abstract group from its  various guises.)  An affine variety \(X\) is then basically an equivalence class of solution sets under the notion of regular isomorphism.  It turns out that \(X\) is uniquely recoverable from the ring of <i>regular functions</i> on it.  This ring is called its  <i>coordinate ring</i>, denoted \(\k[X]\).  The basic philosophy in affine algebraic geometry is then to translate "geometric notions" about \(X\) into ring-theoretic notions about \(\k[X]\), thereby supporting our geometric intuitions with rigorous algebra.
@@ -253,14 +253,14 @@ The relationship between the originating system of equations and its solution se
 </p>
 </div>
 
-<div id="outline-container-orgc8be5be" class="outline-3">
-<h3 id="orgc8be5be"><span class="section-number-3">1.1.</span> Affine sets</h3>
+<div id="outline-container-org9d1d033" class="outline-3">
+<h3 id="org9d1d033"><span class="section-number-3">1.1.</span> Affine sets</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 We begin by defining the central geometric objects of this chapter.
 </p>
 
-<div class="definition" id="org72ef704">
+<div class="definition" id="org2abab3b">
 <ol class="org-ol">
 <li><b><i>Affine space of dimension \(n\) (over \(\k\))</i></b>, denoted \[\A^{n}_{\k}\] is the set of \(n\) -tuples \(p = (p_1, \dots, p_{n})\), \(p_{i} \in \k\).</li>
 <li>For each \(i\), we denote by \[x_{i}: \A^{n}_{\k} \to \A^{1}_{\k}\] the \(i\)-th coordinate function sending \((p_{1}, \dots, p_{n})\) to \(p_i\).</li>
@@ -279,7 +279,7 @@ It is immediate that if \(S \subset \k[x_1, \dots, x_n]\) is any subset, and if 
 </p>
 
 
-<div class="exercise" id="orgce1de70">
+<div class="exercise" id="org0f33f7a">
 <p>
 Suppose \(I,J \subset \k[x_1, \dots, x_n]\) are two ideals. Show:
 </p>
@@ -307,7 +307,7 @@ The beauty in classical algebraic geometry is only seen through its countless, i
 
 
 
-<div class="eg" id="org454a7a2">
+<div class="eg" id="org687465a">
 <ol class="org-ol">
 <li>The <i>parabola</i> \[\V(y-x^{2}) \subset \A^{2}_{\k}.\]</li>
 <li>The <i>quadric cone</i> \[\V(xy-z^2) \subset \A^3_{\k}.\]</li>
@@ -316,7 +316,7 @@ An  <i>affine quadric surface</i> \[\V(xy-z) \subset \A^{3}_{\k}.\]
 </p>
 
 
-<div id="orgf7194e2" class="figure">
+<div id="org184485d" class="figure">
 <p><img src="./images/Affine quadric surface.png" alt="Affine quadric surface.png" />
 </p>
 </div></li>
@@ -330,7 +330,7 @@ An  <i>affine quadric surface</i> \[\V(xy-z) \subset \A^{3}_{\k}.\]
 </ol>
 
 
-<div id="orga42f0e9" class="figure">
+<div id="org872c8e1" class="figure">
 <p><img src="./images/whitney2.png" alt="whitney2.png" />
 </p>
 </div>
@@ -342,8 +342,8 @@ An  <i>affine quadric surface</i> \[\V(xy-z) \subset \A^{3}_{\k}.\]
 </div>
 </div>
 
-<div id="outline-container-org73b493f" class="outline-4">
-<h4 id="org73b493f"><span class="section-number-4">1.1.1.</span> Pictures</h4>
+<div id="outline-container-org183468b" class="outline-4">
+<h4 id="org183468b"><span class="section-number-4">1.1.1.</span> Pictures</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 In the list of examples above, what do those pictures mean?  Clearly they are real images, meaning they exist in \(\A^2_{\R}\) or \(\A^{3}_{\R}\). But this is not our true context: we've assumed \(\k\) is algebraically closed!  Unfortunately, it is not possible to draw a true representation in this case, so we refer to these sorts of images as "real cartoons."   
@@ -351,8 +351,8 @@ In the list of examples above, what do those pictures mean?  Clearly they are re
 </div>
 </div>
 
-<div id="outline-container-org5d268de" class="outline-4">
-<h4 id="org5d268de"><span class="section-number-4">1.1.2.</span> Operations \(\V\) and \(\I\)</h4>
+<div id="outline-container-org1c1bec7" class="outline-4">
+<h4 id="org1c1bec7"><span class="section-number-4">1.1.2.</span> Operations \(\V\) and \(\I\)</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 The operation \(\V\) is a surjective  function: \[\V(-): \big\{\,\textrm{ideals in} \,\,  \k[x_1, \dots, x_n] \big\} \to \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\}.\]
@@ -362,7 +362,7 @@ The operation \(\V\) is a surjective  function: \[\V(-): \big\{\,\textrm{ideals 
 But we can also go backwards, from sets to ideals:
 </p>
 
-<div class="definition" id="orgb82555e">
+<div class="definition" id="org24cc9d8">
 <p>
 Let \(Z \subset \A^n_{\k}\) be any subset.  We define the <b><i>ideal of \(Z\)</i></b> to be \[\I(Z) = \big\{ f \in \k[x_1,\dots,x_n] \mid f(z)=0\,\, \textrm{for all}\,\,z \in Z \big\}.\]
 </p>
@@ -374,7 +374,7 @@ And so, \(\I\) defines a function:
  \[\I(-): \big\{\,\textrm{affine subsets of} \,\,  \A^{n}_{\k} \big\} \to \big\{\,\textrm{ideals in}  \subset \k[x_1, \dots, x_n] \big\}.\]
 </p>
 
-<div class="eg" id="orgdc2d215">
+<div class="eg" id="org062c072">
 <p>
 Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(\I(\{p\}) = (x_1-p_1, \dots, x_n-p_n)\). Notice that \(\I(\{p\}) \subset \k[x_1,\dots, x_n]\) is a <i>maximal ideal</i>.  So, we typically use the symbol \(\fm_p\) for this ideal.
 </p>
@@ -391,7 +391,7 @@ Let \(p = (p_1, \dots, p_n) \in \A^n_{\k}\) be any point. Then \(\I(\{p\}) = (x_
 Since \(\V\) and \(\I\) point in opposite directions, it's natural to wonder that their compositions (both ways) are.  One composition, found in the next exercise, is easy to understand.  The other composition leads naturally to  Hilbert's Nullstellansatz, and so we postpone it.
 </p>
 
-<div class="exercise" id="orgba95f7d">
+<div class="exercise" id="orgb727ce0">
 <ol class="org-ol">
 <li>Prove: For any subset \(Z \subset \A^{n}_{\k}\), we have \(Z \subset \V(\I(Z))\).</li>
 <li>Prove:  \(Z \subset \A^n_{\k}\) is Zariski-closed if and only if \(Z = \V(\I(Z))\).</li>
@@ -404,14 +404,14 @@ Since \(\V\) and \(\I\) point in opposite directions, it's natural to wonder tha
 </div>
 </div>
 
-<div id="outline-container-org68c1cbf" class="outline-4">
-<h4 id="org68c1cbf"><span class="section-number-4">1.1.3.</span> Prime ideals and irreducible affine sets</h4>
+<div id="outline-container-org14104fe" class="outline-4">
+<h4 id="org14104fe"><span class="section-number-4">1.1.3.</span> Prime ideals and irreducible affine sets</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 Affine sets have their "main, big  pieces," called <i>irreducible components</i>.   For instance, in the irreducible components of the  <i>line and plane</i> \(\V(xz,yz) \subset \A^{3}_{\k}\) are the line \(\V(x,y)\) and the plane \(\V(z)\). To make this concept precise, we borrow the  notion of <i>reducibility</i> from topology, which we elaborate on here.  
 </p>
 
-<div class="definition" id="org0d377c1">
+<div class="definition" id="orgd076e67">
 <p>
 An affine set \(Z\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets. Otherwise, \(Z\) is said to be <b><i>irreducible</i></b>.  More generally, a topological space \(X\) is <b><i>reducible</i></b> if it is the union of two non-empty, proper closed subsets, and is <b><i>irreducible</i></b> otherwise.
 </p>
@@ -422,7 +422,7 @@ If \(X\) is any topological space, then a subset \(Y \subset X\) is called an <b
 
 </div>
 
-<div class="exercise" id="org01ecfff">
+<div class="exercise" id="orgd42b0b4">
 <ol class="org-ol">
 <li>Prove: Any two non-empty open subsets of an irreducible topological space must intersect.</li>
 <li>Prove: If \(U \subset X\) is a non-empty open set in an irreducible topological space \(X\), then \(X\) is the closure of \(U\), i.e. \(U\) is dense in \(X\).</li>
@@ -436,14 +436,14 @@ Our next proposition says that for affine sets, irreducibility has a
 really nice algebraic interpretation.
 </p>
 
-<div class="proposition" id="org45e23c9">
+<div class="proposition" id="orge8042fb">
 <p>
 An affine set \(Z \subset \A^{n}_{\k}\) is irreducible if and only if \(\I(Z) \subset \k[x_1, \dots, x_n]\) is a prime ideal.
 </p>
 
 </div>
 
-<div class="proof" id="orgc818154">
+<div class="proof" id="orgff217fa">
 <p>
 First assume \(Z\) is an irreducible affine set, and \(f,g \in \k[x_1, \dots, x_n]\) satisfy \(fg \in \I(Z)\), and \(f \notin \I(Z)\). Then, \(fg \in \I(Z)\) implies \(Z = (\V(f) \cap Z) \cup (\V(g) \cap Z).\) And \(f \notin \I(Z)\) implies \(\V(f) \cap Z \neq Z.\) Thus, by irreducibility we deduce \(\V(g) \cap Z = Z\), i.e. \(g \in \I(Z)\). So \(\I(Z)\) is prime.
 </p>
@@ -457,14 +457,14 @@ Next assume \(Z = A \cup B\) with \(A, B\) both proper closed subsets of \(Z\). 
 </div>
 </div>
 
-<div id="outline-container-org52fe730" class="outline-3">
-<h3 id="org52fe730"><span class="section-number-3">1.2.</span> Algebra reminders</h3>
+<div id="outline-container-org7d4ab80" class="outline-3">
+<h3 id="org7d4ab80"><span class="section-number-3">1.2.</span> Algebra reminders</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Before seeing some of the more interesting algebra lying at the foundations of our subject, let's make sure certain algebraic concepts are solidified.  Throughout this section, suppose \(R\) is an arbitrary ring.  "Ring" here means commutative ring with \(1\).
 </p>
 
-<div class="exercise" id="org00b5cbb">
+<div class="exercise" id="org89c8403">
 <ol class="org-ol">
 <li>An ideal \(I \subset R\) is maximal (resp. prime) if and only if \(R/I\) is a field, (resp. integral domain).</li>
 <li>Dictionary: The assignment \(\overline{J} \mapsto q^{-1}(\overline{J})\) sets up a bijection between the set of ideals of \(R/I\) and the set of ideals in \(R\) containing \(I\), where \(q: R \to R/I\) is the quotient map.</li>
@@ -480,7 +480,7 @@ Before seeing some of the more interesting algebra lying at the foundations of o
 Now suppose \(Z \subset \A^{n}_{\k}\) is an affine set, with ideal \(\I(Z)\).
 </p>
 
-<div class="exercise" id="orgb21c02d">
+<div class="exercise" id="org78f16e8">
 <ol class="org-ol">
 <li>\(p \in \A^{n}_{\k}\) lies in \(Z\) if and only if \(\I(Z) \subset \fm_{p}\).</li>
 <li>A point of \(Z\) is the same thing as a \(\k\)-algebra homomorphism \(\kappa: \k[x_1, \dots, x_n]/\I(Z) \to \k\).</li>
@@ -489,28 +489,28 @@ Now suppose \(Z \subset \A^{n}_{\k}\) is an affine set, with ideal \(\I(Z)\).
 </div>
 </div>
 
-<div id="outline-container-org2372dde" class="outline-4">
-<h4 id="org2372dde"><span class="section-number-4">1.2.1.</span> Ring-value points</h4>
+<div id="outline-container-org9b1b37d" class="outline-4">
+<h4 id="org9b1b37d"><span class="section-number-4">1.2.1.</span> Ring-value points</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 Suppose \(R\) is a \(\k\)-algebra.  We will sometimes use the concept of a \(R\)-point of an affine set (or more generally, algebraic variety) \(Z\).  The definition is as follows:
 </p>
 
-<div class="definition" id="org217068e">
+<div class="definition" id="org3cc8ed8">
 <p>
 Let \(R\) be a \(\k\)-algebra, and suppose \(Z \subset \A^{n}_{\k}\) is an affine set. An <i><b>\(R\)-point of \(Z\)</b></i> is a \(\k\)-algebra homomorphism \(\k[x_1, \dots, x_{n}]/\I(Z) \to R\). 
 </p>
 
 </div>
 
-<div class="exercise" id="org24ce97a">
+<div class="exercise" id="org60c3d50">
 <p>
 Why \(R\)-points are called \(R\)-points: Prove that the \(R\)-points of \(Z\) are in natural bijection with the set of tuples \((r_1, \dots, r_n) \in R^{n}\) satisfying \(f(r_1, \dots, r_n) = 0\) for all \(f \in \I(Z)\).
 </p>
 
 </div>
 
-<div class="exercise" id="org1212930">
+<div class="exercise" id="org3f9096a">
 <p>
 One way to characterize integral domains: Prove that a ring \(R\) is an integral domain if and only if there exists an injective homomorphism from \(R\) to a field.
 </p>
@@ -520,8 +520,8 @@ One way to characterize integral domains: Prove that a ring \(R\) is an integral
 </div>
 </div>
 
-<div id="outline-container-org9879e48" class="outline-3">
-<h3 id="org9879e48"><span class="section-number-3">1.3.</span> Important Algebra: The Nullstellensatz</h3>
+<div id="outline-container-orge461c79" class="outline-3">
+<h3 id="orge461c79"><span class="section-number-3">1.3.</span> Important Algebra: The Nullstellensatz</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Our first fundamental  theorem, which appears in several different forms in several different levels of generality, explains the relationship between the operations \(\V(-)\) and \(\I(-)\).  The exact message of Hilbert's Nullstellensatz can be confusing for newcomers, so I'll try to give many different viewpoints here.  The theorem will also play an important role in laying the foundation for the concept of regular functions.
@@ -536,7 +536,7 @@ Here are two popular ways of thinking about the Nullstellensatz:
 <li>When \(\k\) is algebraically closed, the Nullstellensatz provides the precise list of <i>maximal ideals in</i> \(\k[x_1, \dots, x_n]\): it says that every maximal ideal is of the form \(\fm_{p}\) for some point \(p \in \A^{\k}\).</li>
 </ol>
 
-<div class="theorem" id="org5063562">
+<div class="theorem" id="orgca60612">
 <p>
 Let \(\k\) be an arbitrary field.
 </p>
@@ -555,7 +555,7 @@ Let \(\k\) be an arbitrary field.
 </div>
 
 
-<div class="exercise" id="org86456f1">
+<div class="exercise" id="org359c7bb">
 <p>
 Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \dots, f_m \in \k[x]\) are finitely many polynomials.  Prove that the ring \(\k[x, \frac{1}{f_1}, \dots, \frac{1}{f_m}]\) is never a field. 
 </p>
@@ -566,14 +566,14 @@ Let \(\k[x]\) denote the polynomial ring in one variable, and suppose \(f_1, \do
 </div>
 
 
-<div id="outline-container-org3bc65b6" class="outline-2">
-<h2 id="org3bc65b6"><span class="section-number-2">2.</span> Regular functions and regular mappings</h2>
+<div id="outline-container-org9deb3c2" class="outline-2">
+<h2 id="org9deb3c2"><span class="section-number-2">2.</span> Regular functions and regular mappings</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Next, we must fix the mechanism by which algebraic sets and quasi-affine sets  communicate with each other.  This will also allow us to talk about a quasi-affine set without reference to an ambient \(\A^{n}_{\k}\).   In short, we allow ourselves only  to use functions which are locally describable using ratios of polynomial functions.  These functions are called <i>regular functions</i>. 
 </p>
 
-<div class="definition" id="org9db2f0b">
+<div class="definition" id="org27ebed9">
 <p>
 Let \(U \subset \A^{n}_{\k}\) be a quasi-affine set.
 </p>
@@ -592,14 +592,14 @@ Let \(U \subset \A^{n}_{\k}\) be a quasi-affine set.
 It would be nice if this restricted class of functions behaved well with respect to other choices we've made.  For instance, it comes as a relief that:
 </p>
 
-<div class="proposition" id="orgce07c1d">
+<div class="proposition" id="org25726e4">
 <p>
 Regular functions and mappings are continuous for the Zariski topology.
 </p>
 
 </div>
 
-<div class="proof" id="orgac17305">
+<div class="proof" id="org0487ad0">
 <p>
 In class.  (Then I'll put it here.)
 </p>
@@ -608,7 +608,7 @@ In class.  (Then I'll put it here.)
 
 
 
-<div class="exercise" id="org02e5a32">
+<div class="exercise" id="orgfdf15f6">
 <p>
 Let \(\varphi: U \to U'\) be a regular mapping between quasi-affine sets.  Prove:
 </p>
@@ -631,14 +631,14 @@ If \(U \subset \A^{n}_{\k}\) is a quasi-affine set, then there is a very quick w
 </p>
 
 
-<div class="theorem" id="org615a6dc">
+<div class="theorem" id="org2d1b837">
 <p>
 Let \(Z \subset \A^n_{\k}\) be an affine set. Then every regular function on \(Z\) is the restriction of a polynomial in \(\k[x_1, \dots, x_n]\), and, the restriction homomorphism \(\k[x_1, \dots, x_n]/\I(Z) \to \k[Z]\) is an isomorphism. 
 </p>
 
 </div>
 
-<div class="proof" id="orgcdcd032">
+<div class="proof" id="org19a6e8f">
 <p>
 In class first, then I'll put here.
 </p>
@@ -649,7 +649,7 @@ In class first, then I'll put here.
 This is why, when \(Z \subset \A^{n}_{\k}\) is affine, the ring of regular functions \(\k[Z]\) is called the <i>coordinate ring</i> of \(Z\) &#x2013; it just turns out to be the algebra of functions obtained by playing around with only the coordinate functions \(x_1, \dots, x_n\) restricted to \(Z\).
 </p>
 
-<div class="exercise" id="orgf077127">
+<div class="exercise" id="org435d519">
 <ol class="org-ol">
 <li>Let \(Z \subset \A^n_{\k}\) be an algebraic subset, and let \(f \in \k[x_0, \dots, x_n]\) be any polynomial.  If \(\varphi: Z_f \to \A^1_{\k}\) is a regular function then there exists a polynomial \(a\) such that \(p = a/f^{m}\) for some \(m \geq 0\).</li>
 <li>Very far-reaching idea: Suppose \(W\) is a quasi-affine set and \(U \cup V = W\) is an open cover by Zariski open subsets. Prove that \(\k[W]\) is in natural bijection with the set of pairs \((f,g)\) where \(f \in \k[U]\), \(g \in \k[V]\) satisfying \(f|_{U \cap V} = g|_{U \cap V}\). (Somewhere, you must use that \(U\) and \(V\) are open. Provide an example illustrating why.)</li>
@@ -664,8 +664,8 @@ This is why, when \(Z \subset \A^{n}_{\k}\) is affine, the ring of regular funct
 </div>
 </div>
 
-<div id="outline-container-orgd3f781f" class="outline-3">
-<h3 id="orgd3f781f"><span class="section-number-3">2.1.</span> The many rings attached to a quasi-affine variety</h3>
+<div id="outline-container-orgd70c9bd" class="outline-3">
+<h3 id="orgd70c9bd"><span class="section-number-3">2.1.</span> The many rings attached to a quasi-affine variety</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 If \(X\) is a quasi-affine set, then for each open set \(U \subset X\) we may consider the ring of regular functions \(\k[U]\) defined on \(U\).  In this way, \(X\) defines an entire constellation of rings, namely the \(\k[U]\)'s, and these rings have natural <i>restriction maps</i> among some of them: If \(V \subset U\) is an inclusion of open sets, then each regular function on \(U\) can be restricted to a regular function on \(V\), giving a map \(\rho_{U,V}: \k[U] \to \k[V]\).  If \(W \subset V \subset U\) is a sequence of inclusions, then the two intermediate restriction maps compose to \(\rho_{U,W}\), obviously.
@@ -688,8 +688,8 @@ takes the perspective that the true objects of study are certain kinds of
 </p>
 </div>
 
-<div id="outline-container-org522f24a" class="outline-4">
-<h4 id="org522f24a"><span class="section-number-4">2.1.1.</span> The local ring \(\O_{X,p}\)</h4>
+<div id="outline-container-orgd0bc023" class="outline-4">
+<h4 id="orgd0bc023"><span class="section-number-4">2.1.1.</span> The local ring \(\O_{X,p}\)</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 Some geometric notions are <i>local</i>, in that they describe the geometry "around" a given point,  and some geometric notions are <i>global</i>, describing some aspect of the entire geometry of a (quasi-)affine variety \(X\).  To codify local information into ring theory (which is our overall project so far) we use the <i>local ring of \(X\) at a point \(p\)</i>, denoted \(\O_{X,p}\).
@@ -705,7 +705,7 @@ In other words, we identify locally-defined functions if they agree on
 a sufficiently small neighborhood of \(p\).
 </p>
 
-<div class="exercise" id="orga17d563">
+<div class="exercise" id="orgc075b02">
 <ol class="org-ol">
 <li>Let \(p \in \A^{1}_{\k}\) be any point. Prove that \(\O_{\A^{1}_{\k},p}\) is the ring of ratios of polynomials \(a(t)/b(t)\) such that \(b(p) \neq 0\).</li>
 
@@ -718,7 +718,7 @@ a sufficiently small neighborhood of \(p\).
 In general, the local ring \(\O_{X,p}\) is an especially simple kind of ring &#x2013; it is a <i>local ring</i>, meaning it has a unique maximal ideal:
 </p>
 
-<div class="exercise" id="orgd162adf">
+<div class="exercise" id="orgc8aa21d">
 <ol class="org-ol">
 <li>Prove that any germ \((g,V) \in \O_{X,p}\) satisfying \(g(p) \neq 0\) is a unit in \(\O_{X,p}\).</li>
 
@@ -731,7 +731,7 @@ In general, the local ring \(\O_{X,p}\) is an especially simple kind of ring &#x
 The unique maximal ideal of \(\O_{X,p}\) is denoted \(\fm_{p} \subset \O_{X,p}\).  Many local properties of \(X\) near \(p\) are captured by ring-theoretic properties involving the structure of the maximal ideal \(\fm_p\) in the ring \(\O_{X,p}\).  The two most important examples are: the definition of the  <i>dimension of \(X\) at \(p\)</i>, and the notion of \(X\) being <i>smooth</i> or <i>singular</i> at \(p\).  We will investigate these later.  For now, let us collect more examples.
 </p>
 
-<div class="exercise" id="org3b0ad6d">
+<div class="exercise" id="org9aef71d">
 <ol class="org-ol">
 <li>Let \(X\) denote the cuspidal cubic \(\V(y^2-x^3)\).  Provide a
 description of the local ring \(\O_{X,(0,0)}\).  Prove that
@@ -746,7 +746,7 @@ local rings of points on \(\A^{1}_{\k}\).</li>
 When \(X\) is an irreducible affine variety, \(\O_{X,p}\) has a very concrete general description.  First, we introduce the <i>function field</i> \(\k(X)\) to be the fraction field of the integral domain \(\k[X]\).  (This is only available because \(X\) is irreducible.)  Next, inside \(\k(X)\) we consider those elements which can be represented by a fraction \(a/b\), \(a,b \in \k[X]\) such that \(b(p) \neq 0\).  These elements form a sub-ring.
 </p>
 
-<div class="exercise" id="org04e77b3">
+<div class="exercise" id="org17925ad">
 <p>
 Prove that the sub-ring of \(\k(X)\) just described is isomorphic to \(\O_{X,p}\). 
 </p>
@@ -759,8 +759,8 @@ Prove that the sub-ring of \(\k(X)\) just described is isomorphic to \(\O_{X,p}\
 
 
 
-<div id="outline-container-org388fe72" class="outline-2">
-<h2 id="org388fe72"><span class="section-number-2">3.</span> Projective space \(\P^n_{\k}\) and projective varieties</h2>
+<div id="outline-container-orgd2b5389" class="outline-2">
+<h2 id="orgd2b5389"><span class="section-number-2">3.</span> Projective space \(\P^n_{\k}\) and projective varieties</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 For a multitude of reasons, it is useful to want to <i>compactify</i> affine space.  Take, for instance, the concept of the <i>slope of a line</i> from high school algebra.  Slopes were numbers, typically labelled \(m\).  Except, hold on, what about those pesky "vertical" lines?  It is clear that, geometrically, vertical lines are no more special than any other kind of line.  So we should extend the concept of slope \(m\) to include an "infinity" slope \(m =\infty\). By adding \(\infty\) to the \(\A^1\) of slopes, we arrive at the <i>projective line</i> \(\P^1\).
@@ -771,14 +771,14 @@ Another way that projective space arises is in the following context:  We have a
 </p>
 </div>
 
-<div id="outline-container-org086fce1" class="outline-3">
-<h3 id="org086fce1"><span class="section-number-3">3.1.</span> Projective varieties</h3>
+<div id="outline-container-orgfa7ee4a" class="outline-3">
+<h3 id="orgfa7ee4a"><span class="section-number-3">3.1.</span> Projective varieties</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 For simplicity, we work throughout over an algebraically closed field \(\k\).
 </p>
 
-<div class="definition" id="orgef936a5">
+<div class="definition" id="org6b8a0de">
 <ol class="org-ol">
 <li>The \(n\)-dimensional projective space, denoted \(\P^n_{\k}\), is the set of equivalence classes of points of \(\left(\A^{n+1}_{\k}\right)^{\times}\) under the action of \(\k^{\times}\) by scaling.</li>
 <li>A point \(p \in  \P^n_{\k}\) is denoted by a tuple \([p_0 : p_1 : \ldots : p_n]\), and two tuples \([p_0 : p_1 : \ldots : p_n]\) and \([q_0 : q_1 : \dots : q_n]\) represent the same point in \(\P^n_{\k}\) if and only if there exists \(\lambda \in \k^{\times}\) such that \(p_i = \lambda q_i\) for all \(i = 0,\ldots, n\).</li>
@@ -795,8 +795,8 @@ For simplicity, we work throughout over an algebraically closed field \(\k\).
 
 
 
-<div id="outline-container-org259ec8a" class="outline-4">
-<h4 id="org259ec8a"><span class="section-number-4">3.1.1.</span> The Zariski topology on projective space</h4>
+<div id="outline-container-org74830f2" class="outline-4">
+<h4 id="org74830f2"><span class="section-number-4">3.1.1.</span> The Zariski topology on projective space</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
 Our first, most important objective is to understand how closed subsets of \(\P^{n}_{\k}\) are specified.  The formula is very simple.  First, observe that if \(F(x_0, \dots, x_n) \in \k[x_0, \dots, x_n]\) is a <i>homogeneous</i> polynomial, then the vanishing set \[\V(F) := \{[p_0: \dots : p_n] \in \P^{n}_{\k} \mid F(p_0, \dots, p_n) = 0\}\] is <i>well-defined</i>.  (Remember, projective space is a set of equivalence classes, so we have to make sure definitions are actually well-defined.)  Such a \(\V(F) \subset \P^{n}_{\k}\) will be called a  <i>hypersurface</i> much like in the affine case.  A general closed subset is simply the common vanishing set of a <i>system of homogeneous polynomials</i>, \(\V(F_1, \dots, F_m)\) where each \(F_i\) is a homogeneous polynomial in \(x_0, \dots, x_n\) of some degree \(d_i \geq 0\).
@@ -806,7 +806,7 @@ Our first, most important objective is to understand how closed subsets of \(\P^
 The ideal \((F_i , \dots, F_m) \subset \k[x_0, \dots, x_n]\) is a special kind of ideal, called a <i>graded ideal</i>.  To explain this concept, recall that an arbitrary polynomial \(f \in \k[x_0, \dots, x_n]\) breaks up into a sum of its <i>graded parts</i> \[f = \sum_{i=0}^{\infty} f_{i}\] where each \(f_i\) is homogeneous of degree \(i\). (This is a finite sum &#x2013; almost all  terms are zero.)
 </p>
 
-<div class="definition" id="org60c8a31">
+<div class="definition" id="orga3de071">
 <ol class="org-ol">
 <li>An ideal \(I \subset \k[x_0, \dots, x_n]\) is <i>homogeneous</i> if  \(f \in I\) if and only if every graded part of \(f\) is in \(I\).</li>
 <li>If \(I \subset \k[x_0, \dots, x_n]\) is a homogeneous ideal, we define its <i>vanishing set</i> \(\V(I) \subset \P^{n}_{\k}\) to be the common vanishing set of all homogeneous elements of \(I\).</li>
@@ -814,7 +814,7 @@ The ideal \((F_i , \dots, F_m) \subset \k[x_0, \dots, x_n]\) is a special kind o
 
 </div>
 
-<div class="exercise" id="org0d78c11">
+<div class="exercise" id="org3ba07eb">
 <ol class="org-ol">
 <li>Prove that an ideal is homogeneous if and only if it is generated by homogeneous polynomials.</li>
 <li>Provide an example which shows that not every element of a homogeneous ideal is homogeneous.</li>
@@ -826,7 +826,7 @@ The ideal \((F_i , \dots, F_m) \subset \k[x_0, \dots, x_n]\) is a special kind o
 
 
 
-<div class="theorem" id="org2b52594">
+<div class="theorem" id="orgdce8af1">
 <p>
 Every closed subset of  \(\P^{n}_{\k}\) is obtained as the vanishing set of a graded ideal in \(\k[X_0, \dots, X_n]\). 
 </p>
@@ -834,7 +834,7 @@ Every closed subset of  \(\P^{n}_{\k}\) is obtained as the vanishing set of a gr
 </div>
 
 
-<div class="proof" id="orgfd8564c">
+<div class="proof" id="org5702b7c">
 <p>
 The fact that such a set is closed is immediate from definitions, so we skip that direction.  Now suppose \(Z \subset \P^{n}_{\k}\) is a <i>non-empty</i> closed set, meaning \(\q^{-1}(Z) \subset (\A^{n+1}_{\k})^{\times}\) is Zariski-closed.  By the definition of the induced topology, there is a Zariski-closed set \(\widehat{Z} \subset \A^{n+1}_{\k}\) such that \(\widehat{Z} \cap (\A^{n+1}_{\k})^{\times} = \q^{-1}(Z)\).  Since \(Z\) is non-empty, there exists a point \((p_0, \dots, p_{n}) \in \q^{-1}(Z)\), and hence \((\lambda p_0, \dots, \lambda p_{n}) \in \q^{-1}(Z)\) for all \(\lambda \in \k^{\times}\). It follows that \(\widehat{Z}\) is a <i>conical subset</i> of \(\A^{n+1}_{\k}\).  A Zariski-closed subset \(C \subset \A^{n+1}_{\k}\) is  <i>conical</i>, or a <i>cone</i>, if \((p_0 ,\dots, p_n) \in C\) if and only if \((\lambda p_{0}, \dots, \lambda p_{n}) \in C\) for all \(\lambda \in \k^{\times}\).
 </p>
@@ -849,9 +849,9 @@ So, \(\I(\widehat{Z})\) is homogeneous, which is what we needed to show.
 
 </div>
 
-<div class="exercise" id="orgab4dd87">
+<div class="exercise" id="orgafa86d9">
 <ol class="org-ol">
-<li>For each \(i=0,\ldots, n\), let \(\gamma_i: \A^{n}_{\k} \to U_i\) denote the bijective function that sends \((a_0, \ldots, a_{i-1}, a_{i+1}, \ldots a_n)\) to the point \([a_0: \ldots: a_{i-1} : 1 : a_{i+1} : \ldots : a_n]\).  Prove that \(\gamma_i\) is a <i>homeomorphism</i> of topological spaces, meaning: \(Y \subset \A^n_{\k}\) is Zariski-open if and only if \(\gamma_i(Y) \subset U_i\) is Zariski-open.</li>
+<li>For each \(i=0,\ldots, n\), consider an affine space \(\A^{n}_{\k}\) with coordinates \((x_{0/i}, \dots, x_{n/i})\), where the symbol \(x_{i/i}\) is omitted. Let \(\gamma_i: \A^{n}_{\k} \to U_i\) denote the bijective function that sends \((p_{0/i}, \ldots, \ldots p_{n/i})\) to the point \([p_{0/i}: \ldots: p_{(i-1)/i} : 1 : p_{(i+1)/i} : \ldots : p_{n/i}]\).  Prove that \(\gamma_i\) is a <i>homeomorphism</i> of topological spaces, meaning: \(Y \subset \A^n_{\k}\) is Zariski-open if and only if \(\gamma_i(Y) \subset U_i\) is Zariski-open.</li>
 <li>One could define another topology on \(\P^n_{\k}\) in the following way: A set \(Y \subset \P^n_{\k}\) is closed if and only if \(Y_{i} := Y \cap U_i\) is closed in \(U_i\) for all \(i\), where we think of \(U_i\) as an affine space under the indentifications \(\gamma_i\) in the previous exercise.  Prove that this topology is the same as the Zariski topology defined in the definition above.</li>
 </ol>
 
@@ -859,24 +859,59 @@ So, \(\I(\widehat{Z})\) is homogeneous, which is what we needed to show.
 </div>
 </div>
 
-<div id="outline-container-orge1beb73" class="outline-4">
-<h4 id="orge1beb73"><span class="section-number-4">3.1.2.</span> The projective line</h4>
+<div id="outline-container-org48d5193" class="outline-4">
+<h4 id="org48d5193"><span class="section-number-4">3.1.2.</span> The projective line</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
 The projective line \(\P^{1}_{\k}\) is ubiquitous, and understanding its geometry is absolutely essential.  
 </p>
 
-<div class="proposition" id="org6c6dab7">
+<div class="proposition" id="org8f421fd">
 <p>
 The closed subsets of  \(\P^{1}_{\k}\) are the finite subsets and \(\P^{1}_{\k}\) itself.
 </p>
 
 </div>
 
-<div class="exercise" id="org2d82368">
+<div class="exercise" id="org18f4b67">
 <p>
 Prove the proposition.
 </p>
+
+</div>
+
+<p>
+The projective line \(\P^{1}_{\k}\) is the union of its two affine charts \(U_{0}\) and \(U_{1}\), both identified with the affine line \(\A^{1}_{\k}\).   \(U_{0}\) is the set of points of the form \([1 : p_{1/0}]\) as \(p_{1/0}\) ranges freely in \(\A^{1}_{\k}\), and \(U_1\) is the set of points of the form \([p_{0/1}:1]\) as \(p_{0/1}\) varies freely in \(\A^{1}_{\k}\).  \(U_0\) and \(U_1\) overlap on the points of the form \(p = [p_0 : p_1]\) where both \(p_0\) and \(p_1\) are nonzero elements in \(\k\).  Such a point \(p\) may be viewed as a point of either chart: in the \(U_0\)-chart it corresponds to the value \(p_{1/0} = \frac{p_{1}}{ p_{0}}\) and in the the \(U_1\)-chart it corresponds to the value \(p_{0/1} = \frac{p_0}{p_1}\).   Thus, since we are describing the same point of \(\P^{1}_{\k}\), we deduce that the affine coordinate \(x_{1/0}\) on \(U_0\) is related to the affine coordinate \(x_{0/1}\) on \(U_1\) via the <i>transition</i> or <i>gluing</i> data: \[x_{1/0} = \frac{1}{x_{0/1}}.\]
+</p>
+
+<p>
+This transition data only exists and is meaningful on the intersection \(U_0 \cap U_1\). Indeed, both \(x_{0/1}, x_{1/0}\) must be nonzero to parse it.   When the charts \(U_i\) are identified with \(\A^{1}_{\k}\), we conclude that <i>\(\P^{1}_{\k}\) is obtained by gluing together two \(\A^{1}_{\k}\)'s along \(\A^{1}_{\k} \setminus \{0\}\) where the identification is by inversion.</i> (Recall in complex analysis, where sometimes we make a change of variables \(w = 1/z\) when investigating the behavior of a holomorphic function when the argument becomes arbitrarily large. We are actually doing math on the <i>Riemann sphere</i> \(\P^{1}_{\mathbb{C}}\), where most of the class occurred in one affine chart.)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2eaf9ce" class="outline-4">
+<h4 id="org2eaf9ce"><span class="section-number-4">3.1.3.</span> The classical geometry of binary forms (part I)</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<p>
+It is a good practice to start thinking about the notion of "set of all closed subsets of an algebraic-geometric object".  We will do so in case of \(\P^{1}_{\k}\). 
+</p>
+
+<p>
+Every closed subset of \(\P^{1}_{\k}\) is the vanishing set of a homogeneous polynomial \(F(x_0,x_1)\) of some degree \(d\) in homogeneous coordinates \(x_0,x_{1}\), i.e. a degree \(d\) <i>binary form</i>. The set \(S_d\) of all degree \(d\) binary forms naturally forms a \(\k\)-vector space of dimension \(d+1\): specifically, every form can be written
+\[ F = a_0 x_{0}^d + a_1 x_{0}^{d-1}x_{1} + \dots + a_d x_{1}^d \] where \(a_i \in \k\) are arbitrary.  The \(0\) form obviously does not define a closed <i>strict</i> subset of \(\P^1_{\k}\).  Furthermore, the form \(F\) and \(\lambda F\) define the same closed subset.  Therefore, as a first pass at geometrizing the "set of all closed subsets of \(\P^{1}_{\k}\) we can begin with the <i>projective space of degree \(d\) binary forms</i> \[\P S_d.\]  Here, if \(V\) is any vector space, we denote its <i>projectivization</i> \(V^{\times}/\k^{\times}\) by \(\P V\). It is isomorphic to \(\P^{n}\) where \(\dim V = n+1\).
+</p>
+
+<p>
+A point of \(\P S_d\) is written \([a_0 : \dots : a_d]\), and <i>corresponds to</i> or <i>means</i> the binary form \(\sum_{i}a_{i}x_{0}^{d-i}x_{1}^{i}\), up to scaling.  We will let \(c_i\), \(i \in \{0, \dots, d\}\) denote the homogeneous coordinates on \(S_d\) sending \((a_0, \dots, a_d)\) to \(a_i\).   Notice that \(\P S_d\) is identifiable with \(\P^d\), but the current context <i>gives each point a meaning</i>.   When \(\P^d\) is interpreted as \(\P S_d\) it comes to life with beautiful geometric figures inside it:
+</p>
+
+<div class="exercise" id="org0ed9e63">
+<ol class="org-ol">
+<li>In the \(\P^{2} \simeq \P S_2\) of binary quadratic forms, prove that the locus of forms \(F\) which have a double zero on \(\P^1_{\k}\) (meaning \(\V(F)\) is a single point, as opposed to two distinct points) is a closed subset defined by a famous single homogeneous equation in the coefficient variables \(c_0,c_1,c_2\).</li>
+<li>In the \(\P^3 \simeq \P S_3\) of binary cubic forms, prove that the locus of forms \(F\) which define fewer than \(3\) distinct points in \(\P^{1}_{\k}\) is a closed subset defined by a single homogeneous equation in the coefficient variables \(c_0,c_1,c_2,c_4\). (This will be challenging and fun if you are very new.)</li>
+<li>Show that the subset of \(\P^{3} \simeq \P S_3\) corresponding to binary cubic forms defining a <i>single</i> point is a closed subset.  Find a system of homogeneous equations defining it.</li>
+</ol>
 
 </div>
 </div>
@@ -886,7 +921,7 @@ Prove the proposition.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Anand Patel</p>
-<p class="date">Created: 2022-10-18 Tue 08:14</p>
+<p class="date">Created: 2022-10-19 Wed 10:37</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

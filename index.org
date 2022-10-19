@@ -389,7 +389,7 @@ So, $\I(\widehat{Z})$ is homogeneous, which is what we needed to show.
 #+end_proof
 
 #+begin_exercise
-1) For each $i=0,\ldots, n$, let $\gamma_i: \A^{n}_{\k} \to U_i$ denote the bijective function that sends $(a_0, \ldots, a_{i-1}, a_{i+1}, \ldots a_n)$ to the point $[a_0: \ldots: a_{i-1} : 1 : a_{i+1} : \ldots : a_n]$.  Prove that $\gamma_i$ is a /homeomorphism/ of topological spaces, meaning: $Y \subset \A^n_{\k}$ is Zariski-open if and only if $\gamma_i(Y) \subset U_i$ is Zariski-open.
+1) For each $i=0,\ldots, n$, consider an affine space $\A^{n}_{\k}$ with coordinates $(x_{0/i}, \dots, x_{n/i})$, where the symbol $x_{i/i}$ is omitted. Let $\gamma_i: \A^{n}_{\k} \to U_i$ denote the bijective function that sends $(p_{0/i}, \ldots, \ldots p_{n/i})$ to the point $[p_{0/i}: \ldots: p_{(i-1)/i} : 1 : p_{(i+1)/i} : \ldots : p_{n/i}]$.  Prove that $\gamma_i$ is a /homeomorphism/ of topological spaces, meaning: $Y \subset \A^n_{\k}$ is Zariski-open if and only if $\gamma_i(Y) \subset U_i$ is Zariski-open.
 2) One could define another topology on $\P^n_{\k}$ in the following way: A set $Y \subset \P^n_{\k}$ is closed if and only if $Y_{i} := Y \cap U_i$ is closed in $U_i$ for all $i$, where we think of $U_i$ as an affine space under the indentifications $\gamma_i$ in the previous exercise.  Prove that this topology is the same as the Zariski topology defined in the definition above.
 #+end_exercise
 
@@ -404,5 +404,20 @@ The closed subsets of  \(\P^{1}_{\k}\) are the finite subsets and \(\P^{1}_{\k}\
 Prove the proposition.
 #+end_exercise
 
+The projective line $\P^{1}_{\k}$ is the union of its two affine charts $U_{0}$ and $U_{1}$, both identified with the affine line $\A^{1}_{\k}$.   $U_{0}$ is the set of points of the form $[1 : p_{1/0}]$ as $p_{1/0}$ ranges freely in $\A^{1}_{\k}$, and $U_1$ is the set of points of the form $[p_{0/1}:1]$ as $p_{0/1}$ varies freely in $\A^{1}_{\k}$.  $U_0$ and $U_1$ overlap on the points of the form $p = [p_0 : p_1]$ where both $p_0$ and $p_1$ are nonzero elements in $\k$.  Such a point $p$ may be viewed as a point of either chart: in the \(U_0\)-chart it corresponds to the value $p_{1/0} = \frac{p_{1}}{ p_{0}}$ and in the the \(U_1\)-chart it corresponds to the value $p_{0/1} = \frac{p_0}{p_1}$.   Thus, since we are describing the same point of $\P^{1}_{\k}$, we deduce that the affine coordinate $x_{1/0}$ on $U_0$ is related to the affine coordinate $x_{0/1}$ on $U_1$ via the /transition/ or /gluing/ data: $$x_{1/0} = \frac{1}{x_{0/1}}.$$
 
+This transition data only exists and is meaningful on the intersection $U_0 \cap U_1$. Indeed, both $x_{0/1}, x_{1/0}$ must be nonzero to parse it.   When the charts $U_i$ are identified with $\A^{1}_{\k}$, we conclude that /\(\P^{1}_{\k}\) is obtained by gluing together two \(\A^{1}_{\k}\)'s along \(\A^{1}_{\k} \setminus \{0\}\) where the identification is by inversion./ (Recall in complex analysis, where sometimes we make a change of variables $w = 1/z$ when investigating the behavior of a holomorphic function when the argument becomes arbitrarily large. We are actually doing math on the /Riemann sphere/ $\P^{1}_{\mathbb{C}}$, where most of the class occurred in one affine chart.)
 
+*** The classical geometry of binary forms (part I)
+It is a good practice to start thinking about the notion of "set of all closed subsets of an algebraic-geometric object".  We will do so in case of $\P^{1}_{\k}$. 
+
+Every closed subset of $\P^{1}_{\k}$ is the vanishing set of a homogeneous polynomial $F(x_0,x_1)$ of some degree $d$ in homogeneous coordinates $x_0,x_{1}$, i.e. a degree $d$ /binary form/. The set $S_d$ of all degree $d$ binary forms naturally forms a \(\k\)-vector space of dimension $d+1$: specifically, every form can be written
+$$ F = a_0 x_{0}^d + a_1 x_{0}^{d-1}x_{1} + \dots + a_d x_{1}^d $$ where $a_i \in \k$ are arbitrary.  The $0$ form obviously does not define a closed /strict/ subset of $\P^1_{\k}$.  Furthermore, the form $F$ and $\lambda F$ define the same closed subset.  Therefore, as a first pass at geometrizing the "set of all closed subsets of $\P^{1}_{\k}$ we can begin with the /projective space of degree $d$ binary forms/ $$\P S_d.$$  Here, if $V$ is any vector space, we denote its /projectivization/ $V^{\times}/\k^{\times}$ by $\P V$. It is isomorphic to $\P^{n}$ where $\dim V = n+1$.
+
+A point of $\P S_d$ is written $[a_0 : \dots : a_d]$, and /corresponds to/ or /means/ the binary form $\sum_{i}a_{i}x_{0}^{d-i}x_{1}^{i}$, up to scaling.  We will let \(c_i\), $i \in \{0, \dots, d\}$ denote the homogeneous coordinates on $S_d$ sending $(a_0, \dots, a_d)$ to $a_i$.   Notice that $\P S_d$ is identifiable with \(\P^d\), but the current context /gives each point a meaning/.   When $\P^d$ is interpreted as \(\P S_d\) it comes to life with beautiful geometric figures inside it:
+
+#+begin_exercise
+1) In the $\P^{2} \simeq \P S_2$ of binary quadratic forms, prove that the locus of forms $F$ which have a double zero on $\P^1_{\k}$ (meaning $\V(F)$ is a single point, as opposed to two distinct points) is a closed subset defined by a famous single homogeneous equation in the coefficient variables $c_0,c_1,c_2$.
+2) In the $\P^3 \simeq \P S_3$ of binary cubic forms, prove that the locus of forms $F$ which define fewer than $3$ distinct points in $\P^{1}_{\k}$ is a closed subset defined by a single homogeneous equation in the coefficient variables $c_0,c_1,c_2,c_4$. (This will be challenging and fun if you are very new.)
+3) Show that the subset of $\P^{3} \simeq \P S_3$ corresponding to binary cubic forms defining a /single/ point is a closed subset.  Find a system of homogeneous equations defining it.  
+#+end_exercise
