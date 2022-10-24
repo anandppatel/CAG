@@ -346,10 +346,10 @@ For simplicity, we work throughout over an algebraically closed field \(\k\).
 1) The \(n\)-dimensional projective space, denoted \(\P^n_{\k}\), is the set of equivalence classes of points of $\left(\A^{n+1}_{\k}\right)^{\times}$ under the action of $\k^{\times}$ by scaling.
 2)  A point $p \in  \P^n_{\k}$ is denoted by a tuple $[p_0 : p_1 : \ldots : p_n]$, and two tuples $[p_0 : p_1 : \ldots : p_n]$ and $[q_0 : q_1 : \dots : q_n]$ represent the same point in $\P^n_{\k}$ if and only if there exists $\lambda \in \k^{\times}$ such that $p_i = \lambda q_i$ for all $i = 0,\ldots, n$.
 3) The assignment $(p_0, \dots, p_n) \mapsto [p_0 : \dots : p_n]$ defines the */quotient mapping/* \[\q : \left( \A^{n+1}_{\k}\right)^{\times} \to \P^n_{\k}.\]
-4) The */Zariski topology on \(\P^n_{\k}\)/* is defined as follows: A subset $U \subset \P^n_{\k}$ is open (resp. closed) if and only if $\q^{-1}(U)$ is Zariski-open (resp. closed) in  \(\left( \A^{n+1}_{\k}\right)^{\times}\).
+4) The */Zariski topology on \(\P^n_{\k}\)/* is defined as follows: A subset $U \subset \P^n_{\k}$ is open (resp. closed) if and only if $\q^{-1}(U)$ is Zariski-open (resp. closed) in  \(\left( \A^{n+1}_{\k}\right)^{\times}\).  A closed subset of $\P^{n}_{\k}$ is called a */projective set/*.  An open subset of a projective set is called a */quasi-projective set/*.
 5) For each $i=0, \ldots, n$, we define the */\(i\)-th standard affine open chart of $\P^n_{\k}$/* to be the open set \[U_{i} = \big\{ [p_{0}: \ldots : p_n] \mid p_i \neq 0 \big\}.\]
 6) The coordinate functions $x_i: \A^{n+1}_{\k} \to \A^{1}_{\k}$ are called */homogeneous coordinates/* on $\P^{n}_{\k}$.
-7) If $Z \subset \P^n_{\k}$ is any subset, then $Z_{i} := Z \cap U_{i}$ is the \(i\)-th */affine chart/* of $Z$. 
+7) If $Z \subset \P^n_{\k}$ is any subset, then $Z_{i} := Z \cap U_{i}$ is the \(i\)-th */affine chart/* of $Z$.
 #+end_definition
 
 
@@ -406,7 +406,8 @@ Prove the proposition.
 
 The projective line $\P^{1}_{\k}$ is the union of its two affine charts $U_{0}$ and $U_{1}$, both identified with the affine line $\A^{1}_{\k}$.   $U_{0}$ is the set of points of the form $[1 : p_{1/0}]$ as $p_{1/0}$ ranges freely in $\A^{1}_{\k}$, and $U_1$ is the set of points of the form $[p_{0/1}:1]$ as $p_{0/1}$ varies freely in $\A^{1}_{\k}$.  $U_0$ and $U_1$ overlap on the points of the form $p = [p_0 : p_1]$ where both $p_0$ and $p_1$ are nonzero elements in $\k$.  Such a point $p$ may be viewed as a point of either chart: in the \(U_0\)-chart it corresponds to the value $p_{1/0} = \frac{p_{1}}{ p_{0}}$ and in the the \(U_1\)-chart it corresponds to the value $p_{0/1} = \frac{p_0}{p_1}$.   Thus, since we are describing the same point of $\P^{1}_{\k}$, we deduce that the affine coordinate $x_{1/0}$ on $U_0$ is related to the affine coordinate $x_{0/1}$ on $U_1$ via the /transition/ or /gluing/ data: $$x_{1/0} = \frac{1}{x_{0/1}}.$$
 
-This transition data only exists and is meaningful on the intersection $U_0 \cap U_1$. Indeed, both $x_{0/1}, x_{1/0}$ must be nonzero to parse it.   When the charts $U_i$ are identified with $\A^{1}_{\k}$, we conclude that /\(\P^{1}_{\k}\) is obtained by gluing together two \(\A^{1}_{\k}\)'s along \(\A^{1}_{\k} \setminus \{0\}\) where the identification is by inversion./ (Recall in complex analysis, where sometimes we make a change of variables $w = 1/z$ when investigating the behavior of a holomorphic function when the argument becomes arbitrarily large. We are actually doing math on the /Riemann sphere/ $\P^{1}_{\mathbb{C}}$, where most of the class occurred in one affine chart.)
+This transition data only exists and is meaningful on the intersection $U_0 \cap U_1$. Indeed, both $x_{0/1}, x_{1/0}$ must be nonzero to parse it.   When the charts $U_i$ are identified with $\A^{1}_{\k}$, we conclude that /\(\P^{1}_{\k}\) is obtained by gluing together two \(\A^{1}_{\k}\)'s along \(\A^{1}_{\k} \setminus \{0\}\) where the identification is by inversion./ (Recall in complex analysis, where sometimes we make a change of variables $w = 1/z$ when investigating the behavior of a holomorphic function when the argument becomes arbitrarily large. We are actually doing analysis on the /Riemann sphere/ $\P^{1}_{\mathbb{C}}$, where most of the class occurred in one affine chart.)
+
 
 *** The classical geometry of binary forms (part I)
 It is a good practice to start thinking about the notion of "set of all closed subsets of an algebraic-geometric object".  We will do so in case of $\P^{1}_{\k}$. 
@@ -418,6 +419,60 @@ A point of $\P S_d$ is written $[a_0 : \dots : a_d]$, and /corresponds to/ or /m
 
 #+begin_exercise
 1) In the $\P^{2} \simeq \P S_2$ of binary quadratic forms, prove that the locus of forms $F$ which have a double zero on $\P^1_{\k}$ (meaning $\V(F)$ is a single point, as opposed to two distinct points) is a closed subset defined by a famous single homogeneous equation in the coefficient variables $c_0,c_1,c_2$.
-2) In the $\P^3 \simeq \P S_3$ of binary cubic forms, prove that the locus of forms $F$ which define fewer than $3$ distinct points in $\P^{1}_{\k}$ is a closed subset defined by a single homogeneous equation in the coefficient variables $c_0,c_1,c_2,c_4$. (This will be challenging and fun if you are very new.)
+2) In the $\P^3 \simeq \P S_3$ of binary cubic forms, prove that the locus of forms $F$ which define fewer than $3$ distinct points in $\P^{1}_{\k}$ is a closed subset defined by a single homogeneous equation in the coefficient variables $c_0,c_1,c_2,c_3$. (This will be challenging and fun if you are very new.)
 3) Show that the subset of $\P^{3} \simeq \P S_3$ corresponding to binary cubic forms defining a /single/ point is a closed subset.  Find a system of homogeneous equations defining it.  
 #+end_exercise
+
+*** The geometry of the projective plane 
+Next, we should explore the geometry of the projective plane $\P^{2}_{\k}$.  It has three standard affine charts $U_0, U_1, U_2$.  The affine chart $U_{0}$ is the set of points of the form $[1:p_{1/0}:p_{2/0}]$. The affine chart $U_{1}$ is the set of points of the form $[p_{0/1}:1:p_{2/1}]$.  A point $[p_0 : p_1: p_2]$ is in $U_0 \cap U_1$ if and only if both $p_0$ and $p_1$ are nonzero.  In this case, when we scale down the respective factors to $1$, we find that $p_{0/1} = p_{0}/p_{1}$ while $p_{1/0} = p_{1}/p_{0}$.  Therefore, on $U_{0} \cap U_{1}$ we have the transition data between affine coordinates: \[x_{1/0} = x_{0/1}^{-1}.\]  Furthermore, for the point $p$ above, we have $p_{2/1} = p_{2}/p_{1}$ and $p_{2/0} = p_{2}/p_{0}$. Thus, on $U_{0} \cap U_{1}$ we obtain the further transition data: \[x_{2/1}x_{1/0} = x_{2/0}.\]
+
+Let us now consider a specific projective subset  $C \subset \P^{2}_{\k}$: the /conic curve/ \[\V(x_{0}x_{2}-x_{1}^{2}).\]   Let us see what the three "affine sides" \[C_{i} := C \cap U_{i}\] of this curve look like.  For $C_0$, we simply set $x_0 = 1$ in the defining equation $x_0 x_2 - x_{1}^{2}$, and interpret the remaining variables as $x_{1/0}$ and $x_{2/0}$.  We thus get \[\V(x_{2/0} - x_{1/0}^{2}) \subset U_{0} \simeq \A^{2}_{\k}.\]  This is a "parabola" in the $(x_{1/0}, x_{2/0})$ coordinates.  The "points at infinity" for $C_0$ can simply be taken to mean the points of $C \setminus C_{0}$.  There is only one such point: To find it, we set $x_0 = 0$ in the original homogeneous equation.  We then obtain a homogeneous form only in the variables $x_1, x_2$, namely $x_{1}^{2} = 0$.  This defines a closed subset of the $\P^{1}_{\k}$ "at infinity" consisting of the points in $\P^{2}_{\k}$ of the form $[0:p_{1}:p_{2}]$.  The equation $x_{1}^{2}=0$ defines the single point $[0:0:1]$ on this $\P^{1}_{\k}$ at infinity.  (Observe that the equation obtained was $x_{1}^{2}=0$, not just $x_{1}=0$. This reflects the fact that the line at infinity (from \(U_0\)'s perspective) meets the conic $C$ /tangentially/ at the point $[0:0:1]$, but we don't know what that means quite yet.)
+
+The chart $C_1$ is given by affine equation $x_{0/1}x_{2/1}-1 = 0$.  This is a "hyperbola".  There are two points "at infinity" for $C_1$, namely $[0:0:1]$ and $[1:0:0]$.  These correspond to the two asymptotes of the hyperbola.   Finally, the chart $C_2$ is again a "parabola".  The lesson here, and the reason I put quotation marks around these words, is that the notion of hyperbola, parabola, and ellipse are illusions in the projective setting.  The conic $C$ /is one cohesive object/, and these distinctions arise when we look at $C$ from different sides.
+
+
+** Regular functions and regular mappings in the projective setting 
+Now that we have defined the more general concept of a projective (or quasi-projective) set $X \subset \P^{n}_{\k}$ we must move toward establishing the mechanisms which relate two of them, much as we did in the chapter on affine varieties.  The situation is a bit more complicated than it was for affine sets, essentially because projective sets have many "sides" to deal with, making their anatomy slightly more complicated.  
+
+First we will define what a regular function on a quasi-projective set $X \subset \P^{n}$ means.  The idea is to inherit the meaning of regular function from quasi-affine subsets of $\A^{n+1}_{\k}$:
+
+#+begin_definition
+ Let $X \subset \P^{n}$ be a quasi-projective set. A function $$f:X \to \A^{1}_{\k}$$ is */regular/* if for each point $x \in X$ there exists an open neighborhood $U \subset X$ of $x$ such that the composite $f|_{U} \circ \q : \q^{-1}(U) \to \A^{1}_{\k}$ is a regular function on the quasi-affine set $\q^{-1}(U) \subset \A^{n+1}_{\k}$.
+#+end_definition
+
+One important difference between the affine and projective stories is that homogeneous variables $x_0, \dots, x_n$ or homogeneous polynomials thereof are do not produce well-defined functions on projective space.  However, by taking /ratios/ of two homogeneous forms \[\frac{F(x_0, \dots, x_n)}{G(x_0, \dots, x_n)}\] */of the same degree/*, one obtains a function, not defined on all of $\P^{n}_{\k}$ but defined on the open subset \[\P^{n}_{\k} \setminus \V(G).\]  We will call a ratio of homogeneous polynomials of the same degree a */homogeneous ratio/*.
+
+The next exercise provides an alternative definition of regular function.
+
+#+begin_exercise
+Let $X \subset \P^{n}_{\k}$ be a quasi-projective set.  Prove that a function $f: X \to \A^{1}_{\k}$ is regular if and only if $f$ is locally expressible as a homogeneous ratio, i.e. for each $x \in X$ there is an open neighborhood $U \subset X$ such that $f|_{U}$ is equal to a homogeneous ratio $F(x_0, \dots, x_n)/G(x_0, \dots, x_n)$ with $G$ nonzero on $U$. 
+#+end_exercise
+
+
+Regular functions can be added and multiplied to obtain another regular function.  Constant functions are regular. Thus, the set of all regular functions on $X$ is a \(\k\)-algebra, denoted \(\k[X]\) as in the affine situation.  However, as we will see, the ring $\k[X]$ usually carries very little information about $X$, and certainly does not recover $X$ in most cases where $X$ is projective.
+
+Regularity, however, is evidently a local condition on $X$. Therefore, we obtain a sheaf of regular functions denoted $\O_X$, whose value $\O_{X}(U)$ on an open subset $U$ is the ring $\k[U]$. 
+
+#+begin_exercise
+In this exercise we will establish that $\k[\P^n_{\k}] = \k$, i.e. the only regular functions on projective space are constant. (If you are struggling, just do the case of $\P^{1}_{\k}$.)
+1) Prove: If $X \subset \P^n_{\k}$ is any quasi-projective set, then the restriction of a regular function to an open subset $U \subset X$ is again regular.
+2) Prove that the regular functions on the standard affine open chart $U_i \subset \P^{n}_{\k}$ are exactly the polynomials in the variables $x_{j/i}$, $j \in \{0 ,\dots, n\} \setminus \{i\}$. 
+3) If $f \in \P^{n}_{\k}$ is a regular function, and if $f_i = f|_{U_{i}}$, then clearly $f_{i}|_{U_{i}\cap U_{j}} = f_{j}|_{U_{i} \cap U_{j}}$. Use this, and the transition data between charts to prove the theorem!
+4) In fact, prove that $\k[U_i \cup U_j] = \k$, where $U_i$ and $U_j$ are any two standard affine charts on $\P^{n}_{\k}$.  
+#+end_exercise
+
+As before, once we have the notion of a single regular function, we automatically obtain the definition of a regular mapping $f: X \to \A^{n}_{\k}$ for any $n$ by requesting that each coordinate function be regular.
+
+#+begin_exercise
+A regular mapping $f: X \to \A^{n}_{\k}$ is continuous for the Zariski topologies on domain and codomain.
+#+end_exercise
+
+The question of how to define a /regular mapping/  $\varphi: X \to Y$ between two quasi-projective sets $X$ and $Y$ has two types of answers.  The best, most "mature" answer is in terms of sheaves, which will be given later.  The clunkier, but more vivid "first" answer is as follows.  
+
+First, if $Y \subset \P^{n}_{\k}$ we replace the question with the more specific question: What is a regular mapping $\varphi: X \to \P^{n}_{\k}$? Once this is answered, we simply insist that the image of $\varphi$ lie inside $Y$.  The more specific answer is: For each standard affine open $U_{i} \subset \P^{n}_{\k}$, request that $V_{i} := \varphi^{-1}(U_i)$ is open and that the restriction \[\varphi|_{V_{i}} : V_{i} \to U_{i} \simeq \A^{n}_{\k}\] is regular, as already defined before. 
+
+#+begin_exercise
+Prove that a regular mapping $\varphi: X \to \P^{n}_{\k}$ is continuous for the Zariski topology, i.e. that the preimage of /any/ open set (not just the $U_{i}$) is open. Using this, prove that the composite of regular mappings $\varphi: X \to Y$ and $\psi: Y \to Z$ is again regular.
+#+end_exercise
+
+The modern way to define a regular mapping (both in the affine case and in the projective case) is as follows: A function $\varphi: X \to Y$ is regular if: 1) $\varphi$ is continuous for Zariski topologies, and 2) For any open set $U \subset Y$ and any regular function $g \in \O_{Y}(U)$, the composite function \[\varphi^{\sharp}(g) := g \circ \varphi|_{\varphi^{-1}(U)}: \varphi^{-1}(U) \to \A^{1}_{\k}\] is a regular function on $\varphi^{-1}(U)$.  In the language of sheaves, this second point is summarized as: the "composition with $\varphi$" induces a morphism of sheaves on $X$ \[\varphi^{\sharp}: \varphi^{-1}\O_{Y} \to \O_{X}.\]
