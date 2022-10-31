@@ -476,3 +476,12 @@ Prove that a regular mapping $\varphi: X \to \P^{n}_{\k}$ is continuous for the 
 #+end_exercise
 
 The modern way to define a regular mapping (both in the affine case and in the projective case) is as follows: A function $\varphi: X \to Y$ is regular if: 1) $\varphi$ is continuous for Zariski topologies, and 2) For any open set $U \subset Y$ and any regular function $g \in \O_{Y}(U)$, the composite function \[\varphi^{\sharp}(g) := g \circ \varphi|_{\varphi^{-1}(U)}: \varphi^{-1}(U) \to \A^{1}_{\k}\] is a regular function on $\varphi^{-1}(U)$.  In the language of sheaves, this second point is summarized as: the "composition with $\varphi$" induces a morphism of sheaves on $X$ \[\varphi^{\sharp}: \varphi^{-1}\O_{Y} \to \O_{X}.\]
+
+*** Regular mappings between projective spaces
+Suppose $X \subset \P^{n}_{\k}$ is a quasi-projective set.  It is unclear how one would even specify any non-constant regular mapping $\varphi: X \to \P^{m}_{\k}$ in the first place.  Here, we will provide /one particular recipe/ for specifying /some/ regular maps $\varphi$.  
+
+Suppose $F_{0}, \dots, F_{m}$ are degree $d$ forms on $\P^{n}_{\k}$.  These forms define a /base locus/ \[B \subset \P^{n}_{\k}\] defined by $B = \V(F_0, \dots, F_m)$, i.e. $B$ is the common vanishing set of all $F_i$. The assignment \[[p_0 : \dots :p_{n}] \mapsto [F_{0}(p_0, \dots, p_{n}): \dots : F_{m}(p_0, \dots, p_{n})] \in \P^{m}_{\k}\] is */well-defined/* on $U = \P^{n}_{\k} \setminus B$: this is because each $F_i$ is homogeneous of the /same/ degree $d$, and the output is never $[0: \dots : 0]$ for points in $U$.
+
+#+begin_exercise
+Maintaining the context of the previous paragraph, prove that the assignment $[F_0 : \dots :F_m]$ defines a regular mapping $U \to \P^{m}_{\k}$. 
+#+end_exercise
