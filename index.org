@@ -480,8 +480,20 @@ The modern way to define a regular mapping (both in the affine case and in the p
 *** Regular mappings between projective spaces
 Suppose $X \subset \P^{n}_{\k}$ is a quasi-projective set.  It is unclear how one would even specify any non-constant regular mapping $\varphi: X \to \P^{m}_{\k}$ in the first place.  Here, we will provide /one particular recipe/ for specifying /some/ regular maps $\varphi$.  
 
-Suppose $F_{0}, \dots, F_{m}$ are degree $d$ forms on $\P^{n}_{\k}$.  These forms define a /base locus/ \[B \subset \P^{n}_{\k}\] defined by $B = \V(F_0, \dots, F_m)$, i.e. $B$ is the common vanishing set of all $F_i$. The assignment \[[p_0 : \dots :p_{n}] \mapsto [F_{0}(p_0, \dots, p_{n}): \dots : F_{m}(p_0, \dots, p_{n})] \in \P^{m}_{\k}\] is */well-defined/* on $U = \P^{n}_{\k} \setminus B$: this is because each $F_i$ is homogeneous of the /same/ degree $d$, and the output is never $[0: \dots : 0]$ for points in $U$.
+Suppose $F_{0}, \dots, F_{m}$ are degree $d$ forms on $\P^{n}_{\k}$.  These forms define a /base locus/ \[B \subset \P^{n}_{\k}\] defined by $B = \V(F_0, \dots, F_m)$, i.e. $B$ is the common vanishing set of all $F_i$. The assignment \[p = [p_0 : \dots :p_{n}] \mapsto [F_{0}(p_0, \dots, p_{n}): \dots : F_{m}(p_0, \dots, p_{n})] \in \P^{m}_{\k}\] is */well-defined/* on $U = \P^{n}_{\k} \setminus B$: this is because each $F_i$ is homogeneous of the /same/ degree $d$, and the output is never $[0: \dots : 0]$ for points in $U$.
 
 #+begin_exercise
 Maintaining the context of the previous paragraph, prove that the assignment $[F_0 : \dots :F_m]$ defines a regular mapping $U \to \P^{m}_{\k}$. 
 #+end_exercise
+
+Therefore, this idea of placing homogeneous forms of the same degree between colons ":" gives a recipe for many many types of regular mappings: If $X \subset \P^{n}_{\k}$ is a quasi-projective set, and if $[F_0 : \dots : F_m]$ is a tuple of degree $d$ forms /whose base locus $B$ is disjoint from $X$/, then the recipe \[ [p_0 : \dots : p_n]  \mapsto [F_0 (p) : \dots : F_{m} (p)] \in \P^{m}_{\k}\] defines a regular mapping $\varphi: X \to \P^{m}_{\k}$. Whether this recipe provides /all/ regular maps from $X$ to projective space is a delicate question, which will require us to understand the important concept of a /line bundle/ on $X$. 
+
+When $X = \P^{n}_{\k}$, however, the answer is affirmative: 
+
+#+begin_theorem
+Every regular mapping $\varphi: \P^{n}_{\k} \to \P^{m}_{\k}$ is of the form $[F_0 : \dots : F_m]$ where each form $F_i(x_0 , \dots, x_n)$ has the same degree, and where the base locus $\V(F_0 , \dots, F_m)$ is empty.
+#+end_theorem 
+
+#+begin_proof
+In class first, then I'll put it here. 
+#+end_proof
