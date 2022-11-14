@@ -550,7 +550,8 @@ To recap, we have two regular maps $\pi: T \setminus \{[0:0:0:1]\} \to \P^{1}_{\
 
 
 #+begin_exercise
-Prove that $\alpha$ and $\beta$ from the previous discussion are inverse regular mappings, and therefore that $T$ is isomorphic to $\P^{1}_{\k}$. 
+1) Prove that $\alpha$ and $\beta$ from the previous discussion are inverse regular mappings, and therefore that $T$ is isomorphic to $\P^{1}_{\k}$. 
+2) Prove that no three distinct point on $T$ are collinear (meaning, "lie on a line").
 #+end_exercise
 
 
